@@ -71,14 +71,11 @@ jobs:
               env_file.write(f'RELEASE_TAG={release_tag}\n')
           EOF
 
-      - name: Create Release
-        id: create_github_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Create Release and Upload Assets
+        uses: softprops/action-gh-release@v1
         with:
           tag_name: release-${{ env.RELEASE_TAG }}
-          release_name: FFXI Addons Release ${{ env.RELEASE_TAG }}
+          name: FFXI Addons Release ${{ env.RELEASE_TAG }}
           body: |
             Automated release of FFXI addons
 
@@ -92,83 +89,12 @@ jobs:
             - zonename: ${{ env.ZONENAME_VERSION }}
           draft: false
           prerelease: false
-
-      - name: Upload barfiller
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_github_release.outputs.upload_url }}
-          asset_path: ./releases/barfiller-v${{ env.BARFILLER_VERSION }}.zip
-          asset_name: barfiller-v${{ env.BARFILLER_VERSION }}.zip
-          asset_content_type: application/zip
-
-      - name: Upload enemybar
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_github_release.outputs.upload_url }}
-          asset_path: ./releases/enemybar-v${{ env.ENEMYBAR_VERSION }}.zip
-          asset_name: enemybar-v${{ env.ENEMYBAR_VERSION }}.zip
-          asset_content_type: application/zip
-
-      - name: Upload equipviewer
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_github_release.outputs.upload_url }}
-          asset_path: ./releases/equipviewer-v${{ env.EQUIPVIEWER_VERSION }}.zip
-          asset_name: equipviewer-v${{ env.EQUIPVIEWER_VERSION }}.zip
-          asset_content_type: application/zip
-
-      - name: Upload scoreboard
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_github_release.outputs.upload_url }}
-          asset_path: ./releases/scoreboard-v${{ env.SCOREBOARD_VERSION }}.zip
-          asset_name: scoreboard-v${{ env.SCOREBOARD_VERSION }}.zip
-          asset_content_type: application/zip
-
-      - name: Upload xivbar
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_github_release.outputs.upload_url }}
-          asset_path: ./releases/xivbar-v${{ env.XIVBAR_VERSION }}.zip
-          asset_name: xivbar-v${{ env.XIVBAR_VERSION }}.zip
-          asset_content_type: application/zip
-
-      - name: Upload XIVHotbar
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_github_release.outputs.upload_url }}
-          asset_path: ./releases/XIVHotbar-v${{ env.XIVHOTBAR_VERSION }}.zip
-          asset_name: XIVHotbar-v${{ env.XIVHOTBAR_VERSION }}.zip
-          asset_content_type: application/zip
-
-      - name: Upload zonename
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_github_release.outputs.upload_url }}
-          asset_path: ./releases/zonename-v${{ env.ZONENAME_VERSION }}.zip
-          asset_name: zonename-v${{ env.ZONENAME_VERSION }}.zip
-          asset_content_type: application/zip
-
-      - name: Upload manifest.json
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_github_release.outputs.upload_url }}
-          asset_path: ./manifest.json
-          asset_name: manifest.json
-          asset_content_type: application/json
+          files: |
+            releases/barfiller-v${{ env.BARFILLER_VERSION }}.zip
+            releases/enemybar-v${{ env.ENEMYBAR_VERSION }}.zip
+            releases/equipviewer-v${{ env.EQUIPVIEWER_VERSION }}.zip
+            releases/scoreboard-v${{ env.SCOREBOARD_VERSION }}.zip
+            releases/xivbar-v${{ env.XIVBAR_VERSION }}.zip
+            releases/XIVHotbar-v${{ env.XIVHOTBAR_VERSION }}.zip
+            releases/zonename-v${{ env.ZONENAME_VERSION }}.zip
+            manifest.json
