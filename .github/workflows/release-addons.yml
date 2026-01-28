@@ -1,0 +1,174 @@
+name: Release FFXI Addons
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+
+      - name: Read manifest and create release
+        id: create_release
+        run: |
+          # Read manifest.json
+          MANIFEST_CONTENT=$(cat manifest.json)
+
+          # Extract versions and create zip files for each addon
+          python3 << 'EOF'
+          import json
+          import os
+          import zipfile
+          from pathlib import Path
+
+          with open('manifest.json', 'r') as f:
+              manifest = json.load(f)
+
+          addons = manifest['addons']
+
+          # Create zips directory
+          os.makedirs('releases', exist_ok=True)
+
+          for addon_name, addon_data in addons.items():
+              version = addon_data['version']
+              
+              # Create zip file for this addon
+              zip_filename = f'releases/{addon_name}-v{version}.zip'
+              
+              with zipfile.ZipFile(zip_filename, 'w', zipfile.ZIP_DEFLATED) as zipf:
+                  addon_path = Path(addon_name)
+                  if addon_path.exists() and addon_path.is_dir():
+                      for file_path in addon_path.rglob('*'):
+                          if file_path.is_file():
+                              arcname = file_path.relative_to('.')
+                              zipf.write(file_path, arcname)
+              
+              print(f'Created {zip_filename}')
+              
+              # Set environment variable for version
+              with open(os.environ['GITHUB_ENV'], 'a') as env_file:
+                  env_file.write(f'{addon_name.upper().replace("-", "_")}_VERSION={version}\n')
+
+          # Get latest version for tag (use highest version or current date)
+          from datetime import datetime
+          release_tag = datetime.now().strftime('%Y%m%d-%H%M%S')
+          with open(os.environ['GITHUB_ENV'], 'a') as env_file:
+              env_file.write(f'RELEASE_TAG={release_tag}\n')
+          EOF
+
+      - name: Create Release
+        id: create_github_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: release-${{ env.RELEASE_TAG }}
+          release_name: FFXI Addons Release ${{ env.RELEASE_TAG }}
+          body: |
+            Automated release of FFXI addons
+
+            **Addon Versions:**
+            - barfiller: ${{ env.BARFILLER_VERSION }}
+            - enemybar: ${{ env.ENEMYBAR_VERSION }}
+            - equipviewer: ${{ env.EQUIPVIEWER_VERSION }}
+            - scoreboard: ${{ env.SCOREBOARD_VERSION }}
+            - xivbar: ${{ env.XIVBAR_VERSION }}
+            - XIVHotbar: ${{ env.XIVHOTBAR_VERSION }}
+            - zonename: ${{ env.ZONENAME_VERSION }}
+          draft: false
+          prerelease: false
+
+      - name: Upload barfiller
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_github_release.outputs.upload_url }}
+          asset_path: ./releases/barfiller-v${{ env.BARFILLER_VERSION }}.zip
+          asset_name: barfiller-v${{ env.BARFILLER_VERSION }}.zip
+          asset_content_type: application/zip
+
+      - name: Upload enemybar
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_github_release.outputs.upload_url }}
+          asset_path: ./releases/enemybar-v${{ env.ENEMYBAR_VERSION }}.zip
+          asset_name: enemybar-v${{ env.ENEMYBAR_VERSION }}.zip
+          asset_content_type: application/zip
+
+      - name: Upload equipviewer
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_github_release.outputs.upload_url }}
+          asset_path: ./releases/equipviewer-v${{ env.EQUIPVIEWER_VERSION }}.zip
+          asset_name: equipviewer-v${{ env.EQUIPVIEWER_VERSION }}.zip
+          asset_content_type: application/zip
+
+      - name: Upload scoreboard
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_github_release.outputs.upload_url }}
+          asset_path: ./releases/scoreboard-v${{ env.SCOREBOARD_VERSION }}.zip
+          asset_name: scoreboard-v${{ env.SCOREBOARD_VERSION }}.zip
+          asset_content_type: application/zip
+
+      - name: Upload xivbar
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_github_release.outputs.upload_url }}
+          asset_path: ./releases/xivbar-v${{ env.XIVBAR_VERSION }}.zip
+          asset_name: xivbar-v${{ env.XIVBAR_VERSION }}.zip
+          asset_content_type: application/zip
+
+      - name: Upload XIVHotbar
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_github_release.outputs.upload_url }}
+          asset_path: ./releases/XIVHotbar-v${{ env.XIVHOTBAR_VERSION }}.zip
+          asset_name: XIVHotbar-v${{ env.XIVHOTBAR_VERSION }}.zip
+          asset_content_type: application/zip
+
+      - name: Upload zonename
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_github_release.outputs.upload_url }}
+          asset_path: ./releases/zonename-v${{ env.ZONENAME_VERSION }}.zip
+          asset_name: zonename-v${{ env.ZONENAME_VERSION }}.zip
+          asset_content_type: application/zip
+
+      - name: Upload manifest.json
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_github_release.outputs.upload_url }}
+          asset_path: ./manifest.json
+          asset_name: manifest.json
+          asset_content_type: application/json

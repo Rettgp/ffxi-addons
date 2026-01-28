@@ -32,6 +32,7 @@ render_target_bar = function (...)
         tfgg_body:show()
         t_text:show()
         lvl_text:show()
+        if container then container:show() end
         
         target = windower.ffxi.get_mob_by_target('t')
         
@@ -98,5 +99,6 @@ render_target_bar = function (...)
         tfgg_body:size(0, 12)
         t_text:hide()
         lvl_text:hide()
+        if container then container:hide() end
     end
 end

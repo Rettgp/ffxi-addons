@@ -23,6 +23,8 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 --]]
 
+local packets = require('packets')
+
 targetBarHeight = 14
 targetBarWidth = 330
 subtargetBarHeight = 12
@@ -242,6 +244,22 @@ stfg_body_settings.repeatable.x = 1
 stfg_body_settings.repeatable.y = 1
 stfg_body_settings.draggable = false
 
+-- Draggable container using images for proper size control
+container_settings = {}
+container_settings.pos = {}
+container_settings.pos.x = center_screen
+container_settings.pos.y = 50
+container_settings.visible = true
+container_settings.color = {}
+container_settings.color.alpha = 0
+container_settings.color.red = 255
+container_settings.color.green = 0
+container_settings.color.blue = 255
+container_settings.size = {}
+container_settings.size.width = targetBarWidth
+container_settings.size.height = targetBarHeight
+container_settings.draggable = true
+
 defaults = {}
 defaults.font = 'Arial'
 defaults.font_size = 14
@@ -261,6 +279,11 @@ config.register(settings, function(settings_table)
         nx = settings_table.pos.x
     end
     
+    -- Create invisible draggable container first
+    container_settings.pos.x = nx
+    container_settings.pos.y = settings_table.pos.y
+    container = images.new(container_settings)
+    
     text_settings.pos.x = nx - 5
     text_settings.pos.y = settings_table.pos.y - 20
     text_settings.text.font = settings_table.font
@@ -271,11 +294,6 @@ config.register(settings, function(settings_table)
     lvl_text_settings.text.font = settings_table.font
     lvl_text_settings.text.size = targetBarHeight - 5
 
-    -- diff_text_settings.pos.x = nx
-    -- diff_text_settings.pos.y = settings_table.pos.y
-    -- diff_text_settings.text.font = settings_table.font
-    -- diff_text_settings.text.size = settings_table.font_size
-    
     tbg_cap_settings.pos.x = nx
     tbg_cap_settings.pos.y = settings_table.pos.y
  
@@ -321,7 +339,30 @@ config.register(settings, function(settings_table)
     st_text:pos(st_text:pos_x() + 400, 65)
 end)
 
-
+-- Update all element positions when container is dragged
+windower.register_event('prerender', function()
+    if container then
+        local container_x = container:pos_x()
+        local container_y = container:pos_y()
+        
+        -- Only update if position has changed
+        if container_x ~= settings.pos.x or container_y ~= settings.pos.y then
+            settings.pos.x = container_x
+            settings.pos.y = container_y
+            
+            -- Update all elements relative to container
+            tbg_cap_l:pos(container_x - 1, container_y)
+            tbg_cap_r:pos(container_x + targetBarWidth + 1, container_y)
+            tbg_body:pos(container_x, container_y)
+            tfgg_body:pos(container_x, container_y)
+            tfg_body:pos(container_x, container_y)
+            t_text:pos(container_x - 5, container_y - 20)
+            lvl_text:pos(container_x + 15, container_y)
+            
+            config.save(settings)
+        end
+    end
+end)
 
 check_claim = function(claim_id)
     if player_id == claim_id then
@@ -341,20 +382,40 @@ end
 
 windower.register_event('incoming text',function (original, modified, mode)
     if (mode == 191) then
+        -- Try to extract from formatted text (e.g., "level 2 (EP)")
         foo, bar, check_id = string.find(original, ".*%((%u+)%).*")
-        original = original:gsub('%W','')
-        foo1, bar1, level = string.find(original, "level%s*(%d+).*")
+        local original_clean = original:gsub('%W','')
+        foo1, bar1, level = string.find(original_clean, "level%s*(%d+).*")
+        
+        -- Convert to lowercase for case-insensitive matching
+        local original_lower = original:lower()
 
         if level then
             lvl_text.lvl = level
         else
-            lvl_text.lvl = nil
+            lvl_text.lvl = "-"
         end
 
+        -- Handle difficulty from formatted text or default game text
         if check_id then
             lvl_text.difficulty = check_id
-        elseif string.find(original, ".*impossible.*") then
+        elseif string.find(original_clean, ".*impossible.*") then
             lvl_text.difficulty = "IMPOSSIBLE"
+        -- Check for default game difficulty phrases (case-insensitive)
+        elseif string.find(original_lower, "too weak") then
+            lvl_text.difficulty = "TW"
+        elseif string.find(original_lower, "easy prey") then
+            lvl_text.difficulty = "EP"
+        elseif string.find(original_lower, "decent challenge") then
+            lvl_text.difficulty = "DC"
+        elseif string.find(original_lower, "even match") then
+            lvl_text.difficulty = "EM"
+        elseif string.find(original_lower, "tough") and not string.find(original_lower, "very") and not string.find(original_lower, "incredibly") then
+            lvl_text.difficulty = "T"
+        elseif string.find(original_lower, "very tough") then
+            lvl_text.difficulty = "VT"
+        elseif string.find(original_lower, "incredibly tough") then
+            lvl_text.difficulty = "IT"
         else
             lvl_text.difficulty = nil
         end
@@ -363,7 +424,6 @@ windower.register_event('incoming text',function (original, modified, mode)
     end
 end)
 
-local packets = require('packets')
 target_change = function(index)
     if index == 0 then
         visible = false
