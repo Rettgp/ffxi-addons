@@ -63,19 +63,13 @@ jobs:
               # Set environment variable for version
               with open(os.environ['GITHUB_ENV'], 'a') as env_file:
                   env_file.write(f'{addon_name.upper().replace("-", "_")}_VERSION={version}\n')
-
-          # Get latest version for tag (use highest version or current date)
-          from datetime import datetime
-          release_tag = datetime.now().strftime('%Y%m%d-%H%M%S')
-          with open(os.environ['GITHUB_ENV'], 'a') as env_file:
-              env_file.write(f'RELEASE_TAG={release_tag}\n')
           EOF
 
       - name: Create Release and Upload Assets
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: release-${{ env.RELEASE_TAG }}
-          name: FFXI Addons Release ${{ env.RELEASE_TAG }}
+          tag_name: latest
+          name: FFXI Addons - Latest Release
           body: |
             Automated release of FFXI addons
 
