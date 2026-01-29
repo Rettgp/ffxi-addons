@@ -600,7 +600,6 @@ local function load_action(ui, row, slot, action, player_vitals)
 			ui.hotbars[row].slot_icons[slot]:show()
 		elseif action.type == 'ws' then
 			ws = database[action.type][(action.action):lower()]
-            print("ws.icon: "..tostring(ws.icon))
 			setup_slot_icons(ui, '/images/icons/weapons/' .. string.format("%02d", ws.icon) .. '.jpg', row, slot)
 		-- if action is an item/gearswap
 		elseif S{'item','gs'}:contains(action.type) then
