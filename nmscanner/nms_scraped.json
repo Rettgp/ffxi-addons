@@ -1,0 +1,2654 @@
+[
+  {
+    "name": "Tococo",
+    "zone": "South Gustaberg",
+    "level": "5",
+    "family": "Bird"
+  },
+  {
+    "name": "Amanita",
+    "zone": "West Ronfaure",
+    "level": "5",
+    "family": "Funguar"
+  },
+  {
+    "name": "Duke Decapod",
+    "zone": "East Sarutabaruta",
+    "level": "8",
+    "family": "Crab"
+  },
+  {
+    "name": "Bigmouth Billy",
+    "zone": "East Ronfaure",
+    "level": "9",
+    "family": "Worm"
+  },
+  {
+    "name": "Jaggedy-Eared Jack",
+    "zone": "West Ronfaure",
+    "level": "9",
+    "family": "Rabbit"
+  },
+  {
+    "name": "Stinging Sophie",
+    "zone": "North Gustaberg",
+    "level": "9",
+    "family": "Bee"
+  },
+  {
+    "name": "Bubbly Bernie",
+    "zone": "South Gustaberg",
+    "level": "9",
+    "family": "Crab"
+  },
+  {
+    "name": "Spiny Spipi",
+    "zone": "East Sarutabaruta",
+    "level": "9",
+    "family": "Crawler"
+  },
+  {
+    "name": "Tom Tit Tat",
+    "zone": "West Sarutabaruta",
+    "level": "9",
+    "family": "Mandragora"
+  },
+  {
+    "name": "Leaping Lizzy",
+    "zone": "South Gustaberg",
+    "level": "10",
+    "family": "Lizard"
+  },
+  {
+    "name": "Fungus Beetle",
+    "zone": "West Ronfaure",
+    "level": "10",
+    "family": "Beetle"
+  },
+  {
+    "name": "Sharp-Eared Ropipi",
+    "zone": "East Sarutabaruta",
+    "level": "10",
+    "family": "Rabbits"
+  },
+  {
+    "name": "Maighdean Uaine",
+    "zone": "North Gustaberg",
+    "level": "11",
+    "family": "Sapling"
+  },
+  {
+    "name": "Sharp-Eared Ropipi",
+    "zone": "East Sarutabaruta",
+    "level": "11",
+    "family": "Rabbit"
+  },
+  {
+    "name": "Bedrock Barry",
+    "zone": "North Gustaberg",
+    "level": "11",
+    "family": "Worm"
+  },
+  {
+    "name": "Carnero",
+    "zone": "South Gustaberg",
+    "level": "11",
+    "family": "Sheep"
+  },
+  {
+    "name": "Thousandarm Deshglesh",
+    "zone": "Ghelsba Outpost",
+    "level": "11",
+    "family": "Orc"
+  },
+  {
+    "name": "Hundredscar Hajwaj",
+    "zone": "Fort Ghelsba",
+    "level": "11",
+    "family": "Orc"
+  },
+  {
+    "name": "Bu'Ghi Howlblade",
+    "zone": "Palborough Mines",
+    "level": "12",
+    "family": "Quadav"
+  },
+  {
+    "name": "Nunyenunc",
+    "zone": "West Sarutabaruta",
+    "level": "12",
+    "family": "Bird"
+  },
+  {
+    "name": "Numbing Norman",
+    "zone": "West Sarutabaruta",
+    "level": "12",
+    "family": "Bee"
+  },
+  {
+    "name": "Swamfisk",
+    "zone": "East Ronfaure",
+    "level": "12",
+    "family": "Pugil"
+  },
+  {
+    "name": "Rambukk",
+    "zone": "East Ronfaure",
+    "level": "12",
+    "family": "Ram"
+  },
+  {
+    "name": "Juu Duzu the Whirlwind",
+    "zone": "Giddeus",
+    "level": "13",
+    "family": "Yagudo"
+  },
+  {
+    "name": "Bloody Vrukwuk",
+    "zone": "Ghelsba Outpost",
+    "level": "14",
+    "family": "Orc"
+  },
+  {
+    "name": "Fogweaver Mozzfuzz",
+    "zone": "Ghelsba Outpost",
+    "level": "14",
+    "family": "Orc"
+  },
+  {
+    "name": "Haty",
+    "zone": "Konschtat Highlands",
+    "level": "14",
+    "family": "Hound"
+  },
+  {
+    "name": "Bendigeit Vran",
+    "zone": "Konschtat Highlands",
+    "level": "14",
+    "family": "Shadow"
+  },
+  {
+    "name": "Yara Ma Yha Who",
+    "zone": "Tahrongi Canyon",
+    "level": "14",
+    "family": "Sapling"
+  },
+  {
+    "name": "Ghillie Dhu",
+    "zone": "Konschtat Highlands",
+    "level": "15",
+    "family": "Sapling"
+  },
+  {
+    "name": "Zi'Ghi Boneeater",
+    "zone": "Palborough Mines",
+    "level": "15",
+    "family": "Quadav"
+  },
+  {
+    "name": "Eyy Mon the Ironbreaker",
+    "zone": "Giddeus",
+    "level": "16",
+    "family": "Yagudo"
+  },
+  {
+    "name": "Zhuu Buxu the Silent",
+    "zone": "Giddeus",
+    "level": "16",
+    "family": "Yagudo"
+  },
+  {
+    "name": "Hoo Mjuu the Torrent",
+    "zone": "Giddeus",
+    "level": "16",
+    "family": "Yagudo"
+  },
+  {
+    "name": "Habrok",
+    "zone": "Tahrongi Canyon",
+    "level": "16",
+    "family": "Bird"
+  },
+  {
+    "name": "Slumbering Samwell",
+    "zone": "La Theine Plateau",
+    "level": "17",
+    "family": "Sheep"
+  },
+  {
+    "name": "Qu'Vho Deathhurler",
+    "zone": "Palborough Mines",
+    "level": "17",
+    "family": "Quadav"
+  },
+  {
+    "name": "Bomb King",
+    "zone": "Outer Horutoto Ruins",
+    "level": "16",
+    "family": "Bomb"
+  },
+  {
+    "name": "Ashmaker Gotblut",
+    "zone": "Yughott Grotto",
+    "level": "17",
+    "family": "Orc"
+  },
+  {
+    "name": "Tumbling Truffle",
+    "zone": "La Theine Plateau",
+    "level": "19",
+    "family": "Funguar"
+  },
+  {
+    "name": "Stray Mary",
+    "zone": "Konschtat Highlands",
+    "level": "19",
+    "family": "Sheep"
+  },
+  {
+    "name": "Serpopard Ishtar",
+    "zone": "Tahrongi Canyon",
+    "level": "19",
+    "family": "Dhalmel"
+  },
+  {
+    "name": "Teporingo",
+    "zone": "Dangruf Wadi",
+    "level": "20",
+    "family": "Rabbit"
+  },
+  {
+    "name": "Orcish Panzer",
+    "zone": "Fort Ghelsba",
+    "level": "20",
+    "family": "Warmachine"
+  },
+  {
+    "name": "Vuu Puqu the Beguiler",
+    "zone": "Giddeus",
+    "level": "21",
+    "family": "Yagudo"
+  },
+  {
+    "name": "Wake Warder Wanda",
+    "zone": "Buburimu Peninsula",
+    "level": "22",
+    "family": "Crab"
+  },
+  {
+    "name": "No'Mho Crimsonarmor",
+    "zone": "Palborough Mines",
+    "level": "22",
+    "family": "Quadav"
+  },
+  {
+    "name": "Maltha",
+    "zone": "Inner Horutoto Ruins",
+    "level": "22",
+    "family": "Slime"
+  },
+  {
+    "name": "Doppelganger Dio",
+    "zone": "Outer Horutoto Ruins",
+    "level": "23",
+    "family": "Shadow"
+  },
+  {
+    "name": "Doppelganger Gog",
+    "zone": "Outer Horutoto Ruins",
+    "level": "23",
+    "family": "Shadow"
+  },
+  {
+    "name": "Bloodpool Vorax",
+    "zone": "Pashhow Marshlands",
+    "level": "24",
+    "family": "Leech"
+  },
+  {
+    "name": "Chocoboleech",
+    "zone": "Dangruf Wadi",
+    "level": "24",
+    "family": "Leech"
+  },
+  {
+    "name": "Bi'Gho Headtaker",
+    "zone": "Beadeaux",
+    "level": "25",
+    "family": "Quadav"
+  },
+  {
+    "name": "Nocuous Weapon",
+    "zone": "Inner Horutoto Ruins",
+    "level": "25",
+    "family": "Evil Weapon"
+  },
+  {
+    "name": "Quu Xijo the Illusory",
+    "zone": "Giddeus",
+    "level": "25",
+    "family": "Yagudo"
+  },
+  {
+    "name": "Panzer Percival",
+    "zone": "Jugner Forest",
+    "level": "25",
+    "family": "Beetle"
+  },
+  {
+    "name": "Golden Bat",
+    "zone": "Valkurm Dunes",
+    "level": "26",
+    "family": "Giant Bat"
+  },
+  {
+    "name": "Black Triple Stars",
+    "zone": "Rolanberry Fields",
+    "level": "26",
+    "family": "Bats"
+  },
+  {
+    "name": "Hawkeyed Dnatbat",
+    "zone": "Davoi",
+    "level": "26",
+    "family": "Orc"
+  },
+  {
+    "name": "Herbage Hunter",
+    "zone": "Tahrongi Canyon",
+    "level": "28",
+    "family": "Crawler"
+  },
+  {
+    "name": "Lumbering Lambert",
+    "zone": "La Theine Plateau",
+    "level": "27",
+    "family": "Ram"
+  },
+  {
+    "name": "Rampaging Ram",
+    "zone": "Konschtat Highlands",
+    "level": "27",
+    "family": "Ram"
+  },
+  {
+    "name": "Highlander Lizard",
+    "zone": "Konschtat Highlands",
+    "level": "27",
+    "family": "Lizard"
+  },
+  {
+    "name": "Tottering Toby",
+    "zone": "Batallia Downs",
+    "level": "27",
+    "family": "Sapling"
+  },
+  {
+    "name": "Jolly Green",
+    "zone": "Pashhow Marshlands",
+    "level": "27",
+    "family": "Goobbue"
+  },
+  {
+    "name": "Daggerclaw Dracos",
+    "zone": "Meriphataud Mountains",
+    "level": "27",
+    "family": "Raptor"
+  },
+  {
+    "name": "Geyser Lizard",
+    "zone": "Dangruf Wadi",
+    "level": "28",
+    "family": "Lizard"
+  },
+  {
+    "name": "Epialtes",
+    "zone": "Lower Delkfutt's Tower",
+    "level": "28",
+    "family": "Gigas"
+  },
+  {
+    "name": "Hippolytos",
+    "zone": "Lower Delkfutt's Tower",
+    "level": "28",
+    "family": "Gigas"
+  },
+  {
+    "name": "Valkurm Emperor",
+    "zone": "Valkurm Dunes",
+    "level": "29",
+    "family": "Fly"
+  },
+  {
+    "name": "Helldiver",
+    "zone": "Buburimu Peninsula",
+    "level": "29",
+    "family": "Bird"
+  },
+  {
+    "name": "Goblin Archaeologist",
+    "zone": "La Theine PlateauKonschtat HighlandsTahrongi Canyon",
+    "level": "30",
+    "family": "Goblin"
+  },
+  {
+    "name": "Morion Worm",
+    "zone": "Korroloka Tunnel",
+    "level": "30",
+    "family": "Worm"
+  },
+  {
+    "name": "Buburimboo",
+    "zone": "Buburimu Peninsula",
+    "level": "30",
+    "family": "Pugil"
+  },
+  {
+    "name": "Moo Ouzi the Swiftblade",
+    "zone": "Castle Oztroja",
+    "level": "30",
+    "family": "Yagudo"
+  },
+  {
+    "name": "Ge'Dha Evileye",
+    "zone": "Beadeaux",
+    "level": "30",
+    "family": "Quadav"
+  },
+  {
+    "name": "Da'Dha Hundredmask",
+    "zone": "Beadeaux",
+    "level": "30",
+    "family": "Quadav"
+  },
+  {
+    "name": "Falcatus Aranei",
+    "zone": "Korroloka Tunnel",
+    "level": "32",
+    "family": "Spider"
+  },
+  {
+    "name": "Eurymedon",
+    "zone": "Lower Delkfutt's Tower",
+    "level": "30",
+    "family": "Gigas"
+  },
+  {
+    "name": "Tigerbane Bakdak",
+    "zone": "Davoi",
+    "level": "31",
+    "family": "Orc"
+  },
+  {
+    "name": "Eurytos",
+    "zone": "Middle Delkfutt's Tower",
+    "level": "32",
+    "family": "Gigas"
+  },
+  {
+    "name": "Steelbiter Gudrud",
+    "zone": "Davoi",
+    "level": "33",
+    "family": "Orc"
+  },
+  {
+    "name": "Fraelissa",
+    "zone": "Jugner Forest",
+    "level": "33",
+    "family": "Treant"
+  },
+  {
+    "name": "Hercules Beetle",
+    "zone": "Carpenters' Landing",
+    "level": "34",
+    "family": "Beetle"
+  },
+  {
+    "name": "Cargo Crab Colin",
+    "zone": "Korroloka Tunnel",
+    "level": "35",
+    "family": "Crab"
+  },
+  {
+    "name": "Leech King",
+    "zone": "Maze of Shakhrami",
+    "level": "35",
+    "family": "Leech"
+  },
+  {
+    "name": "Mee Deggi the Punisher",
+    "zone": "Castle Oztroja",
+    "level": "35",
+    "family": "Yagudo"
+  },
+  {
+    "name": "Quu Domi the Gallant",
+    "zone": "Castle Oztroja",
+    "level": "35",
+    "family": "Yagudo"
+  },
+  {
+    "name": "Trickster Kinetix",
+    "zone": "Qufim Island",
+    "level": "35",
+    "family": "Evil Weapon"
+  },
+  {
+    "name": "Mycophile",
+    "zone": "Carpenters' Landing",
+    "level": "35",
+    "family": "Funguar"
+  },
+  {
+    "name": "Meteormauler Zhagtegg",
+    "zone": "Jugner Forest",
+    "level": "35",
+    "family": "Orc"
+  },
+  {
+    "name": "Burned Bergmann",
+    "zone": "Gusgen Mines",
+    "level": "36",
+    "family": "Ghost"
+  },
+  {
+    "name": "Asphyxiated Amsel",
+    "zone": "Gusgen Mines",
+    "level": "36",
+    "family": "Ghost"
+  },
+  {
+    "name": "Crushed Krause",
+    "zone": "Gusgen Mines",
+    "level": "36",
+    "family": "Ghost"
+  },
+  {
+    "name": "Pulverized Pfeffer",
+    "zone": "Gusgen Mines",
+    "level": "36",
+    "family": "Ghost"
+  },
+  {
+    "name": "Smothered Schmidt",
+    "zone": "Gusgen Mines",
+    "level": "36",
+    "family": "Ghost"
+  },
+  {
+    "name": "Wounded Wurfel",
+    "zone": "Gusgen Mines",
+    "level": "36",
+    "family": "Ghost"
+  },
+  {
+    "name": "Argus",
+    "zone": "Maze of Shakhrami",
+    "level": "36",
+    "family": "Hecteyes"
+  },
+  {
+    "name": "Mimas",
+    "zone": "Upper Delkfutt's Tower",
+    "level": "36",
+    "family": "Gigas"
+  },
+  {
+    "name": "Porphyrion",
+    "zone": "Upper Delkfutt's Tower",
+    "level": "36",
+    "family": "Gigas"
+  },
+  {
+    "name": "Zo'Khu Blackcloud",
+    "zone": "Beadeaux",
+    "level": "36",
+    "family": "Quadav"
+  },
+  {
+    "name": "Backoo",
+    "zone": "Buburimu Peninsula",
+    "level": "37",
+    "family": "Mandragora"
+  },
+  {
+    "name": "Bo'Who Warmonger",
+    "zone": "Pashhow Marshlands",
+    "level": "37",
+    "family": "Quadav"
+  },
+  {
+    "name": "Dame Blanche",
+    "zone": "Korroloka Tunnel",
+    "level": "37",
+    "family": "Ghost"
+  },
+  {
+    "name": "Orctrap",
+    "zone": "Carpenters' Landing",
+    "level": "37",
+    "family": "Flytrap"
+  },
+  {
+    "name": "Stubborn Dredvodd",
+    "zone": "Phanauet Channel",
+    "level": "37",
+    "family": "Orc"
+  },
+  {
+    "name": "Coo Keja the Unseen",
+    "zone": "Meriphataud Mountains",
+    "level": "37",
+    "family": "Yagudo"
+  },
+  {
+    "name": "Aroma Leech",
+    "zone": "Ordelle's Caves",
+    "level": "38",
+    "family": "Leech"
+  },
+  {
+    "name": "Poisonhand Gnadgad",
+    "zone": "Davoi",
+    "level": "39",
+    "family": "Orc"
+  },
+  {
+    "name": "Drooling Daisy",
+    "zone": "Rolanberry Fields",
+    "level": "39",
+    "family": "Morbol"
+  },
+  {
+    "name": "Deadly Dodo",
+    "zone": "Sauromugue Champaign",
+    "level": "39",
+    "family": "Cockatrice"
+  },
+  {
+    "name": "Masan",
+    "zone": "Sea Serpent Grotto",
+    "level": "39",
+    "family": "Leech"
+  },
+  {
+    "name": "Namtar",
+    "zone": "Sea Serpent Grotto",
+    "level": "40",
+    "family": "Skeleton"
+  },
+  {
+    "name": "Aroma Fly",
+    "zone": "Gusgen Mines",
+    "level": "40",
+    "family": "Fly"
+  },
+  {
+    "name": "Aroma Crawler",
+    "zone": "Maze of Shakhrami",
+    "level": "40",
+    "family": "Crawler"
+  },
+  {
+    "name": "Go'Bhu Gascon",
+    "zone": "Beadeaux",
+    "level": "41",
+    "family": "Quadav"
+  },
+  {
+    "name": "Nue",
+    "zone": "Beaucedine Glacier",
+    "level": "41",
+    "family": "Tiger"
+  },
+  {
+    "name": "Kirata",
+    "zone": "Beaucedine Glacier",
+    "level": "41",
+    "family": "Tiger"
+  },
+  {
+    "name": "Morbolger",
+    "zone": "Ordelle's Caves",
+    "level": "42",
+    "family": "Morbol"
+  },
+  {
+    "name": "Yaa Haqa the Profane",
+    "zone": "Castle Oztroja",
+    "level": "42",
+    "family": "Yagudo"
+  },
+  {
+    "name": "Chonchon",
+    "zone": "Meriphataud Mountains",
+    "level": "43",
+    "family": "Cockatrice"
+  },
+  {
+    "name": "Foul Meat",
+    "zone": "Gusgen Mines",
+    "level": "43",
+    "family": "Doomed"
+  },
+  {
+    "name": "Weeping Willow",
+    "zone": "Batallia Downs",
+    "level": "45",
+    "family": "Treant"
+  },
+  {
+    "name": "Blubbery Bulge",
+    "zone": "Davoi",
+    "level": "45",
+    "family": "Slime"
+  },
+  {
+    "name": "Guardian Crawler",
+    "zone": "Crawlers' Nest",
+    "level": "45",
+    "family": "Crawler"
+  },
+  {
+    "name": "De'Vyu Headhunter",
+    "zone": "Beadeaux",
+    "level": "45",
+    "family": "Quadav"
+  },
+  {
+    "name": "Dune Widow",
+    "zone": "Eastern Altepa Desert",
+    "level": "45",
+    "family": "Spider"
+  },
+  {
+    "name": "Vodyanoi",
+    "zone": "Phanauet Channel",
+    "level": "45",
+    "family": "Doomed"
+  },
+  {
+    "name": "Padfoot",
+    "zone": "Lufaise Meadows",
+    "level": "45",
+    "family": "Sheep"
+  },
+  {
+    "name": "Juggler Hecatomb",
+    "zone": "Gusgen Mines",
+    "level": "46",
+    "family": "Evil Weapon"
+  },
+  {
+    "name": "Intulo",
+    "zone": "Bibiki Bay",
+    "level": "46",
+    "family": "Eft"
+  },
+  {
+    "name": "Eyegouger",
+    "zone": "Batallia Downs",
+    "level": "46",
+    "family": "Birds"
+  },
+  {
+    "name": "Gargantua",
+    "zone": "Beaucedine Glacier",
+    "level": "47",
+    "family": "Golem"
+  },
+  {
+    "name": "Ga'Bhu Unvanquished",
+    "zone": "Beadeaux",
+    "level": "47",
+    "family": "Quadav"
+  },
+  {
+    "name": "Celphie",
+    "zone": "Western Altepa Desert",
+    "level": "47",
+    "family": "Dhalmel"
+  },
+  {
+    "name": "Meww the Turtlerider",
+    "zone": "Yuhtunga Jungle",
+    "level": "47",
+    "family": "Sahagin"
+  },
+  {
+    "name": "Shadow Eye",
+    "zone": "Xarcabard",
+    "level": "48",
+    "family": "Ahriman"
+  },
+  {
+    "name": "Wuur the Sandcomber",
+    "zone": "Sea Serpent Grotto",
+    "level": "48",
+    "family": "Sahagin"
+  },
+  {
+    "name": "Seww the Squidlimbed",
+    "zone": "Sea Serpent Grotto",
+    "level": "48",
+    "family": "Sahagin"
+  },
+  {
+    "name": "Fyuu the Seabellow",
+    "zone": "Sea Serpent Grotto",
+    "level": "48",
+    "family": "Sahagin"
+  },
+  {
+    "name": "Eba",
+    "zone": "Phomiuna Aqueducts",
+    "level": "48",
+    "family": "Fomor"
+  },
+  {
+    "name": "Serra",
+    "zone": "Bibiki Bay - Purgonorgo Isle",
+    "level": "49",
+    "family": "Pugil"
+  },
+  {
+    "name": "Qull the Shellbuster",
+    "zone": "Sea Serpent Grotto",
+    "level": "49",
+    "family": "Sahagin"
+  },
+  {
+    "name": "Guardian Crawler",
+    "zone": "Crawlers' Nest",
+    "level": "50",
+    "family": "Crawler"
+  },
+  {
+    "name": "Drone Crawler",
+    "zone": "Crawlers' Nest",
+    "level": "50",
+    "family": "Crawler"
+  },
+  {
+    "name": "Rose Garden",
+    "zone": "Yuhtunga Jungle",
+    "level": "50",
+    "family": "Morbol"
+  },
+  {
+    "name": "Mysticmaker Profblix",
+    "zone": "Labyrinth of Onzozo",
+    "level": "50",
+    "family": "Goblin"
+  },
+  {
+    "name": "Odqan",
+    "zone": "Misareaux Coast",
+    "level": "50",
+    "family": "Cluster"
+  },
+  {
+    "name": "Bugbear Strongman",
+    "zone": "Oldton Movalpolos",
+    "level": "50",
+    "family": "Bugbear"
+  },
+  {
+    "name": "Gloomanita",
+    "zone": "North Gustaberg (S)",
+    "level": "50",
+    "family": "Funguar"
+  },
+  {
+    "name": "Goblin Wolfman",
+    "zone": "Oldton Movalpolos",
+    "level": "50",
+    "family": "Moblin"
+  },
+  {
+    "name": "Noble Mold",
+    "zone": "Sanctuary of Zi'Tah",
+    "level": "50",
+    "family": "Funguar"
+  },
+  {
+    "name": "Ahtu",
+    "zone": "Batallia Downs",
+    "level": "51",
+    "family": "Treant"
+  },
+  {
+    "name": "Old Two-Wings",
+    "zone": "Garlaige Citadel",
+    "level": "52",
+    "family": "Giant Bat"
+  },
+  {
+    "name": "Balam-Quitz",
+    "zone": "Sauromugue Champaign (S)",
+    "level": "53",
+    "family": "Coeurl"
+  },
+  {
+    "name": "Mischievous Micholas",
+    "zone": "Yuhtunga Jungle",
+    "level": "53",
+    "family": "Opo-opo"
+  },
+  {
+    "name": "Skewer Sam",
+    "zone": "Garlaige Citadel",
+    "level": "54",
+    "family": "Cockatrice"
+  },
+  {
+    "name": "Bloodtear Baldurf",
+    "zone": "La Theine Plateau",
+    "level": "55",
+    "family": "Ram"
+  },
+  {
+    "name": "Steelfleece Baldarich",
+    "zone": "Konschtat Highlands",
+    "level": "55",
+    "family": "Ram"
+  },
+  {
+    "name": "King Arthro",
+    "zone": "Jugner Forest",
+    "level": "55",
+    "family": "Crab"
+  },
+  {
+    "name": "Lumber Jack",
+    "zone": "Batallia Downs",
+    "level": "55",
+    "family": "Beetle"
+  },
+  {
+    "name": "Drone Crawler",
+    "zone": "Crawlers' Nest",
+    "level": "55",
+    "family": "Crawler"
+  },
+  {
+    "name": "Waraxe Beak",
+    "zone": "Meriphataud Mountains",
+    "level": "55",
+    "family": "Cockatrice"
+  },
+  {
+    "name": "Roc",
+    "zone": "Sauromugue Champaign",
+    "level": "55",
+    "family": "Roc"
+  },
+  {
+    "name": "Goblinsavior Heronox",
+    "zone": "Gustav Tunnel",
+    "level": "55",
+    "family": "Goblin"
+  },
+  {
+    "name": "Bright-handed Kunberry",
+    "zone": "Yhoator Jungle",
+    "level": "55",
+    "family": "Tonberry"
+  },
+  {
+    "name": "Edacious Opo-opo",
+    "zone": "Yhoator Jungle",
+    "level": "55",
+    "family": "Opo-opo"
+  },
+  {
+    "name": "Ziphius",
+    "zone": "Misareaux Coast",
+    "level": "55",
+    "family": "Pugil"
+  },
+  {
+    "name": "Cactuar Cantautor",
+    "zone": "Western Altepa Desert",
+    "level": "56",
+    "family": "Sabotender"
+  },
+  {
+    "name": "Centurio X-I",
+    "zone": "Quicksand Caves",
+    "level": "56",
+    "family": "Antica"
+  },
+  {
+    "name": "Keeper of Halidom",
+    "zone": "Sanctuary of Zi'Tah",
+    "level": "56",
+    "family": "Goobbue"
+  },
+  {
+    "name": "Boll Weevil",
+    "zone": "Jugner Forest (S)",
+    "level": "56",
+    "family": "Beetle"
+  },
+  {
+    "name": "Centurio XII-I",
+    "zone": "Eastern Altepa Desert",
+    "level": "56",
+    "family": "Antica"
+  },
+  {
+    "name": "Colorful Leshy",
+    "zone": "Lufaise Meadows",
+    "level": "56",
+    "family": "Treant"
+  },
+  {
+    "name": "Unstable Cluster",
+    "zone": "Riverne - Site B01",
+    "level": "56",
+    "family": "Cluster"
+  },
+  {
+    "name": "Dynast Beetle",
+    "zone": "Crawlers' Nest",
+    "level": "56",
+    "family": "Beetle"
+  },
+  {
+    "name": "Sagittarius X-XIII",
+    "zone": "Quicksand Caves",
+    "level": "57",
+    "family": "Antica"
+  },
+  {
+    "name": "Lamina",
+    "zone": "Rolanberry Fields (S)",
+    "level": "57",
+    "family": "Mandragora"
+  },
+  {
+    "name": "Pahh the Gullcaller",
+    "zone": "Sea Serpent Grotto",
+    "level": "57",
+    "family": "Sahagin"
+  },
+  {
+    "name": "Habetrot",
+    "zone": "Temple of Uggalepih",
+    "level": "57",
+    "family": "Crawler"
+  },
+  {
+    "name": "Lich C Magnus",
+    "zone": "Eldieme Necropolis",
+    "level": "58",
+    "family": "Skeleton"
+  },
+  {
+    "name": "Simurgh",
+    "zone": "Rolanberry Fields",
+    "level": "58",
+    "family": "Roc"
+  },
+  {
+    "name": "Bisque-heeled Sunberry",
+    "zone": "Yhoator Jungle",
+    "level": "58",
+    "family": "Tonberry"
+  },
+  {
+    "name": "Fradubio",
+    "zone": "Jugner Forest",
+    "level": "58",
+    "family": "Treant"
+  },
+  {
+    "name": "Hyakinthos",
+    "zone": "Sauromugue Champaign (S)",
+    "level": "58",
+    "family": "Mandragora"
+  },
+  {
+    "name": "Flauros",
+    "zone": "Temple of Uggalepih",
+    "level": "59",
+    "family": "Coeurl"
+  },
+  {
+    "name": "Balor",
+    "zone": "Sacrarium",
+    "level": "59",
+    "family": "Fomor"
+  },
+  {
+    "name": "Sabotender Bailarin",
+    "zone": "Quicksand Caves",
+    "level": "59",
+    "family": "Sabotender"
+  },
+  {
+    "name": "Luaith",
+    "zone": "Sacrarium",
+    "level": "59",
+    "family": "Fomor"
+  },
+  {
+    "name": "Lobais",
+    "zone": "Sacrarium",
+    "level": "59",
+    "family": "Fomor"
+  },
+  {
+    "name": "Caithleann",
+    "zone": "Sacrarium",
+    "level": "59",
+    "family": "Fomor"
+  },
+  {
+    "name": "Indich",
+    "zone": "Sacrarium",
+    "level": "59",
+    "family": "Fomor"
+  },
+  {
+    "name": "Skull of Envy",
+    "zone": "Eldieme Necropolis",
+    "level": "60",
+    "family": "Skeleton"
+  },
+  {
+    "name": "Skull of Gluttony",
+    "zone": "Eldieme Necropolis",
+    "level": "60",
+    "family": "Skeleton"
+  },
+  {
+    "name": "Skull of Greed",
+    "zone": "Eldieme Necropolis",
+    "level": "60",
+    "family": "Skeleton"
+  },
+  {
+    "name": "Skull of Lust",
+    "zone": "Eldieme Necropolis",
+    "level": "60",
+    "family": "Skeleton"
+  },
+  {
+    "name": "Skull of Pride",
+    "zone": "Eldieme Necropolis",
+    "level": "60",
+    "family": "Skeleton"
+  },
+  {
+    "name": "Skull of Sloth",
+    "zone": "Eldieme Necropolis",
+    "level": "60",
+    "family": "Skeleton"
+  },
+  {
+    "name": "Skull of Wrath",
+    "zone": "Eldieme Necropolis",
+    "level": "60",
+    "family": "Skeleton"
+  },
+  {
+    "name": "La Velue",
+    "zone": "Batallia Downs (S)",
+    "level": "60",
+    "family": "Tiger"
+  },
+  {
+    "name": "Nussknacker",
+    "zone": "Quicksand Caves",
+    "level": "60",
+    "family": "Lizard"
+  },
+  {
+    "name": "Tribunus VII-I",
+    "zone": "Quicksand Caves",
+    "level": "60",
+    "family": "Antica"
+  },
+  {
+    "name": "Woodland Sage",
+    "zone": "Yhoator Jungle",
+    "level": "60",
+    "family": "Treant"
+  },
+  {
+    "name": "Sea Horror",
+    "zone": "Ship bound for Mhaura",
+    "level": "60",
+    "family": "Sea Monk"
+  },
+  {
+    "name": "Taisaijin",
+    "zone": "Ranguemont Pass",
+    "level": "60",
+    "family": "Hecteyes"
+  },
+  {
+    "name": "Demonic Tiphia",
+    "zone": "Crawlers' Nest",
+    "level": "60",
+    "family": "Bee"
+  },
+  {
+    "name": "Peg Powler",
+    "zone": "Labyrinth of Onzozo",
+    "level": "61",
+    "family": "Sea Monk"
+  },
+  {
+    "name": "Worr the Clawfisted",
+    "zone": "Sea Serpent Grotto",
+    "level": "61",
+    "family": "Sahagin"
+  },
+  {
+    "name": "Goliath",
+    "zone": "Fei'Yin",
+    "level": "62",
+    "family": "Golem"
+  },
+  {
+    "name": "Sea Hog",
+    "zone": "Sea Serpent Grotto",
+    "level": "62",
+    "family": "Pugil"
+  },
+  {
+    "name": "Death from Above",
+    "zone": "Temple of Uggalepih",
+    "level": "62",
+    "family": "Bee"
+  },
+  {
+    "name": "Zoredonite",
+    "zone": "Manaclipper",
+    "level": "62",
+    "family": "Uragnite"
+  },
+  {
+    "name": "Northern Shadow",
+    "zone": "Fei'Yin",
+    "level": "63",
+    "family": "Shadow"
+  },
+  {
+    "name": "Eastern Shadow",
+    "zone": "Fei'Yin",
+    "level": "63",
+    "family": "Shadow"
+  },
+  {
+    "name": "Western Shadow",
+    "zone": "Fei'Yin",
+    "level": "63",
+    "family": "Shadow"
+  },
+  {
+    "name": "Southern Shadow",
+    "zone": "Fei'Yin",
+    "level": "63",
+    "family": "Shadow"
+  },
+  {
+    "name": "Gugru Orobon(Fishing)",
+    "zone": "Open sea route to Al Zahbi",
+    "level": "63",
+    "family": "Orobon"
+  },
+  {
+    "name": "63 - 63",
+    "zone": "Orobon",
+    "level": "??",
+    "family": "Orobon Lure"
+  },
+  {
+    "name": "Sewer Syrup",
+    "zone": "Bostaunieux Oubliette",
+    "level": "64",
+    "family": "Slime"
+  },
+  {
+    "name": "Queen Crawler",
+    "zone": "Crawlers' Nest",
+    "level": "64",
+    "family": "Crawler"
+  },
+  {
+    "name": "Matron Crawler",
+    "zone": "Crawlers' Nest",
+    "level": "64",
+    "family": "Crawler"
+  },
+  {
+    "name": "Voll the Sharkfinned",
+    "zone": "Sea Serpent Grotto",
+    "level": "64",
+    "family": "Sahagin"
+  },
+  {
+    "name": "Mouu the Waverider",
+    "zone": "Sea Serpent Grotto",
+    "level": "64",
+    "family": "Sahagin"
+  },
+  {
+    "name": "Antican Praefectus",
+    "zone": "Quicksand Caves",
+    "level": "65",
+    "family": "Antica"
+  },
+  {
+    "name": "Antican Proconsul",
+    "zone": "Quicksand Caves",
+    "level": "65",
+    "family": "Antica"
+  },
+  {
+    "name": "Cancer",
+    "zone": "Kuftal Tunnel",
+    "level": "65",
+    "family": "Crab"
+  },
+  {
+    "name": "Sozu Bliberry",
+    "zone": "Den of Rancor",
+    "level": "65",
+    "family": "Tonberry"
+  },
+  {
+    "name": "Sozu Terberry",
+    "zone": "Temple of Uggalepih",
+    "level": "65",
+    "family": "Tonberry"
+  },
+  {
+    "name": "Tonberry Kinq",
+    "zone": "Temple of Uggalepih",
+    "level": "65",
+    "family": "Tonberry"
+  },
+  {
+    "name": "Sozu Rogberry",
+    "zone": "Temple of Uggalepih",
+    "level": "65",
+    "family": "Tonberry"
+  },
+  {
+    "name": "Hastatus XI-XII",
+    "zone": "Quicksand Caves",
+    "level": "65",
+    "family": "Antica"
+  },
+  {
+    "name": "Dyinyinga",
+    "zone": "Rolanberry Fields (S)",
+    "level": "65",
+    "family": "Slugs"
+  },
+  {
+    "name": "Hellion",
+    "zone": "Labyrinth of Onzozo",
+    "level": "66",
+    "family": "Doomed"
+  },
+  {
+    "name": "Amemet",
+    "zone": "Kuftal Tunnel",
+    "level": "66",
+    "family": "Lizard"
+  },
+  {
+    "name": "Ellyllon",
+    "zone": "Boyahda Tree",
+    "level": "66",
+    "family": "Funguar"
+  },
+  {
+    "name": "Novv the Whitehearted",
+    "zone": "Sea Serpent Grotto",
+    "level": "66",
+    "family": "Sahagin"
+  },
+  {
+    "name": "Carmine-tailed Janberry",
+    "zone": "Den of Rancor",
+    "level": "66",
+    "family": "Tonberry"
+  },
+  {
+    "name": "Antican Magister",
+    "zone": "Quicksand Caves",
+    "level": "66",
+    "family": "Antica"
+  },
+  {
+    "name": "Sacrificial Goblet",
+    "zone": "Temple of Uggalepih",
+    "level": "66",
+    "family": "Magic Pot"
+  },
+  {
+    "name": "Splacknuck",
+    "zone": "Bibiki Bay",
+    "level": "66",
+    "family": "Eft"
+  },
+  {
+    "name": "Sozu Sarberry",
+    "zone": "Temple of Uggalepih",
+    "level": "66",
+    "family": "Tonberry"
+  },
+  {
+    "name": "Blackbeard",
+    "zone": "Ship bound for Mhaura",
+    "level": "67",
+    "family": "Skeleton"
+  },
+  {
+    "name": "Celeste-eyed Tozberry",
+    "zone": "Den of Rancor",
+    "level": "67",
+    "family": "Tonberry"
+  },
+  {
+    "name": "Citipati",
+    "zone": "Attohwa Chasm",
+    "level": "67",
+    "family": "Corse"
+  },
+  {
+    "name": "Awd Goggie",
+    "zone": "Crawlers' Nest",
+    "level": "68",
+    "family": "Crawler"
+  },
+  {
+    "name": "Oni Carcass",
+    "zone": "Toraimarai Canal",
+    "level": "68",
+    "family": "Doomed"
+  },
+  {
+    "name": "Baronet Romwe",
+    "zone": "Castle Zvahl Keep",
+    "level": "68",
+    "family": "Demon"
+  },
+  {
+    "name": "Baron Vapula",
+    "zone": "Castle Zvahl Keep",
+    "level": "68",
+    "family": "Demon"
+  },
+  {
+    "name": "Count Bifrons",
+    "zone": "Castle Zvahl Keep",
+    "level": "68",
+    "family": "Demon"
+  },
+  {
+    "name": "Viscount Morax",
+    "zone": "Castle Zvahl Keep",
+    "level": "68",
+    "family": "Demon"
+  },
+  {
+    "name": "Sabotender Mariachi",
+    "zone": "Kuftal Tunnel",
+    "level": "68",
+    "family": "Sabotender"
+  },
+  {
+    "name": "Cwn Cyrff",
+    "zone": "Eldieme Necropolis",
+    "level": "68",
+    "family": "Hound"
+  },
+  {
+    "name": "Soulstealer Skullnix",
+    "zone": "Labyrinth of Onzozo",
+    "level": "69",
+    "family": "Goblin"
+  },
+  {
+    "name": "Bloodthirster Madkix",
+    "zone": "Kuftal Tunnel",
+    "level": "69",
+    "family": "Goblin"
+  },
+  {
+    "name": "Arachne",
+    "zone": "Kuftal Tunnel",
+    "level": "69",
+    "family": "Spider"
+  },
+  {
+    "name": "Yowie",
+    "zone": "Kuftal Tunnel",
+    "level": "69",
+    "family": "Raptor"
+  },
+  {
+    "name": "Aquarius",
+    "zone": "Boyahda Tree",
+    "level": "69",
+    "family": "Crab"
+  },
+  {
+    "name": "Bonnacon",
+    "zone": "Uleguerand Range",
+    "level": "69",
+    "family": "Buffalo"
+  },
+  {
+    "name": "Shii",
+    "zone": "Bostaunieux Oubliette",
+    "level": "70",
+    "family": "Hound"
+  },
+  {
+    "name": "Serket",
+    "zone": "Garlaige Citadel",
+    "level": "70",
+    "family": "Scorpion"
+  },
+  {
+    "name": "Capricious Cassie",
+    "zone": "Fei'Yin",
+    "level": "70",
+    "family": "Morbol"
+  },
+  {
+    "name": "Diamond Daig",
+    "zone": "Quicksand Caves",
+    "level": "70",
+    "family": "Beetle"
+  },
+  {
+    "name": "Phantom Worm",
+    "zone": "Kuftal Tunnel",
+    "level": "70",
+    "family": "Worm"
+  },
+  {
+    "name": "Wyvernpoacher Drachlox",
+    "zone": "Gustav Tunnel",
+    "level": "70",
+    "family": "Goblin"
+  },
+  {
+    "name": "Zuug the Shoreleaper",
+    "zone": "Sea Serpent Grotto",
+    "level": "70",
+    "family": "Sahagin"
+  },
+  {
+    "name": "Crimson-toothed Pawberry",
+    "zone": "Temple of Uggalepih",
+    "level": "70",
+    "family": "Tonberry"
+  },
+  {
+    "name": "Friar Rush",
+    "zone": "Den of Rancor",
+    "level": "70",
+    "family": "Bomb"
+  },
+  {
+    "name": "Biast",
+    "zone": "Xarcabard",
+    "level": "70",
+    "family": "Dragon"
+  },
+  {
+    "name": "Silverhook",
+    "zone": "Ship bound for Mhaura",
+    "level": "70",
+    "family": "Skeleton"
+  },
+  {
+    "name": "White Coney",
+    "zone": "Uleguerand Range",
+    "level": "70",
+    "family": "Rabbit"
+  },
+  {
+    "name": "Black Coney",
+    "zone": "Uleguerand Range",
+    "level": "70",
+    "family": "Rabbit"
+  },
+  {
+    "name": "Bloodsucker",
+    "zone": "Bostaunieux Oubliette",
+    "level": "71",
+    "family": "Leech"
+  },
+  {
+    "name": "Dirtyhanded Gochakzuk",
+    "zone": "Davoi",
+    "level": "71",
+    "family": "Orc"
+  },
+  {
+    "name": "Ixtab",
+    "zone": "Upper Delkfutt's Tower",
+    "level": "71",
+    "family": "Ghost"
+  },
+  {
+    "name": "Foreseer Oramix",
+    "zone": "Ifrit's Cauldron",
+    "level": "71",
+    "family": "Goblin"
+  },
+  {
+    "name": "Snow Maiden",
+    "zone": "Uleguerand Range",
+    "level": "71",
+    "family": "Snoll"
+  },
+  {
+    "name": "Tawny-fingered Mugberry",
+    "zone": "Den of Rancor",
+    "level": "71",
+    "family": "Tonberry"
+  },
+  {
+    "name": "Phanduron the Condemned",
+    "zone": "Bostaunieux Oubliette",
+    "level": "72",
+    "family": "Shadow"
+  },
+  {
+    "name": "Drexerion the Condemned",
+    "zone": "Bostaunieux Oubliette",
+    "level": "72",
+    "family": "Shadow"
+  },
+  {
+    "name": "Cemetery Cherry",
+    "zone": "King Ranperre's Tomb",
+    "level": "72",
+    "family": "Treant"
+  },
+  {
+    "name": "Orcish Warlord",
+    "zone": "Monastic Cavern",
+    "level": "72",
+    "family": "Orc"
+  },
+  {
+    "name": "Orcish Hexspinner",
+    "zone": "Monastic Cavern",
+    "level": "72",
+    "family": "Orc"
+  },
+  {
+    "name": "Pallas",
+    "zone": "Upper Delkfutt's Tower",
+    "level": "72",
+    "family": "Gigas"
+  },
+  {
+    "name": "Antican Legatus",
+    "zone": "Quicksand Caves",
+    "level": "72",
+    "family": "Antica"
+  },
+  {
+    "name": "Proconsul XII",
+    "zone": "Quicksand Caves",
+    "level": "72",
+    "family": "Antica"
+  },
+  {
+    "name": "Antican Tribunus",
+    "zone": "Quicksand Caves",
+    "level": "72",
+    "family": "Antica"
+  },
+  {
+    "name": "Triarius X-XV",
+    "zone": "Quicksand Caves",
+    "level": "72",
+    "family": "Antica"
+  },
+  {
+    "name": "Adamantoise",
+    "zone": "Valley of Sorrows",
+    "level": "72",
+    "family": "Adamantoise"
+  },
+  {
+    "name": "Tonberry Decapitator",
+    "zone": "Den of Rancor",
+    "level": "72",
+    "family": "Tonberry"
+  },
+  {
+    "name": "Tonberry Tracker",
+    "zone": "Den of Rancor",
+    "level": "72",
+    "family": "Tonberry"
+  },
+  {
+    "name": "Unut",
+    "zone": "Boyahda Tree",
+    "level": "72",
+    "family": "Rabbit"
+  },
+  {
+    "name": "Tarasque",
+    "zone": "Ifrit's Cauldron",
+    "level": "72",
+    "family": "Lizard"
+  },
+  {
+    "name": "Tyrannic Tunnok",
+    "zone": "Ifrit's Cauldron",
+    "level": "73",
+    "family": "Scorpion"
+  },
+  {
+    "name": "Mountain Worm",
+    "zone": "Uleguerand Range",
+    "level": "73",
+    "family": "Worm"
+  },
+  {
+    "name": "Zoraal Ja's Pkuucha",
+    "zone": "Wajaom Woodlands",
+    "level": "73",
+    "family": "Colibri"
+  },
+  {
+    "name": "Orobon(Fishing)",
+    "zone": "Open sea route to Al Zahbi",
+    "level": "73",
+    "family": "Orobon"
+  },
+  {
+    "name": "73 - 74",
+    "zone": "Orobon",
+    "level": "??",
+    "family": "Orobon Lure"
+  },
+  {
+    "name": "Peallaidh",
+    "zone": "Caedarva Mire",
+    "level": "73",
+    "family": "Sheep"
+  },
+  {
+    "name": "Beryl-footed Molberry",
+    "zone": "Temple of Uggalepih",
+    "level": "73",
+    "family": "Tonberry"
+  },
+  {
+    "name": "Lord of Onzozo",
+    "zone": "Labyrinth of Onzozo",
+    "level": "74",
+    "family": "Sea Monk"
+  },
+  {
+    "name": "Ose",
+    "zone": "Labyrinth of Onzozo",
+    "level": "74",
+    "family": "Coeurl"
+  },
+  {
+    "name": "Lindwurm",
+    "zone": "Ifrit's Cauldron",
+    "level": "74",
+    "family": "Raptor"
+  },
+  {
+    "name": "Father Frost",
+    "zone": "Uleguerand Range",
+    "level": "74",
+    "family": "Snoll"
+  },
+  {
+    "name": "Orcish Overlord",
+    "zone": "Monastic Cavern",
+    "level": "75",
+    "family": "Orc"
+  },
+  {
+    "name": "Diamond Quadav",
+    "zone": "Qulun Dome",
+    "level": "75",
+    "family": "Quadav"
+  },
+  {
+    "name": "Narasimha",
+    "zone": "Labyrinth of Onzozo",
+    "level": "75",
+    "family": "Manticore"
+  },
+  {
+    "name": "Yagudo Avatar",
+    "zone": "Castle Oztroja",
+    "level": "75",
+    "family": "Yagudo"
+  },
+  {
+    "name": "Alkyoneus",
+    "zone": "Upper Delkfutt's Tower",
+    "level": "75",
+    "family": "Gigas"
+  },
+  {
+    "name": "Antican Consul",
+    "zone": "Quicksand Caves",
+    "level": "75",
+    "family": "Antica"
+  },
+  {
+    "name": "Ocean Sahagin",
+    "zone": "Sea Serpent Grotto",
+    "level": "75",
+    "family": "Sahagin"
+  },
+  {
+    "name": "Ambusher Antlion",
+    "zone": "Attohwa Chasm",
+    "level": "75",
+    "family": "Antlion"
+  },
+  {
+    "name": "Grand Duke Batym",
+    "zone": "Castle Zvahl Baileys",
+    "level": "76",
+    "family": "Demon"
+  },
+  {
+    "name": "Duke Haborym",
+    "zone": "Castle Zvahl Baileys",
+    "level": "76",
+    "family": "Demon"
+  },
+  {
+    "name": "Marquis Allocen",
+    "zone": "Castle Zvahl Baileys",
+    "level": "76",
+    "family": "Demon"
+  },
+  {
+    "name": "Marquis Amon",
+    "zone": "Castle Zvahl Baileys",
+    "level": "76",
+    "family": "Demon"
+  },
+  {
+    "name": "Nightmare Vase",
+    "zone": "Ro'Maeve",
+    "level": "76",
+    "family": "Magic Pot"
+  },
+  {
+    "name": "Emergent Elm",
+    "zone": "Bhaflau Thickets",
+    "level": "77",
+    "family": "Treant"
+  },
+  {
+    "name": "Baobhan Sith",
+    "zone": "Gustav Tunnel",
+    "level": "77",
+    "family": "Ghost"
+  },
+  {
+    "name": "Taxim",
+    "zone": "Gustav Tunnel",
+    "level": "78",
+    "family": "Skeleton"
+  },
+  {
+    "name": "Gration",
+    "zone": "Misareaux Coast",
+    "level": "79",
+    "family": "Gigas"
+  },
+  {
+    "name": "Ancient Goobbue",
+    "zone": "Boyahda Tree",
+    "level": "78",
+    "family": "Goobbue"
+  },
+  {
+    "name": "Shikigami Weapon",
+    "zone": "Ro'Maeve",
+    "level": "78",
+    "family": "Evil Weapon"
+  },
+  {
+    "name": "Giant Orobon(Fishing)",
+    "zone": "Mount Zhayolm",
+    "level": "78",
+    "family": "Orobon"
+  },
+  {
+    "name": "Northern Piranu(Fishing)",
+    "zone": "Open sea route to Al Zahbi",
+    "level": "78",
+    "family": "Orobon"
+  },
+  {
+    "name": "Vouivre",
+    "zone": "Ifrit's Cauldron",
+    "level": "79",
+    "family": "Wyvern"
+  },
+  {
+    "name": "Leshonki",
+    "zone": "Boyahda Tree",
+    "level": "79",
+    "family": "Sapling"
+  },
+  {
+    "name": "Kreutzet",
+    "zone": "Cape Teriggan",
+    "level": "79",
+    "family": "Roc"
+  },
+  {
+    "name": "Jailer of Fortitude",
+    "zone": "The Garden of Ru'Hmet",
+    "level": "79",
+    "family": "Ghrah"
+  },
+  {
+    "name": "Amikiri",
+    "zone": "Gustav Tunnel",
+    "level": "80",
+    "family": "Scorpion"
+  },
+  {
+    "name": "Behemoth",
+    "zone": "Behemoth's Dominion",
+    "level": "80",
+    "family": "Behemoth"
+  },
+  {
+    "name": "Bune",
+    "zone": "Gustav Tunnel",
+    "level": "80",
+    "family": "Wyvern"
+  },
+  {
+    "name": "Dorgerwor the Astute",
+    "zone": "Halvung",
+    "level": "80",
+    "family": "Troll"
+  },
+  {
+    "name": "Garharlor the Unruly",
+    "zone": "Mount Zhayolm",
+    "level": "80",
+    "family": "Troll"
+  },
+  {
+    "name": "Energetic Eruca",
+    "zone": "Mount Zhayolm",
+    "level": "80",
+    "family": "Crawler"
+  },
+  {
+    "name": "Frostmane",
+    "zone": "Cape Teriggan",
+    "level": "80",
+    "family": "Manticore"
+  },
+  {
+    "name": "Jaded Jody",
+    "zone": "Wajaom Woodlands",
+    "level": "80",
+    "family": "Morbol"
+  },
+  {
+    "name": "Hydra",
+    "zone": "Wajaom Woodlands",
+    "level": "80",
+    "family": "Hydra"
+  },
+  {
+    "name": "Zikko",
+    "zone": "Caedarva Mire",
+    "level": "80",
+    "family": "Imp"
+  },
+  {
+    "name": "Ix'aern (MNK)",
+    "zone": "Grand Palace of Hu'Xzoi",
+    "level": "80",
+    "family": "Aern"
+  },
+  {
+    "name": "Cactrot Rapido",
+    "zone": "Eastern Altepa Desert",
+    "level": "80",
+    "family": "Sabotender"
+  },
+  {
+    "name": "Pelican",
+    "zone": "Kuftal Tunnel",
+    "level": "80",
+    "family": "Cockatrice"
+  },
+  {
+    "name": "Charybdis",
+    "zone": "Sea Serpent Grotto",
+    "level": "80",
+    "family": "Sea Monk"
+  },
+  {
+    "name": "Xolotl",
+    "zone": "Attohwa Chasm",
+    "level": "80",
+    "family": "Corse"
+  },
+  {
+    "name": "Giant Orobon(Fishing)",
+    "zone": "Arrapago Reef",
+    "level": "80",
+    "family": "Orobon"
+  },
+  {
+    "name": "Bomb Queen",
+    "zone": "Ifrit's Cauldron",
+    "level": "80",
+    "family": "Bomb"
+  },
+  {
+    "name": "Sabotender Bailarina",
+    "zone": "Quicksand Caves",
+    "level": "80",
+    "family": "Sabotender"
+  },
+  {
+    "name": "Scitalis",
+    "zone": "Grauberg (S)",
+    "level": "80",
+    "family": "Wyvern"
+  },
+  {
+    "name": "Despot",
+    "zone": "Ru'Aun Gardens",
+    "level": "80",
+    "family": "Doll"
+  },
+  {
+    "name": "Ungur",
+    "zone": "Gustav Tunnel",
+    "level": "80",
+    "family": "Wyvern"
+  },
+  {
+    "name": "King Vinegarroon",
+    "zone": "Western Altepa Desert",
+    "level": "80",
+    "family": "Scorpion"
+  },
+  {
+    "name": "Giant Orobon(Fishing)",
+    "zone": "Talacca Cove",
+    "level": "81",
+    "family": "Orobon"
+  },
+  {
+    "name": "Big Bomb",
+    "zone": "Halvung",
+    "level": "81",
+    "family": "Bomb"
+  },
+  {
+    "name": "Guivre",
+    "zone": "Kuftal Tunnel",
+    "level": "82",
+    "family": "Wyvern"
+  },
+  {
+    "name": "Steam Cleaner",
+    "zone": "Ve'Lugannon Palace",
+    "level": "82",
+    "family": "Magic Pot"
+  },
+  {
+    "name": "Bluestreak Gyugyuroon",
+    "zone": "Aydeewa Subterrane",
+    "level": "82",
+    "family": "Qiqirn"
+  },
+  {
+    "name": "Darting Kachaal Ja",
+    "zone": "Mamook",
+    "level": "83",
+    "family": "Mamool Ja"
+  },
+  {
+    "name": "Dragonscaled Bugaal Ja",
+    "zone": "Mamook",
+    "level": "83",
+    "family": "Mamool Ja"
+  },
+  {
+    "name": "Hundredfaced Hapool Ja",
+    "zone": "Mamook",
+    "level": "83",
+    "family": "Mamool Ja"
+  },
+  {
+    "name": "Jailer of Love",
+    "zone": "Al'Taieu",
+    "level": "83",
+    "family": "Yovra"
+  },
+  {
+    "name": "Zipacna",
+    "zone": "Ve'Lugannon Palace",
+    "level": "83",
+    "family": "Golem"
+  },
+  {
+    "name": "Faust",
+    "zone": "Shrine of Ru'Avitau",
+    "level": "83",
+    "family": "Doll"
+  },
+  {
+    "name": "Devout Radol Ja",
+    "zone": "Mamook",
+    "level": "83",
+    "family": "Mamool Ja"
+  },
+  {
+    "name": "Alastor Antlion",
+    "zone": "Attohwa Chasm",
+    "level": "83",
+    "family": "Antlion"
+  },
+  {
+    "name": "Absolute Virtue",
+    "zone": "Al'Taieu",
+    "level": "84",
+    "family": "Aern"
+  },
+  {
+    "name": "Jailer of Hope",
+    "zone": "Al'Taieu",
+    "level": "84",
+    "family": "Phuabo"
+  },
+  {
+    "name": "Golden-Tongued Culberry",
+    "zone": "Pso'Xja",
+    "level": "84",
+    "family": "Tonberry"
+  },
+  {
+    "name": "Shen",
+    "zone": "Bibiki Bay - Purgonorgo Isle",
+    "level": "84",
+    "family": "Uragnite"
+  },
+  {
+    "name": "Kurrea",
+    "zone": "Lufaise Meadows",
+    "level": "84",
+    "family": "Bugard"
+  },
+  {
+    "name": "Ash Dragon",
+    "zone": "Ifrit's Cauldron",
+    "level": "85",
+    "family": "Dragon"
+  },
+  {
+    "name": "Cerberus",
+    "zone": "Mount Zhayolm",
+    "level": "85",
+    "family": "Cerberus"
+  },
+  {
+    "name": "Overlord Bakgodek",
+    "zone": "Monastic Cavern",
+    "level": "85",
+    "family": "Orc"
+  },
+  {
+    "name": "Za'Dha Adamantking",
+    "zone": "Qulun Dome",
+    "level": "85",
+    "family": "Quadav"
+  },
+  {
+    "name": "Tzee Xicu the Manifest",
+    "zone": "Castle Oztroja",
+    "level": "85",
+    "family": "Yagudo"
+  },
+  {
+    "name": "King Behemoth",
+    "zone": "Behemoth's Dominion",
+    "level": "85",
+    "family": "Behemoth"
+  },
+  {
+    "name": "Aspidochelone",
+    "zone": "Valley of Sorrows",
+    "level": "85",
+    "family": "Adamantoise"
+  },
+  {
+    "name": "Voluptuous Vivian",
+    "zone": "Boyahda Tree",
+    "level": "85",
+    "family": "Morbol"
+  },
+  {
+    "name": "Ullikummi",
+    "zone": "Shrine of Ru'Avitau",
+    "level": "85",
+    "family": "Golem"
+  },
+  {
+    "name": "Olla Grande",
+    "zone": "Shrine of Ru'Avitau",
+    "level": "85",
+    "family": "Magic Pot"
+  },
+  {
+    "name": "Hakutaku",
+    "zone": "Den of Rancor",
+    "level": "85",
+    "family": "Hecteyes"
+  },
+  {
+    "name": "Jailer of Justice",
+    "zone": "Al'Taieu",
+    "level": "85",
+    "family": "Xzomit"
+  },
+  {
+    "name": "Jailer of Temperance",
+    "zone": "Grand Palace of Hu'Xzoi",
+    "level": "85",
+    "family": "Zdei"
+  },
+  {
+    "name": "Jailer of Faith",
+    "zone": "The Garden of Ru'Hmet",
+    "level": "85",
+    "family": "Euvhi"
+  },
+  {
+    "name": "Fafnir",
+    "zone": "Dragon's Aery",
+    "level": "88",
+    "family": "Wyrm"
+  },
+  {
+    "name": "Dark Ixion",
+    "zone": "West Sarutabaruta (S),East Ronfaure (S),Grauberg (S),Fort Karugo-Narugo (S),Jugner Forest (S),Rolanberry Fields (S),Batallia Downs (S)",
+    "level": "88",
+    "family": "Monoceros"
+  },
+  {
+    "name": "Genbu",
+    "zone": "Ru'Aun Gardens",
+    "level": "88",
+    "family": "Adamantoise"
+  },
+  {
+    "name": "Suzaku",
+    "zone": "Ru'Aun Gardens",
+    "level": "88",
+    "family": "Roc"
+  },
+  {
+    "name": "Byakko",
+    "zone": "Ru'Aun Gardens",
+    "level": "88",
+    "family": "Tiger"
+  },
+  {
+    "name": "Seiryu",
+    "zone": "Ru'Aun Gardens",
+    "level": "88",
+    "family": "Wyvern"
+  },
+  {
+    "name": "Nidhogg",
+    "zone": "Dragon's Aery",
+    "level": "90",
+    "family": "Wyrm"
+  },
+  {
+    "name": "Kirin",
+    "zone": "Shrine of Ru'Avitau",
+    "level": "92",
+    "family": "Manticore"
+  },
+  {
+    "name": "Vrtra",
+    "zone": "King Ranperre's Tomb",
+    "level": "95",
+    "family": "Wyrm"
+  },
+  {
+    "name": "Tiamat",
+    "zone": "Attohwa Chasm",
+    "level": "95",
+    "family": "Wyrm"
+  },
+  {
+    "name": "Jormungand",
+    "zone": "Uleguerand Range",
+    "level": "95",
+    "family": "Wyrm"
+  },
+  {
+    "name": "Arioch",
+    "zone": "Bostaunieux Oubliette",
+    "level": "??",
+    "family": "Giant Bat"
+  },
+  {
+    "name": "Manes",
+    "zone": "Bostaunieux Oubliette",
+    "level": "??",
+    "family": "Ghost"
+  },
+  {
+    "name": "Nihniknoovi",
+    "zone": "La Theine Plateau",
+    "level": "??",
+    "family": "Bird"
+  },
+  {
+    "name": "Enkelados",
+    "zone": "Upper Delkfutt's Tower",
+    "level": "??",
+    "family": "Gigas"
+  },
+  {
+    "name": "Brigandish Blade",
+    "zone": "Ve'Lugannon Palace",
+    "level": "??",
+    "family": "Evil Weapon"
+  },
+  {
+    "name": "Mother Globe",
+    "zone": "Shrine of Ru'Avitau",
+    "level": "??",
+    "family": "Spheroid"
+  },
+  {
+    "name": "Ogygos",
+    "zone": "Middle Delkfutt's Tower",
+    "level": "??",
+    "family": "Gigas"
+  },
+  {
+    "name": "Ophion",
+    "zone": "Middle Delkfutt's Tower",
+    "level": "??",
+    "family": "Gigas"
+  },
+  {
+    "name": "Polybotes",
+    "zone": "Middle Delkfutt's Tower",
+    "level": "??",
+    "family": "Gigas"
+  },
+  {
+    "name": "Rhoikos",
+    "zone": "Middle Delkfutt's Tower",
+    "level": "??",
+    "family": "Gigas"
+  },
+  {
+    "name": "Rhoitos",
+    "zone": "Middle Delkfutt's Tower",
+    "level": "??",
+    "family": "Gigas"
+  },
+  {
+    "name": "Autarch",
+    "zone": "Upper Delkfutt's Tower",
+    "level": "??",
+    "family": "Dolls"
+  },
+  {
+    "name": "Bistre-hearted Malberry",
+    "zone": "Den of Rancor",
+    "level": "??",
+    "family": "Tonberry"
+  },
+  {
+    "name": "Ogama",
+    "zone": "Den of Rancor",
+    "level": "??",
+    "family": "Doomed"
+  },
+  {
+    "name": "Swashstox Beadblinker",
+    "zone": "Newton Movalpolos",
+    "level": "??",
+    "family": "Goblin"
+  },
+  {
+    "name": "Aipaloovik(Fishing)",
+    "zone": "Phanauet Channel",
+    "level": "??",
+    "family": "Pugils"
+  },
+  {
+    "name": "Aiatar",
+    "zone": "Riverne - Site A01",
+    "level": "??",
+    "family": "Wyvern"
+  },
+  {
+    "name": "Imdugud",
+    "zone": "Riverne - Site B01",
+    "level": "??",
+    "family": "Hippogryph"
+  },
+  {
+    "name": "Tres Duendes",
+    "zone": "Phomiuna Aqueducts",
+    "level": "??",
+    "family": "Bat Trio"
+  },
+  {
+    "name": "Boroka",
+    "zone": "Riverne - Site B01",
+    "level": "??",
+    "family": "Hippogryph"
+  },
+  {
+    "name": "Carmine Dobsonfly",
+    "zone": "Riverne - Site A01",
+    "level": "??",
+    "family": "Fly"
+  },
+  {
+    "name": "Upyri",
+    "zone": "Misareaux Coast",
+    "level": "??",
+    "family": "Giant Bat"
+  },
+  {
+    "name": "Jailer of Prudence",
+    "zone": "Al'Taieu",
+    "level": "??",
+    "family": "Hpemde"
+  },
+  {
+    "name": "Chariotbuster Byakzak",
+    "zone": "Fort Ghelsba",
+    "level": "??",
+    "family": "Orc"
+  },
+  {
+    "name": "Dosetsu Tree",
+    "zone": "Qufim Island",
+    "level": "??",
+    "family": "Treant"
+  },
+  {
+    "name": "Heliodromos",
+    "zone": "Riverne - Site A01",
+    "level": "??",
+    "family": "Hippogryph"
+  },
+  {
+    "name": "Mahisha",
+    "zone": "Phomiuna Aqueducts",
+    "level": "??",
+    "family": "Tauri"
+  },
+  {
+    "name": "Goblin Collector",
+    "zone": "Newton Movalpolos",
+    "level": "??",
+    "family": "Moblin"
+  },
+  {
+    "name": "Ereshkigal",
+    "zone": "Xarcabard",
+    "level": "??",
+    "family": "Ghost"
+  },
+  {
+    "name": "Shieldtrap",
+    "zone": "Riverne - Site A01",
+    "level": "??",
+    "family": "Flytrap"
+  },
+  {
+    "name": "Bugbear Matman",
+    "zone": "Newton Movalpolos",
+    "level": "??",
+    "family": "Bugbear"
+  },
+  {
+    "name": "Defoliate Leshy",
+    "zone": "Lufaise Meadows",
+    "level": "??",
+    "family": "Treant"
+  },
+  {
+    "name": "Proteus",
+    "zone": "Silver Sea route to Nashmau",
+    "level": "??",
+    "family": "Sea Monk"
+  },
+  {
+    "name": "Garfurlar the Rabid",
+    "zone": "Mount Zhayolm",
+    "level": "??",
+    "family": "Troll"
+  },
+  {
+    "name": "Garhorlur the Brutal",
+    "zone": "Mount Zhayolm",
+    "level": "??",
+    "family": "Troll"
+  },
+  {
+    "name": "Kirlirger the Abhorrent",
+    "zone": "Halvung",
+    "level": "??",
+    "family": "Troll"
+  },
+  {
+    "name": "Farlarder the Shrewd",
+    "zone": "Halvung",
+    "level": "??",
+    "family": "Troll"
+  },
+  {
+    "name": "Gurfurlur the Menacing",
+    "zone": "Halvung",
+    "level": "??",
+    "family": "Troll"
+  },
+  {
+    "name": "Medusa",
+    "zone": "Arrapago Reef",
+    "level": "??",
+    "family": "Lamiae"
+  },
+  {
+    "name": "Bloody Bones",
+    "zone": "Arrapago Reef",
+    "level": "??",
+    "family": "Skeleton"
+  },
+  {
+    "name": "Southern Piranu(Fishing)",
+    "zone": "Open sea route to Al Zahbi",
+    "level": "??",
+    "family": "Orobon"
+  },
+  {
+    "name": "Almighty Apkallu",
+    "zone": "Silver Sea route to Al Zahbi",
+    "level": "??",
+    "family": "Apkallu"
+  },
+  {
+    "name": "Crystal Eater",
+    "zone": "Aydeewa Subterrane",
+    "level": "??",
+    "family": "Funguar"
+  },
+  {
+    "name": "Zizzy Zillah",
+    "zone": "Mamook",
+    "level": "??",
+    "family": "Cockatrice"
+  },
+  {
+    "name": "Gulool Ja Ja",
+    "zone": "Mamook",
+    "level": "??",
+    "family": "Mamool Ja"
+  },
+  {
+    "name": "Ravin Raven",
+    "zone": "Caedarva Mire",
+    "level": "??",
+    "family": "Bird"
+  },
+  {
+    "name": "Vulkodlac",
+    "zone": "Jugner Forest (S)",
+    "level": "??",
+    "family": "Gnole"
+  },
+  {
+    "name": "Cyclopean Conch(Fishing)",
+    "zone": "Manaclipper",
+    "level": "??",
+    "family": "Uragnites"
+  },
+  {
+    "name": "Harajnite(Fishing)",
+    "zone": "Manaclipper",
+    "level": "??",
+    "family": "Uragnites"
+  }
+]
