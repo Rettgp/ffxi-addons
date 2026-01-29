@@ -25,6 +25,10 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 local packets = require('packets')
 
+-- Cache for target check data
+local target_cache = {}
+local last_target_id = nil
+
 targetBarHeight = 14
 targetBarWidth = 330
 subtargetBarHeight = 12
@@ -390,8 +394,30 @@ windower.register_event('incoming text',function (original, modified, mode)
         -- Convert to lowercase for case-insensitive matching
         local original_lower = original:lower()
 
+        local target = windower.ffxi.get_mob_by_target('t')
+        local target_id = target and target.id or nil
+        
+        -- Only process if this looks like a check message
+        local is_check_message = level or check_id or 
+            string.find(original_clean, ".*impossible.*") or
+            string.find(original_lower, "too weak") or
+            string.find(original_lower, "easy prey") or
+            string.find(original_lower, "decent challenge") or
+            string.find(original_lower, "even match") or
+            string.find(original_lower, "tough") or
+            string.find(original_lower, "very tough") or
+            string.find(original_lower, "incredibly tough")
+        
+        if not is_check_message then
+            return false  -- Not a check message, ignore it
+        end
+
         if level then
             lvl_text.lvl = level
+            if target_id then
+                target_cache[target_id] = target_cache[target_id] or {}
+                target_cache[target_id].lvl = level
+            end
         else
             lvl_text.lvl = "-"
         end
@@ -399,26 +425,61 @@ windower.register_event('incoming text',function (original, modified, mode)
         -- Handle difficulty from formatted text or default game text
         if check_id then
             lvl_text.difficulty = check_id
+            if target_id then
+                target_cache[target_id] = target_cache[target_id] or {}
+                target_cache[target_id].difficulty = check_id
+            end
         elseif string.find(original_clean, ".*impossible.*") then
             lvl_text.difficulty = "IMPOSSIBLE"
+            if target_id then
+                target_cache[target_id] = target_cache[target_id] or {}
+                target_cache[target_id].difficulty = "IMPOSSIBLE"
+            end
         -- Check for default game difficulty phrases (case-insensitive)
         elseif string.find(original_lower, "too weak") then
             lvl_text.difficulty = "TW"
+            if target_id then
+                target_cache[target_id] = target_cache[target_id] or {}
+                target_cache[target_id].difficulty = "TW"
+            end
         elseif string.find(original_lower, "easy prey") then
             lvl_text.difficulty = "EP"
+            if target_id then
+                target_cache[target_id] = target_cache[target_id] or {}
+                target_cache[target_id].difficulty = "EP"
+            end
         elseif string.find(original_lower, "decent challenge") then
             lvl_text.difficulty = "DC"
+            if target_id then
+                target_cache[target_id] = target_cache[target_id] or {}
+                target_cache[target_id].difficulty = "DC"
+            end
         elseif string.find(original_lower, "even match") then
             lvl_text.difficulty = "EM"
+            if target_id then
+                target_cache[target_id] = target_cache[target_id] or {}
+                target_cache[target_id].difficulty = "EM"
+            end
         elseif string.find(original_lower, "tough") and not string.find(original_lower, "very") and not string.find(original_lower, "incredibly") then
             lvl_text.difficulty = "T"
+            if target_id then
+                target_cache[target_id] = target_cache[target_id] or {}
+                target_cache[target_id].difficulty = "T"
+            end
         elseif string.find(original_lower, "very tough") then
             lvl_text.difficulty = "VT"
+            if target_id then
+                target_cache[target_id] = target_cache[target_id] or {}
+                target_cache[target_id].difficulty = "VT"
+            end
         elseif string.find(original_lower, "incredibly tough") then
             lvl_text.difficulty = "IT"
-        else
-            lvl_text.difficulty = nil
+            if target_id then
+                target_cache[target_id] = target_cache[target_id] or {}
+                target_cache[target_id].difficulty = "IT"
+            end
         end
+        -- Don't set to nil if no match - just keep the existing value
 
         return true
     end
@@ -427,22 +488,36 @@ end)
 target_change = function(index)
     if index == 0 then
         visible = false
+        last_target_id = nil
     else
         visible = true
     end
     target = windower.ffxi.get_mob_by_target('t')
 
     if (target and target.valid_target and target.is_npc) then
-        local check_target = packets.new('outgoing', 0x0DD, {
-            ['Target'] = target.id,
-            ['Target Index'] = target.index,
-            ['_unknown1'] = 0,
-            ['Check Type'] = 0,
-            ['_junk1'] = 0
-        })
-        lvl_text.lvl = '-'
-        lvl_text.difficulty = ' '
-        packets.inject(check_target)
+        -- Only update if this is actually a new target
+        if last_target_id ~= target.id then
+            last_target_id = target.id
+            
+            -- Check if we have cached data for this target
+            if target_cache[target.id] then
+                lvl_text.lvl = target_cache[target.id].lvl or '-'
+                lvl_text.difficulty = target_cache[target.id].difficulty or ' '
+            else
+                lvl_text.lvl = '-'
+                lvl_text.difficulty = ' '
+            end
+
+            local check_target = packets.new('outgoing', 0x0DD, {
+                ['Target'] = target.id,
+                ['Target Index'] = target.index,
+                ['_unknown1'] = 0,
+                ['Check Type'] = 0,
+                ['_junk1'] = 0
+            })
+            packets.inject(check_target)
+        end
+        -- If it's the same target, keep existing lvl_text values
     end
 end
 
