@@ -1,25 +1,28 @@
 {
-  "addons": {
-    "barfiller": {
-      "version": "0.2.5"
-    },
-    "enemybar": {
-      "version": "1.1.0"
-    },
-    "equipviewer": {
-      "version": "3.3.1"
-    },
-    "scoreboard": {
-      "version": "1.15"
-    },
-    "xivbar": {
-      "version": "1.0"
-    },
-    "XIVHotbar": {
-      "version": "0.5"
-    },
-    "zonename": {
-      "version": "1.0.0"
+    "addons": {
+        "barfiller": {
+            "version": "0.2.5"
+        },
+        "enemybar": {
+            "version": "1.1.1"
+        },
+        "equipviewer": {
+            "version": "3.3.1"
+        },
+        "nmscanner": {
+            "version": "1.0"
+        },
+        "scoreboard": {
+            "version": "1.16"
+        },
+        "xivbar": {
+            "version": "1.0"
+        },
+        "XIVHotbar": {
+            "version": "1.0.0"
+        },
+        "zonename": {
+            "version": "1.0.0"
+        }
     }
-  }
 }

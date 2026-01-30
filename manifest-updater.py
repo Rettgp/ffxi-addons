@@ -17,8 +17,7 @@ for folder in os.listdir("."):
                 if match:
                     version = match.group(1)
                     manifest["addons"][folder] = {
-                        "version": version,
-                        "download_url": f"https://github.com/Rettgp/ffxi-addons/archive/refs/heads/main.zip",  # Adjust as needed
+                        "version": version
                     }
 
 with open(MANIFEST_PATH, "w", encoding="utf-8") as f:

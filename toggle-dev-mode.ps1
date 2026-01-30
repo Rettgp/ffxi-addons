@@ -54,79 +54,128 @@ Write-Host "Repository Path: $repoPath" -ForegroundColor Gray
 Write-Host ""
 
 if ($Mode -eq "dev") {
-    Write-Host "Switching to DEV MODE (creating symlinks)..." -ForegroundColor Green
+    Write-Host "Switching to DEV MODE (creating file symlinks)..." -ForegroundColor Green
     Write-Host ""
     
     foreach ($addon in $addons) {
-        $target = Join-Path $WindowerPath $addon
-        $source = Join-Path $repoPath $addon
+        $targetDir = Join-Path $WindowerPath $addon
+        $sourceDir = Join-Path $repoPath $addon
         
         # Check if source exists in repo
-        if (-not (Test-Path $source)) {
+        if (-not (Test-Path $sourceDir)) {
             Write-Host "  [SKIP] $addon - not found in repository" -ForegroundColor Yellow
             continue
         }
         
-        # Check if target already exists
-        if (Test-Path $target) {
-            $item = Get-Item $target
+        # Ensure target directory exists
+        if (-not (Test-Path $targetDir)) {
+            Write-Host "  [CREATE] $addon - creating directory" -ForegroundColor Cyan
+            New-Item -ItemType Directory -Path $targetDir -Force | Out-Null
+        }
+        
+        # Get all files and subdirectories from source, recursively
+        $sourceItems = Get-ChildItem -Path $sourceDir -Recurse
+        $linkedCount = 0
+        $skippedCount = 0
+        
+        foreach ($sourceItem in $sourceItems) {
+            # Get relative path from source directory
+            $relativePath = $sourceItem.FullName.Substring($sourceDir.Length + 1)
+            $targetPath = Join-Path $targetDir $relativePath
             
-            # If it's already a symlink pointing to our repo, skip
-            if ($item.LinkType -eq "SymbolicLink" -or $item.LinkType -eq "Junction") {
-                if ($item.Target -eq $source) {
-                    Write-Host "  [OK] $addon - already linked" -ForegroundColor Gray
-                    continue
-                } else {
-                    Write-Host "  [WARN] $addon - existing symlink to different location, removing..." -ForegroundColor Yellow
-                    Remove-Item $target -Force -Recurse
+            # Skip anything inside images/ or icons/ folders
+            if ($relativePath -match '(^|\\)(images|icons)(\\|$)') {
+                continue
+            }
+            
+            if ($sourceItem.PSIsContainer) {
+                # Create directory if it doesn't exist
+                if (-not (Test-Path $targetPath)) {
+                    New-Item -ItemType Directory -Path $targetPath -Force | Out-Null
                 }
             } else {
-                # Regular folder exists - back it up and remove
-                $backup = "$target.backup_$(Get-Date -Format 'yyyyMMdd_HHmmss')"
-                Write-Host "  [BACKUP] $addon - backing up to $(Split-Path -Leaf $backup)" -ForegroundColor Yellow
-                Move-Item $target $backup -Force
+                # Handle file symlink
+                $shouldLink = $true
+                
+                if (Test-Path $targetPath) {
+                    $existingItem = Get-Item $targetPath -Force
+                    
+                    # If already a symlink pointing to our source, skip
+                    if (($existingItem.LinkType -eq "SymbolicLink" -or $existingItem.LinkType -eq "HardLink") -and 
+                        $existingItem.Target -eq $sourceItem.FullName) {
+                        $shouldLink = $false
+                        $skippedCount++
+                    } else {
+                        # Remove existing file or incorrect symlink
+                        Remove-Item $targetPath -Force
+                    }
+                }
+                
+                if ($shouldLink) {
+                    try {
+                        New-Item -ItemType SymbolicLink -Path $targetPath -Target $sourceItem.FullName -Force | Out-Null
+                        $linkedCount++
+                    } catch {
+                        Write-Host "  [ERROR] Failed to link $relativePath : $_" -ForegroundColor Red
+                    }
+                }
             }
         }
         
-        # Create the symlink
-        try {
-            New-Item -ItemType SymbolicLink -Path $target -Target $source -Force | Out-Null
-            Write-Host "  [CREATED] $addon -> $source" -ForegroundColor Green
-        } catch {
-            Write-Host "  [ERROR] $addon - Failed to create symlink: $_" -ForegroundColor Red
+        if ($linkedCount -gt 0) {
+            Write-Host "  [LINKED] $addon - $linkedCount file(s) linked" -ForegroundColor Green
+        }
+        if ($skippedCount -gt 0) {
+            Write-Host "  [OK] $addon - $skippedCount file(s) already linked" -ForegroundColor Gray
         }
     }
     
     Write-Host "`nDEV MODE ACTIVE - Changes in your git repo will be live in-game!" -ForegroundColor Green
     
 } elseif ($Mode -eq "release") {
-    Write-Host "Switching to RELEASE MODE (removing symlinks)..." -ForegroundColor Yellow
+    Write-Host "Switching to RELEASE MODE (replacing symlinks with real files)..." -ForegroundColor Yellow
     Write-Host ""
     
     foreach ($addon in $addons) {
-        $target = Join-Path $WindowerPath $addon
+        $targetDir = Join-Path $WindowerPath $addon
+        $sourceDir = Join-Path $repoPath $addon
         
-        if (-not (Test-Path $target)) {
+        if (-not (Test-Path $targetDir)) {
             Write-Host "  [SKIP] $addon - doesn't exist in Windower" -ForegroundColor Gray
             continue
         }
         
-        $item = Get-Item $target
+        if (-not (Test-Path $sourceDir)) {
+            Write-Host "  [SKIP] $addon - not found in repository" -ForegroundColor Yellow
+            continue
+        }
         
-        # Only remove if it's a symlink
-        if ($item.LinkType -eq "SymbolicLink" -or $item.LinkType -eq "Junction") {
-            Write-Host "  [REMOVED] $addon - symlink removed" -ForegroundColor Yellow
-            Remove-Item $target -Force
-            
-            # Check for backup and restore it
-            $backups = Get-ChildItem -Path $WindowerPath -Filter "$addon.backup_*" | Sort-Object LastWriteTime -Descending
-            if ($backups.Count -gt 0) {
-                $latestBackup = $backups[0]
-                Write-Host "  [RESTORED] $addon - from $($latestBackup.Name)" -ForegroundColor Green
-                Move-Item $latestBackup.FullName $target -Force
+        # Find and replace all symlinked files with real copies
+        $allFiles = Get-ChildItem -Path $targetDir -Recurse -File -Force
+        $replacedCount = 0
+        
+        foreach ($file in $allFiles) {
+            if ($file.LinkType -eq "SymbolicLink" -or $file.LinkType -eq "HardLink") {
+                # Check if it's pointing to our repo
+                if ($file.Target -and $file.Target.StartsWith($repoPath)) {
+                    $symlinkTarget = $file.Target
+                    
+                    # Remove the symlink
+                    Remove-Item $file.FullName -Force
+                    
+                    # Copy the actual file from repo
+                    if (Test-Path $symlinkTarget) {
+                        Copy-Item $symlinkTarget $file.FullName -Force
+                        $replacedCount++
+                    }
+                }
             }
+        }
+        
+        if ($replacedCount -gt 0) {
+            Write-Host "  [REPLACED] $addon - $replacedCount symlink(s) replaced with real files" -ForegroundColor Green
         } else {
-            Write-Host "  [OK] $addon - already using regular folder" -ForegroundColor Gray
+            Write-Host "  [OK] $addon - no dev symlinks found" -ForegroundColor Gray
         }
     }
     

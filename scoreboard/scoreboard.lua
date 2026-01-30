@@ -2,7 +2,7 @@
 
 _addon.name = 'Scoreboard'
 _addon.author = 'Suji'
-_addon.version = '1.15'
+_addon.version = '1.16'
 _addon.commands = {'sb', 'scoreboard'}
 
 require('tables')
@@ -369,6 +369,7 @@ end
 
 display = Display:new(settings, dps_db)
 
+local was_in_combat = false
 
 -- Keep updates flowing
 local function update_dps_clock()
@@ -383,12 +384,20 @@ local function update_dps_clock()
             end
         end
     end
-    if player and (player.in_combat or (pet ~= nil and pet.status == 1)) then
+    local in_combat = player and (player.in_combat or (pet ~= nil and pet.status == 1))
+    
+    if in_combat then
+        -- Transitioning from paused to active - reset everything
+        if not was_in_combat then
+            dps_clock:reset()
+            dps_db:reset()
+        end
         dps_clock:advance()
     else
         dps_clock:pause()
     end
-
+    
+    was_in_combat = in_combat
     display:update()
 end
 

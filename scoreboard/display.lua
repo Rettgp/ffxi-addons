@@ -109,7 +109,7 @@ function Display:build_scoreboard_header()
     if self.db:empty() then
         labels = '\n'
     else
-        labels = '%32s%7s%9s\n':format('Tot', 'Pct', 'DPS')
+        labels = '%-12s  %9s  %7s\n':format('', 'Total', 'DPS')
     end
 
     local dps_status
@@ -126,7 +126,7 @@ function Display:build_scoreboard_header()
 
     local dps_chunk = 'DPS: %s%s':format(dps_status, dps_clock_str)
 
-    return '%s%s\nMobs: %-9s\n%s':format(dps_chunk, ' ':rep(29 - dps_chunk:len()) .. '//sb help', mob_filter_str, labels)
+    return '%s%s\n%s':format(dps_chunk, ' ':rep(29 - dps_chunk:len()), labels)
 end
 
 
@@ -201,7 +201,7 @@ function Display:update()
             else
                 percent = '(0%)'
             end
-            display_table:append('%-25s%7.0f%8s %7s':format(v[1], v[2], percent, dps))
+            display_table:append('%-12s  %9.0f  %7s':format(v[1], v[2], dps))
         end
         alli_damage = alli_damage + v[2] -- gather this even for players not displayed
         player_lines = player_lines + 1
@@ -209,7 +209,7 @@ function Display:update()
 
     if self.settings.showallidps and dps_clock.clock > 0 then
         display_table:append('-':rep(17))
-        display_table:append('Alli DPS: ' .. '%7.1f':format(alli_damage / dps_clock.clock))
+        display_table:append('Alli DPS: ' .. '%.1f':format(alli_damage / dps_clock.clock))
     end
 
     self.text:text(self:build_scoreboard_header() .. table.concat(display_table, '\n'))
@@ -419,7 +419,7 @@ function Display:reset()
     -- consistent even when there's no data being displayed
     self.text:text(self:build_scoreboard_header() ..
                       'Waiting for results...' ..
-                      ' ':rep(17))
+                      ' ':rep(7))
 end
 
 
