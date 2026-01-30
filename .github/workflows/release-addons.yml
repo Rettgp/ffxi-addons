@@ -81,6 +81,7 @@ jobs:
             - xivbar: ${{ env.XIVBAR_VERSION }}
             - XIVHotbar: ${{ env.XIVHOTBAR_VERSION }}
             - zonename: ${{ env.ZONENAME_VERSION }}
+            - nmscanner: ${{ env.NMSCANNER_VERSION }}
           draft: false
           prerelease: false
           files: |
@@ -91,4 +92,5 @@ jobs:
             releases/xivbar-v${{ env.XIVBAR_VERSION }}.zip
             releases/XIVHotbar-v${{ env.XIVHOTBAR_VERSION }}.zip
             releases/zonename-v${{ env.ZONENAME_VERSION }}.zip
+            releases/nmscanner-v${{ env.NMSCANNER_VERSION }}.zip
             manifest.json
