@@ -1,6 +1,6 @@
 _addon.name = 'nmscanner'
 _addon.author = 'Rett'
-_addon.version = '1.2'
+_addon.version = '1.3'
 _addon.commands = {'nmscan', 'nmscanner'}
 
 require('luau')
@@ -100,8 +100,8 @@ local function scan_for_nms()
                         mob.x or 0, mob.y or 0, mob.z or 0
                     )
                     
-                    -- Check if within alert range and not blacklisted
-                    if distance <= config.max_distance and not blacklisted_nms[mob.id] then
+                    -- Check if within alert range, not blacklisted, and alive (hpp > 0)
+                    if distance <= config.max_distance and not blacklisted_nms[mob.id] and (mob.hpp or 0) > 0 then
                         found_nms[mob.id] = true
                         
                         -- Prepare notification data
