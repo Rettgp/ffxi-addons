@@ -15,13 +15,14 @@ ui.display_time = 0  -- Track when NM was first displayed
 local settings = {
     pos = {
         x = -1,  -- -1 means auto-center
-        y = 200
+        y = 10
     },
     bg = {
-        alpha = 220,
-        red = 20,
+        alpha = 0,
+        red = 0,
         green = 0,
-        blue = 0
+        blue = 0,
+        visible = false
     },
     padding = 8,
     flags = {
@@ -104,32 +105,34 @@ function ui.show_nm(nm_data)
     -- Get colors based on NM properties
     local family_color = get_family_color(nm_data.family)
     local distance_color = get_distance_color(nm_data.distance or 50)
-    local rank = get_rank_symbol(tonumber(nm_data.level) or 0)
     
     -- Build fancy header with border
     local header = string.format(
         '\\cs(255,50,50)╔═══════════════════════════════════════════╗\\cr\n' ..
-        '\\cs(255,50,50)║\\cr  \\cs(255,255,100)⚠  NOTORIOUS MONSTER DETECTED  ⚠\\cr  \\cs(255,50,50)║\\cr\n' ..
-        '\\cs(255,50,50)╠═══════════════════════════════════════════╣\\cr'
+        '\\cs(255,50,50)║\\cs(255,255,100)        NOTORIOUS MONSTER DETECTED         \\cs(255,50,50)║\\cr\n' ..
+        '\\cs(255,50,50)╠═══════════════════════════════════════════╣\\cr\n'
     )
     
-    -- Build NM name with rank
-    local nm_name = string.format(
-        '\\cs(255,50,50)║\\cr  \\cs(%d,%d,%d)%s\\cr\n' ..
-        '\\cs(255,50,50)║\\cr  \\cs(255,200,100)【 %s 】\\cr',
-        family_color.r, family_color.g, family_color.b,
-        nm_data.name or 'Unknown',
-        rank
-    )
+    -- Build NM name
+    local nm_name = '\\cs(255,50,50)║\\cr' ..
+        '%2s':format(' ') ..
+        '\\cs(%d,%d,%d)%-30s\\cr':format(family_color.r, family_color.g, family_color.b, nm_data.name or 'Unknown') ..
+        '%11s\\cs(255,50,50)║\\cr\n':format(' ')
     
-    -- Build stats section with icons
-    local stats = string.format(
-        '\\cs(255,50,50)╠───────────────────────────────────────────╣\\cr\n' ..
-        '\\cs(255,50,50)║\\cr  \\cs(200,200,200)Level:\\cr    \\cs(255,255,150)%s\\cr\n' ..
-        '\\cs(255,50,50)║\\cr  \\cs(200,200,200)Distance:\\cr \\cs(%d,%d,%d)%.1f yalms\\cr',
-        nm_data.level or '??',
-        distance_color.r, distance_color.g, distance_color.b, nm_data.distance or 0
-    )
+    -- Build stats section with fixed-width formatting
+    local level_line = '\\cs(255,50,50)║\\cr' ..
+        '%2s':format(' ') ..
+        ('\\cs(200,200,200)%-12s\\cs(255,255,150)%-28s\\cr'):format('Level:', nm_data.level or '??') ..
+        '%1s\\cs(255,50,50)║\\cr\n':format(' ')
+    
+    local distance_line = '\\cs(255,50,50)║\\cr' ..
+        '%2s':format(' ') ..
+        ('\\cs(200,200,200)%-12s\\cs(%d,%d,%d)%-28s\\cr'):format(
+            'Distance:', distance_color.r, distance_color.g, distance_color.b, ('%.1f yalms'):format(nm_data.distance or 0)
+        ) ..
+        '%1s\\cs(255,50,50)║\\cr':format(' ')
+    
+    local stats = level_line .. distance_line
     
     -- Add HP if available
     local hp_bar = ''
@@ -140,16 +143,18 @@ function ui.show_nm(nm_data)
         if hp_percent < 25 then hp_color = {r=255, g=50, b=50}
         elseif hp_percent < 50 then hp_color = {r=255, g=200, b=50} end
         
-        hp_bar = string.format(
-            '\n\\cs(255,50,50)║\\cr  \\cs(200,200,200)HP:\\cr       \\cs(%d,%d,%d)%d%%\\cr',
-            hp_color.r, hp_color.g, hp_color.b, hp_percent
-        )
+        hp_bar = '\n\\cs(255,50,50)║\\cr  %s\\cr':format(
+            ('\\cs(200,200,200)%-12s\\cs(%d,%d,%d)%d%%'):format(
+                'HP:', hp_color.r, hp_color.g, hp_color.b, hp_percent
+            )
+        ) ..
+        '%25s\\cs(255,50,50)║\\cr':format(' ')
     end
     
     -- Build footer
     local footer = string.format(
         '\n\\cs(255,50,50)╠═══════════════════════════════════════════╣\\cr\n' ..
-        '\\cs(255,50,50)║\\cr  \\cs(150,150,150)Click to dismiss • Auto-hide in 30s\\cr  \\cs(255,50,50)║\\cr\n' ..
+        '\\cs(255,50,50)║\\cr  \\cs(150,150,150)Right-click to dismiss • Auto-hide (30s)\\cr \\cs(255,50,50)║\\cr\n' ..
         '\\cs(255,50,50)╚═══════════════════════════════════════════╝\\cr'
     )
     
@@ -180,57 +185,10 @@ function ui.update_nm(nm_data)
         return
     end
     
-    -- Update current NM data
+    print("foo")
+    -- Update current NM data and refresh display
     ui.current_nm = nm_data
-    
-    -- Rebuild display with updated data
-    local family_color = get_family_color(nm_data.family)
-    local distance_color = get_distance_color(nm_data.distance or 50)
-    local rank = get_rank_symbol(tonumber(nm_data.level) or 0)
-    
-    local header = string.format(
-        '\\cs(255,50,50)╔═══════════════════════════════════════════╗\\cr\n' ..
-        '\\cs(255,50,50)║\\cr  \\cs(255,255,100)⚠  NOTORIOUS MONSTER DETECTED  ⚠\\cr  \\cs(255,50,50)║\\cr\n' ..
-        '\\cs(255,50,50)╠═══════════════════════════════════════════╣\\cr'
-    )
-    
-    local nm_name = string.format(
-        '\\cs(255,50,50)║\\cr  \\cs(%d,%d,%d)%s\\cr\n' ..
-        '\\cs(255,50,50)║\\cr  \\cs(255,200,100)【 %s 】\\cr',
-        family_color.r, family_color.g, family_color.b,
-        nm_data.name or 'Unknown',
-        rank
-    )
-    
-    local stats = string.format(
-        '\\cs(255,50,50)╠───────────────────────────────────────────╣\\cr\n' ..
-        '\\cs(255,50,50)║\\cr  \\cs(200,200,200)Level:\\cr    \\cs(255,255,150)%s\\cr\n' ..
-        '\\cs(255,50,50)║\\cr  \\cs(200,200,200)Distance:\\cr \\cs(%d,%d,%d)%.1f yalms\\cr',
-        nm_data.level or '??',
-        distance_color.r, distance_color.g, distance_color.b, nm_data.distance or 0
-    )
-    
-    local hp_bar = ''
-    if nm_data.hpp and nm_data.hpp > 0 then
-        local hp_percent = nm_data.hpp
-        local hp_color = {r=100, g=255, b=100}
-        if hp_percent < 25 then hp_color = {r=255, g=50, b=50}
-        elseif hp_percent < 50 then hp_color = {r=255, g=200, b=50} end
-        
-        hp_bar = string.format(
-            '\n\\cs(255,50,50)║\\cr  \\cs(200,200,200)HP:\\cr       \\cs(%d,%d,%d)%d%%\\cr',
-            hp_color.r, hp_color.g, hp_color.b, hp_percent
-        )
-    end
-    
-    local footer = string.format(
-        '\n\\cs(255,50,50)╠═══════════════════════════════════════════╣\\cr\n' ..
-        '\\cs(255,50,50)║\\cr  \\cs(150,150,150)Click to dismiss • Auto-hide in 30s\\cr  \\cs(255,50,50)║\\cr\n' ..
-        '\\cs(255,50,50)╚═══════════════════════════════════════════╝\\cr'
-    )
-    
-    local display_text = header .. nm_name .. stats .. hp_bar .. footer
-    ui.display:text(display_text)
+    ui.show_nm(nm_data)
 end
 
 -- Hide the display
@@ -251,7 +209,15 @@ function ui.set_position(x, y)
     end
 end
 
--- Update for pulsing effect and auto-hide timer
+-- Get current display position
+function ui.get_position()
+    if ui.display then
+        return {x = ui.display:pos_x(), y = ui.display:pos_y()}
+    end
+    return {x = settings.pos.x, y = settings.pos.y}
+end
+
+-- Update for auto-hide timer
 function ui.update()
     if not ui.is_visible or not ui.display then return end
     
@@ -262,18 +228,11 @@ function ui.update()
         return
     end
     
-    -- Create subtle pulsing effect by adjusting background alpha
-    ui.pulse_phase = (ui.pulse_phase + 0.05) % (math.pi * 2)
-    local pulse = math.sin(ui.pulse_phase)
-    local alpha = settings.bg.alpha + math.floor(pulse * 20)
-    
-    ui.display:bg_alpha(alpha)
-end
-
--- Toggle visibility
-function ui.toggle()
-    if ui.is_visible then
-        ui.hide()
+    -- Check if position has changed (dragged)
+    if ui.display then
+        local current_x = ui.display:pos_x()
+        local current_y = ui.display:pos_y()
+        
     else
         if ui.current_nm then
             ui.show_nm(ui.current_nm)

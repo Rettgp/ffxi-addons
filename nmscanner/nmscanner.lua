@@ -4,6 +4,7 @@ _addon.version = '1.0'
 _addon.commands = {'nmscan', 'nmscanner'}
 
 require('luau')
+require('ffxi')
 local nm_database = require('nm_database')
 local ui = require('ui')
 
@@ -12,7 +13,7 @@ local config = {
     enabled = true,
     scan_interval = 1.0,  -- seconds between scans
     show_ui = true,
-    max_distance = 50,  -- yalms - only alert for NMs within this distance
+    max_distance = 200,  -- yalms - only alert for NMs within this distance
     alert_sound = true
 }
 
@@ -34,38 +35,6 @@ function log(msg)
     else
         windower.add_to_chat(color, prefix .. msg)
     end
-end
-
---[[
-    Stub for mob array access
-    Replace this with actual Windower mob array access when available
-    The real implementation would use: windower.ffxi.get_mob_array()
-]]
-local function get_mob_array()
-    -- STUB: This should return the actual mob array from Windower
-    -- Expected format:
-    -- {
-    --   [id] = {
-    --     name = "Monster Name",
-    --     id = 12345,
-    --     index = 100,
-    --     x = 0.0,
-    --     y = 0.0,
-    --     z = 0.0,
-    --     distance = 10.5,
-    --     hpp = 100,
-    --     is_npc = false,
-    --     spawn_type = 16,  -- 16 = mob
-    --     model_id = 1234
-    --   }
-    -- }
-    
-    -- For now, return the actual Windower function if available
-    if windower.ffxi.get_mob_array then
-        return windower.ffxi.get_mob_array()
-    end
-    
-    return {}
 end
 
 -- Calculate distance between two points
@@ -98,13 +67,12 @@ local function scan_for_nms()
     end
     
     last_scan_time = current_time
-    local mob_array = get_mob_array()
     local player_x, player_y, player_z = get_player_position()
     
     local found_nms = {}  -- Track NMs found in this scan
     
-    -- Scan through all mobs
-    for id, mob in pairs(mob_array) do
+    -- Scan through all mobs (index is mob.index in zone, not mob.id)
+    for index, mob in pairs(ffxi.mob_array) do
         if mob and mob.name and mob.spawn_type == 16 then  -- 16 = mob
             -- Check if this is an NM
             if nm_database.is_nm(mob.name) then
@@ -202,6 +170,27 @@ windower.register_event('prerender', function()
     end
 end)
 
+-- Mouse click handler to dismiss UI
+windower.register_event('mouse', function(type, x, y, delta, blocked)
+    if type == 5 and ui.is_showing() then  -- Right click (type 5) to dismiss
+        if ui.display then
+            local pos_x = ui.display:pos_x()
+            local pos_y = ui.display:pos_y()
+            
+            -- Approximate UI bounds (adjust as needed)
+            local ui_width = 450
+            local ui_height = 150
+            
+            if x >= pos_x and x <= pos_x + ui_width and
+               y >= pos_y and y <= pos_y + ui_height then
+                ui.hide()
+                return true  -- Block the click from passing through
+            end
+        end
+    end
+    return false
+end)
+
 -- Command handling
 windower.register_event('addon command', function(command, ...)
     command = (command or 'help'):lower()
@@ -279,8 +268,7 @@ windower.register_event('addon command', function(command, ...)
     elseif command == 'test' then
         local mob_id = tonumber(params[1])
         if mob_id then
-            local mob_array = get_mob_array()
-            local mob = mob_array[mob_id]
+            local mob = ffxi.mob_array[mob_id]
             
             if mob and mob.name then
                 local player_x, player_y, player_z = get_player_position()
@@ -308,14 +296,6 @@ windower.register_event('addon command', function(command, ...)
                 if config.show_ui then
                     ui.show_nm(nm_data)
                 end
-                
-                log({
-                    string.format('Testing notification for mob ID: %d', mob_id),
-                    string.format('  Name: %s', mob.name),
-                    string.format('  Distance: %.1f yalms', distance),
-                    string.format('  HP: %d%%', mob.hpp or 100),
-                    string.format('  In NM Database: %s', is_real_nm and '\\cs(100,255,100)YES\\cr' or '\\cs(255,100,100)NO\\cr')
-                })
             else
                 log(string.format('\\cs(255,100,100)Mob ID %d not found in mob array\\cr', mob_id))
             end
