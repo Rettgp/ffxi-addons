@@ -48,7 +48,7 @@ defaults.Images.Background.Size.Width = 472
 defaults.Images.Background.Repeatable = {}
 defaults.Images.Background.Repeatable.X = 1
 defaults.Images.Background.Repeatable.Y = 1
-defaults.Images.Background.Draggable = true
+defaults.Images.Background.Draggable = false
 defaults.Images.Foreground = {}
 defaults.Images.Foreground.Pos = {}
 defaults.Images.Foreground.Pos.X = 100
@@ -68,7 +68,7 @@ defaults.Images.Foreground.Size.Width = 1
 defaults.Images.Foreground.Repeatable = {}
 defaults.Images.Foreground.Repeatable.X = 1
 defaults.Images.Foreground.Repeatable.Y = 1
-defaults.Images.Foreground.Draggable = true
+defaults.Images.Foreground.Draggable = false
 defaults.Images.RestedBonus = {}
 defaults.Images.RestedBonus.Pos = {}
 defaults.Images.RestedBonus.Pos.X = 636
@@ -89,6 +89,24 @@ defaults.Images.RestedBonus.Repeatable = {}
 defaults.Images.RestedBonus.Repeatable.X = 1
 defaults.Images.RestedBonus.Repeatable.Y = 1
 defaults.Images.RestedBonus.Draggable = false
+-- Draggable container using images for proper size control
+defaults.Images.Container = {}
+defaults.Images.Container.Pos = {}
+defaults.Images.Container.Pos.X = 100
+defaults.Images.Container.Pos.Y = 100
+defaults.Images.Container.Visible = true
+defaults.Images.Container.Texture = {}
+defaults.Images.Container.Texture.Path = windower.addon_path..'bar_bg.png'
+defaults.Images.Container.Texture.Fit = true
+defaults.Images.Container.Color = {}
+defaults.Images.Container.Color.Alpha = 0
+defaults.Images.Container.Color.Red = 255
+defaults.Images.Container.Color.Green = 0
+defaults.Images.Container.Color.Blue = 255
+defaults.Images.Container.Size = {}
+defaults.Images.Container.Size.Height = 32
+defaults.Images.Container.Size.Width = 472
+defaults.Images.Container.Draggable = true
 defaults.Texts = {}
 defaults.Texts.Exp = {}
 defaults.Texts.Exp.Pos = {}
@@ -108,7 +126,7 @@ defaults.Texts.Exp.Flags.Draggable = false
 defaults.Texts.Exp.Flags.Italic = false
 defaults.Texts.Exp.Padding = 0
 defaults.Texts.Exp.Text = {}
-defaults.Texts.Exp.Text.Size = 10
+defaults.Texts.Exp.Text.Size = 8
 defaults.Texts.Exp.Text.Font = 'Montserrat'
 defaults.Texts.Exp.Text.Fonts = {'Ubuntu Mono', 'sans-serif'}
 defaults.Texts.Exp.Text.Alpha = 255
@@ -121,6 +139,37 @@ defaults.Texts.Exp.Text.Stroke.Alpha = 127
 defaults.Texts.Exp.Text.Stroke.Red = 136
 defaults.Texts.Exp.Text.Stroke.Green = 97
 defaults.Texts.Exp.Text.Stroke.Blue = 18
+defaults.Texts.Job = {}
+defaults.Texts.Job.Pos = {}
+defaults.Texts.Job.Pos.X = 159
+defaults.Texts.Job.Pos.Y = 13
+defaults.Texts.Job.Background = {}
+defaults.Texts.Job.Background.Alpha = 0
+defaults.Texts.Job.Background.Red = 0
+defaults.Texts.Job.Background.Green = 0
+defaults.Texts.Job.Background.Blue = 0
+defaults.Texts.Job.Background.Visible = false
+defaults.Texts.Job.Flags = {}
+defaults.Texts.Job.Flags.Right = false
+defaults.Texts.Job.Flags.Bottom = false
+defaults.Texts.Job.Flags.Bold = false
+defaults.Texts.Job.Flags.Draggable = false
+defaults.Texts.Job.Flags.Italic = false
+defaults.Texts.Job.Padding = 0
+defaults.Texts.Job.Text = {}
+defaults.Texts.Job.Text.Size = 10
+defaults.Texts.Job.Text.Font = 'Montserrat'
+defaults.Texts.Job.Text.Fonts = {'Ubuntu Mono', 'sans-serif'}
+defaults.Texts.Job.Text.Alpha = 255
+defaults.Texts.Job.Text.Red = 253
+defaults.Texts.Job.Text.Green = 252
+defaults.Texts.Job.Text.Blue = 250
+defaults.Texts.Job.Text.Stroke = {}
+defaults.Texts.Job.Text.Stroke.Width = 1
+defaults.Texts.Job.Text.Stroke.Alpha = 127
+defaults.Texts.Job.Text.Stroke.Red = 136
+defaults.Texts.Job.Text.Stroke.Green = 97
+defaults.Texts.Job.Text.Stroke.Blue = 18
 defaults.ShowDetails = {}
 defaults.ShowDetails.MainJob = true
 defaults.ShowDetails.SubJob = true
@@ -147,30 +196,56 @@ approved_commands = {
 }
 
 function load_images()
-    background_image:pos(settings.Images.Background.Pos.X, settings.Images.Background.Pos.Y)
+    -- Create invisible draggable container first
+    local container_x = settings.Images.Container.Pos.X
+    local container_y = settings.Images.Container.Pos.Y
+    
+    container:pos(container_x, container_y)
+    container:path(settings.Images.Container.Texture.Path)
+    container:fit(settings.Images.Container.Texture.Fit)
+    container:draggable(settings.Images.Container.Draggable)
+    container:alpha(settings.Images.Container.Color.Alpha)
+    container:size(settings.Images.Container.Size.Width, settings.Images.Container.Size.Height)
+    container:show()
+    
+    -- Position all elements relative to container
+    background_image:pos(container_x, container_y)
     background_image:path(settings.Images.Background.Texture.Path)
     background_image:repeat_xy(settings.Images.Background.Repeatable.X, settings.Images.Background.Repeatable.Y)
-    background_image:draggable(settings.Images.Background.Draggable)
+    background_image:draggable(false)
     background_image:show()
 
-    foreground_image:pos(settings.Images.Foreground.Pos.X, settings.Images.Foreground.Pos.Y)
+    foreground_image:pos(container_x + 2, container_y)
     foreground_image:path(settings.Images.Foreground.Texture.Path)
     foreground_image:fit(settings.Images.Foreground.Texture.Fit)
-    foreground_image:draggable(settings.Images.Foreground.Draggable)
+    foreground_image:draggable(false)
     foreground_image:show()
 
-    rested_bonus_image:pos(settings.Images.RestedBonus.Pos.X, settings.Images.RestedBonus.Pos.Y)
+    rested_bonus_image:pos(container_x + settings.Images.Background.Size.Width, container_y - 6)
     rested_bonus_image:visible(settings.Images.RestedBonus.Visible)
     rested_bonus_image:path(settings.Images.RestedBonus.Texture.Path)
-    rested_bonus_image:draggable(settings.Images.RestedBonus.Draggable)
+    rested_bonus_image:draggable(false)
     mog_house()
-
-    position_images()
 end
 
 function load_text_box()
-    local x = windower.get_windower_settings().ui_x_res / 2  - settings.Images.Background.Size.Width / 2
-    exp_text:pos(x, settings.Texts.Exp.Pos.Y)
+    local container_x = container:pos_x()
+    local container_y = container:pos_y()
+    
+    job_text:pos(container_x, container_y - 17)
+    job_text:bg_alpha(settings.Texts.Job.Background.Alpha)
+    job_text:bg_visible(settings.Texts.Job.Background.Visible)
+    job_text:font(settings.Texts.Job.Text.Font, unpack(settings.Texts.Job.Text.Fonts))
+    job_text:size(settings.Texts.Job.Text.Size)
+    job_text:color(settings.Texts.Job.Text.Red, settings.Texts.Job.Text.Green, settings.Texts.Job.Text.Blue)
+    job_text:stroke_alpha(settings.Texts.Job.Text.Stroke.Alpha)
+    job_text:stroke_color(settings.Texts.Job.Text.Stroke.Red, settings.Texts.Job.Text.Stroke.Green,
+        settings.Texts.Job.Text.Stroke.Blue)
+    job_text:stroke_width(settings.Texts.Job.Text.Stroke.Width)
+    job_text:draggable(false)
+    job_text:show()
+    
+    exp_text:pos(container_x + 170, container_y - 13)
     exp_text:bg_alpha(settings.Texts.Exp.Background.Alpha)
     exp_text:bg_visible(settings.Texts.Exp.Background.Visible)
     exp_text:font(settings.Texts.Exp.Text.Font, unpack(settings.Texts.Exp.Text.Fonts))
@@ -180,7 +255,7 @@ function load_text_box()
     exp_text:stroke_color(settings.Texts.Exp.Text.Stroke.Red, settings.Texts.Exp.Text.Stroke.Green,
         settings.Texts.Exp.Text.Stroke.Blue)
     exp_text:stroke_width(settings.Texts.Exp.Text.Stroke.Width)
-
+    exp_text:draggable(false)
     exp_text:show()
 end
 
@@ -210,17 +285,15 @@ end
 
 function update_strings()
     info = windower.ffxi.get_player()
-    player.job = string.upper(info.main_job)
-    player.sub = (info.sub_job and '('..string.lower(info.sub_job)..') ' or '(---) ')
-    player.lvl = 'Lv'..info.main_job_level..'  '
+    player.job = info.main_job_level .. ' ' .. string.upper(info.main_job) .. " / "
+    player.sub = (info.sub_job and info.sub_job_level .. ' ' .. string.upper(info.sub_job) or '-')
     player.exp = 'EXP '..xp.current..'/'..xp.total..' '
     player.tnl = '('..xp.tnl..') '
     player.pct = (xp.total > 0 and math.floor((xp.current / xp.total) * 100)..'% ' or '0% ')
     player.phr = 'EXP/hr '..string.format('%.1f',math.floor(xp.rate/100)/10)..'k'
     exp_text:clear()
-    if settings.ShowDetails.MainJob          then exp_text:append(player.job) end
-    if settings.ShowDetails.SubJob           then exp_text:append(player.sub) else exp_text:append(' ') end
-    if settings.ShowDetails.Level            then exp_text:append(player.lvl) end
+    if settings.ShowDetails.MainJob          then job_text:append(player.job) end
+    if settings.ShowDetails.SubJob           then job_text:append(player.sub) else job_text:append(' ') end
     if settings.ShowDetails.ExperiencePoints then exp_text:append(player.exp) end
     if settings.ShowDetails.ToNextLevel      then exp_text:append(player.tnl) end
     if settings.ShowDetails.Percent          then exp_text:append(player.pct) end
@@ -281,36 +354,42 @@ function calc_new_width()
     end
 end
 
-function position_images()
-    local x
-    if settings.Images.Background.Pos.AllowDecenter then
-        x = settings.Images.Background.Pos.X
-    else
-        x = windower.get_windower_settings().ui_x_res / 2  - settings.Images.Background.Size.Width / 2
+function update_element_positions()
+    if container then
+        local container_x = container:pos_x()
+        local container_y = container:pos_y()
+        
+        -- Update all elements relative to container
+        background_image:pos(container_x, container_y)
+        foreground_image:pos(container_x + 2, container_y)
+        rested_bonus_image:pos(container_x + settings.Images.Background.Size.Width, container_y - 6)
+        job_text:pos(container_x, container_y - 17)
+        exp_text:pos(container_x + 170, container_y - 13)
+        
+        -- Save position to settings
+        settings.Images.Container.Pos.X = container_x
+        settings.Images.Container.Pos.Y = container_y
+        config.save(settings)
     end
-    
-    background_image:pos(x, settings.Images.Background.Pos.Y)
-    foreground_image:pos(x + 2, settings.Images.Foreground.Pos.Y)
-    rested_bonus_image:pos(x + settings.Images.Background.Size.Width, settings.Images.Background.Pos.Y - 6)
-end
-
-function position_text()
-    exp_text:pos((background_image:pos_x() - 6), (background_image:pos_y() + 4))
 end
 
 function hide()
+    if container then container:hide() end
     background_image:hide()
     foreground_image:hide()
     rested_bonus_image:hide()
     exp_text:hide()
+    job_text:hide()
     ready = false
 end
 
 function show()
+    if container then container:show() end
     background_image:show()
     foreground_image:show()
     mog_house()
     exp_text:show()
+    job_text:show()
     ready = true
 end
 

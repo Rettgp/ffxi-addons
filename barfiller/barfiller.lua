@@ -1,6 +1,6 @@
 _addon.name = 'BarFiller'
-_addon.author = 'Morath'
-_addon.version = '0.2.5'
+_addon.author = 'Rett'
+_addon.version = '1.0.0'
 _addon.commands = {'bf','barfiller'}
 _addon.language = 'english'
 
@@ -17,11 +17,13 @@ require('statics')
 settings = config.load(defaults)
 config.save(settings)
 
+container          = images.new(settings.Images.Container)
 background_image   = images.new(settings.Images.Background)
 foreground_image   = images.new(settings.Images.Foreground)
 rested_bonus_image = images.new(settings.Images.RestedBonus)
 
 exp_text = texts.new(settings.Texts.Exp)
+job_text = texts.new(settings.Texts.Job)
 
 debug = false
 ready = false
@@ -80,6 +82,16 @@ windower.register_event('incoming chunk',function(id,org,modi,is_injected,is_blo
 end)
 
 windower.register_event('prerender',function()
+    -- Update all element positions when container is dragged
+    if container then
+        local container_x = container:pos_x()
+        local container_y = container:pos_y()
+        
+        if container_x ~= settings.Images.Container.Pos.X or container_y ~= settings.Images.Container.Pos.Y then
+            update_element_positions()
+        end
+    end
+    
     if ready and chunk_update then
         local old_width = foreground_image:width()
         local new_width = calc_new_width()
