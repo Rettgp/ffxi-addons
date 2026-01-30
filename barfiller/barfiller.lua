@@ -1,6 +1,6 @@
 _addon.name = 'BarFiller'
 _addon.author = 'Rett'
-_addon.version = '1.0.0'
+_addon.version = '1.0.1'
 _addon.commands = {'bf','barfiller'}
 _addon.language = 'english'
 

@@ -31,8 +31,8 @@ defaults.Images = {}
 defaults.Images.Background = {}
 defaults.Images.Background.Pos = {}
 defaults.Images.Background.Pos.AllowDecenter = false
-defaults.Images.Background.Pos.X = 100
-defaults.Images.Background.Pos.Y = 6
+defaults.Images.Background.Pos.X = 200
+defaults.Images.Background.Pos.Y = 200
 defaults.Images.Background.Visible = true
 defaults.Images.Background.Texture = {}
 defaults.Images.Background.Texture.Path = windower.addon_path..'bar_bg.png'
@@ -92,8 +92,8 @@ defaults.Images.RestedBonus.Draggable = false
 -- Draggable container using images for proper size control
 defaults.Images.Container = {}
 defaults.Images.Container.Pos = {}
-defaults.Images.Container.Pos.X = 100
-defaults.Images.Container.Pos.Y = 100
+defaults.Images.Container.Pos.X = 500
+defaults.Images.Container.Pos.Y = 500
 defaults.Images.Container.Visible = true
 defaults.Images.Container.Texture = {}
 defaults.Images.Container.Texture.Path = windower.addon_path..'bar_bg.png'
@@ -218,6 +218,9 @@ function load_images()
     foreground_image:pos(container_x + 2, container_y)
     foreground_image:path(settings.Images.Foreground.Texture.Path)
     foreground_image:fit(settings.Images.Foreground.Texture.Fit)
+    foreground_image:color(settings.Images.Foreground.Color.Red, settings.Images.Foreground.Color.Green, settings.Images.Foreground.Color.Blue)
+    foreground_image:alpha(settings.Images.Foreground.Color.Alpha)
+    foreground_image:size(settings.Images.Foreground.Size.Width, settings.Images.Foreground.Size.Height)
     foreground_image:draggable(false)
     foreground_image:show()
 
@@ -291,6 +294,7 @@ function update_strings()
     player.tnl = '('..xp.tnl..') '
     player.pct = (xp.total > 0 and math.floor((xp.current / xp.total) * 100)..'% ' or '0% ')
     player.phr = 'EXP/hr '..string.format('%.1f',math.floor(xp.rate/100)/10)..'k'
+    job_text:clear()
     exp_text:clear()
     if settings.ShowDetails.MainJob          then job_text:append(player.job) end
     if settings.ShowDetails.SubJob           then job_text:append(player.sub) else job_text:append(' ') end
