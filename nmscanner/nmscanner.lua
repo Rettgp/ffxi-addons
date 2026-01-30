@@ -1,6 +1,6 @@
 _addon.name = 'nmscanner'
 _addon.author = 'Rett'
-_addon.version = '1.1'
+_addon.version = '1.2'
 _addon.commands = {'nmscan', 'nmscanner'}
 
 require('luau')
@@ -21,8 +21,10 @@ local config = {
 -- Tracking
 local detected_nms = {}  -- Cache to avoid repeat alerts
 local active_nms = {}    -- Currently tracked NMs with live data
+local blacklisted_nms = {} -- Dismissed NMs that won't show again until zone change
 local last_scan_time = 0
 local scan_active = false
+local current_zone_id = 0  -- Track zone changes
 
 -- Logging function
 function log(msg)
@@ -98,8 +100,8 @@ local function scan_for_nms()
                         mob.x or 0, mob.y or 0, mob.z or 0
                     )
                     
-                    -- Check if within alert range
-                    if distance <= config.max_distance then
+                    -- Check if within alert range and not blacklisted
+                    if distance <= config.max_distance and not blacklisted_nms[mob.id] then
                         found_nms[mob.id] = true
                         
                         -- Prepare notification data
@@ -184,7 +186,16 @@ windower.register_event('prerender', function()
     end
 end)
 
--- Mouse click handler to dismiss UI
+-- Zone change handler - clear blacklist
+windower.register_event('zone change', function(new_id, old_id)
+    blacklisted_nms = {}
+    detected_nms = {}
+    active_nms = {}
+    current_zone_id = new_id
+    ui.hide()
+end)
+
+-- Mouse click handler to dismiss UI and blacklist NM
 windower.register_event('mouse', function(type, x, y, delta, blocked)
     if type == 5 and ui.is_showing() then  -- Right click (type 5) to dismiss
         if ui.display then
@@ -197,6 +208,10 @@ windower.register_event('mouse', function(type, x, y, delta, blocked)
             
             if x >= pos_x and x <= pos_x + ui_width and
                y >= pos_y and y <= pos_y + ui_height then
+                -- Add current NM to blacklist
+                if ui.current_nm and ui.current_nm.mob_id then
+                    blacklisted_nms[ui.current_nm.mob_id] = true
+                end
                 ui.hide()
                 return true  -- Block the click from passing through
             end
@@ -255,7 +270,8 @@ windower.register_event('addon command', function(command, ...)
         end
     elseif command == 'clear' then
         detected_nms = {}
-        log('Detected NM cache cleared')
+        blacklisted_nms = {}
+        log('Detected NM cache and blacklist cleared')
     elseif command == 'status' then
         log({
             'NM Scanner Status:',
@@ -266,7 +282,8 @@ windower.register_event('addon command', function(command, ...)
             string.format('  Max Distance: %.1f yalms', config.max_distance),
             string.format('  Current Zone: %s', get_current_zone() or 'Unknown'),
             string.format('  NMs in Database: %d', nm_database.get_count()),
-            string.format('  Currently Detected: %d', table.length(detected_nms))
+            string.format('  Currently Detected: %d', table.length(detected_nms)),
+            string.format('  Blacklisted (Dismissed): %d', table.length(blacklisted_nms))
         })
     elseif command == 'list' then
         local search_name = table.concat(params, ' ')
