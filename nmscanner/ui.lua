@@ -185,7 +185,6 @@ function ui.update_nm(nm_data)
         return
     end
     
-    print("foo")
     -- Update current NM data and refresh display
     ui.current_nm = nm_data
     ui.show_nm(nm_data)

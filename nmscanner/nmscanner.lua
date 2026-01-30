@@ -1,6 +1,6 @@
 _addon.name = 'nmscanner'
 _addon.author = 'Rett'
-_addon.version = '1.0'
+_addon.version = '1.1'
 _addon.commands = {'nmscan', 'nmscanner'}
 
 require('luau')
@@ -13,8 +13,9 @@ local config = {
     enabled = true,
     scan_interval = 1.0,  -- seconds between scans
     show_ui = true,
-    max_distance = 200,  -- yalms - only alert for NMs within this distance
-    alert_sound = true
+    max_distance = 500,  -- yalms - only alert for NMs within this distance
+    alert_sound = true,
+    validate_zone = true  -- Only alert for NMs in the current zone
 }
 
 -- Tracking
@@ -57,6 +58,15 @@ local function get_player_position()
     return 0, 0, 0
 end
 
+-- Get current zone name
+local function get_current_zone()
+    local info = windower.ffxi.get_info()
+    if info and info.zone then
+        return res.zones[info.zone].en
+    end
+    return nil
+end
+
 -- Scan for NMs in the mob array
 local function scan_for_nms()
     if not config.enabled then return end
@@ -68,60 +78,64 @@ local function scan_for_nms()
     
     last_scan_time = current_time
     local player_x, player_y, player_z = get_player_position()
+    local current_zone = get_current_zone()
     
     local found_nms = {}  -- Track NMs found in this scan
     
     -- Scan through all mobs (index is mob.index in zone, not mob.id)
     for index, mob in pairs(ffxi.mob_array) do
-        if mob and mob.name and mob.spawn_type == 16 then  -- 16 = mob
+        if mob and mob.name then  -- 16 = mob
             -- Check if this is an NM
             if nm_database.is_nm(mob.name) then
-                -- Calculate distance
-                local distance = calculate_distance(
-                    player_x, player_y, player_z,
-                    mob.x or 0, mob.y or 0, mob.z or 0
-                )
+                -- Get NM details from database
+                local nm_details = nm_database.get_details(mob.name)
                 
-                -- Check if within alert range
-                if distance <= config.max_distance then
-                    found_nms[mob.id] = true
+                -- Validate zone if enabled
+                if config.validate_zone and current_zone and nm_details and nm_details.zone and nm_details.zone == current_zone then
+                    -- Calculate distance
+                    local distance = calculate_distance(
+                        player_x, player_y, player_z,
+                        mob.x or 0, mob.y or 0, mob.z or 0
+                    )
                     
-                    -- Get NM details from database
-                    local nm_details = nm_database.get_details(mob.name)
-                    
-                    -- Prepare notification data
-                    local nm_data = {
-                        name = mob.name,
-                        level = nm_details and nm_details.level or '??',
-                        family = nm_details and nm_details.family or 'Unknown',
-                        zone = nm_details and nm_details.zone or 'Current Zone',
-                        distance = distance,
-                        hpp = mob.hpp or 100,
-                        mob_id = mob.id
-                    }
-                    
-                    -- If new NM, show initial alert and play sound
-                    if not detected_nms[mob.id] then
-                        detected_nms[mob.id] = {
-                            time = current_time,
-                            name = mob.name
+                    -- Check if within alert range
+                    if distance <= config.max_distance then
+                        found_nms[mob.id] = true
+                        
+                        -- Prepare notification data
+                        local nm_data = {
+                            name = mob.name,
+                            level = nm_details and nm_details.level or '??',
+                            family = nm_details and nm_details.family or 'Unknown',
+                            zone = nm_details and nm_details.zone or 'Current Zone',
+                            distance = distance,
+                            hpp = mob.hpp or 100,
+                            mob_id = mob.id
                         }
                         
-                        -- Play alert sound
-                        if config.alert_sound then
-                            windower.play_sound(windower.addon_path .. 'alert.wav')
+                        -- If new NM, show initial alert and play sound
+                        if not detected_nms[mob.id] then
+                            detected_nms[mob.id] = {
+                                time = current_time,
+                                name = mob.name
+                            }
+                            
+                            -- Play alert sound
+                            if config.alert_sound then
+                                windower.play_sound(windower.addon_path .. 'alert.wav')
+                            end
                         end
-                    end
-                    
-                    -- Track as active NM
-                    active_nms[mob.id] = {
-                        data = nm_data,
-                        last_update = current_time
-                    }
-                    
-                    -- Update UI with current data
-                    if config.show_ui then
-                        ui.update_nm(nm_data)
+                        
+                        -- Track as active NM
+                        active_nms[mob.id] = {
+                            data = nm_data,
+                            last_update = current_time
+                        }
+                        
+                        -- Update UI with current data
+                        if config.show_ui then
+                            ui.update_nm(nm_data)
+                        end
                     end
                 end
             end
@@ -203,6 +217,7 @@ windower.register_event('addon command', function(command, ...)
             '  //nmscan toggle - Toggle scanner on/off',
             '  //nmscan ui - Toggle UI notifications',
             '  //nmscan sound - Toggle alert sound',
+            '  //nmscan zone - Toggle zone validation',
             '  //nmscan distance <yalms> - Set max alert distance',
             '  //nmscan theme <dark|blue|purple|red> - Change UI theme',
             '  //nmscan clear - Clear detected NM cache',
@@ -219,6 +234,9 @@ windower.register_event('addon command', function(command, ...)
     elseif command == 'sound' then
         config.alert_sound = not config.alert_sound
         log(string.format('Alert sound %s', config.alert_sound and '\\cs(100,255,100)ON\\cr' or '\\cs(255,100,100)OFF\\cr'))
+    elseif command == 'zone' then
+        config.validate_zone = not config.validate_zone
+        log(string.format('Zone validation %s', config.validate_zone and '\\cs(100,255,100)ON\\cr' or '\\cs(255,100,100)OFF\\cr'))
     elseif command == 'distance' then
         local distance = tonumber(params[1])
         if distance and distance > 0 then
@@ -244,7 +262,9 @@ windower.register_event('addon command', function(command, ...)
             string.format('  Scanner: %s', config.enabled and '\\cs(100,255,100)ENABLED\\cr' or '\\cs(255,100,100)DISABLED\\cr'),
             string.format('  UI Notifications: %s', config.show_ui and 'ON' or 'OFF'),
             string.format('  Alert Sound: %s', config.alert_sound and 'ON' or 'OFF'),
+            string.format('  Zone Validation: %s', config.validate_zone and 'ON' or 'OFF'),
             string.format('  Max Distance: %.1f yalms', config.max_distance),
+            string.format('  Current Zone: %s', get_current_zone() or 'Unknown'),
             string.format('  NMs in Database: %d', nm_database.get_count()),
             string.format('  Currently Detected: %d', table.length(detected_nms))
         })
