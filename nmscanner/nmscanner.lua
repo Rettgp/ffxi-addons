@@ -1,6 +1,6 @@
 _addon.name = 'nmscanner'
 _addon.author = 'Rett'
-_addon.version = '1.6'
+_addon.version = '1.7'
 _addon.commands = {'nmscan', 'nmscanner'}
 
 require('luau')
@@ -20,7 +20,7 @@ local config = {
     validate_zone = true,  -- Only alert for NMs in the current zone
     debug = false,  -- Enable debug logging
     widescan_monitor = true,  -- Monitor Wide Scan for distant NMs
-    auto_widescan = true,  -- Automatically use Wide Scan
+    auto_widescan = false,  -- Automatically use Wide Scan
     auto_widescan_interval = 5  -- Seconds between auto Wide Scans
 }
 
