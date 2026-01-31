@@ -1,6 +1,6 @@
 _addon.name = 'nmscanner'
 _addon.author = 'Rett'
-_addon.version = '1.3'
+_addon.version = '1.4'
 _addon.commands = {'nmscan', 'nmscanner'}
 
 require('luau')
