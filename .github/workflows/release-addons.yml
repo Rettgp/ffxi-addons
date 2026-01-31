@@ -65,6 +65,13 @@ jobs:
                   env_file.write(f'{addon_name.upper().replace("-", "_")}_VERSION={version}\n')
           EOF
 
+      - name: Delete old release
+        continue-on-error: true
+        run: |
+          gh release delete latest --yes --cleanup-tag
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Create Release and Upload Assets
         uses: softprops/action-gh-release@v1
         with:
