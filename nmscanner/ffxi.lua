@@ -399,6 +399,8 @@ _ffxi.i[0x038] = function(id,data)
         ffxi.mob_array[index].valid_target = false
     elseif p['Type'] == "deru" and not ffxi.mob_array[index] then 
         ffxi.mob_array[index] = case_insensitive_table()
+        ffxi.mob_array[index].index = index
+        ffxi.mob_array[index].valid_target = true
     end
 end
 

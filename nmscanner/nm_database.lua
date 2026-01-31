@@ -645,12 +645,49 @@ add_nm("Harajnite(Fishing)", "Manaclipper", 999, "Uragnites")
 -- Helper functions
 function nm_database.is_nm(name)
     if not name then return false end
-    return nm_database.nm_set[name:lower()] == true
+    -- Strip spaces for Wide Scan packet matching (names come without spaces, max 16 chars)
+    local normalized_name = name:lower():gsub('%s+', ''):gsub('[^%w]', '')
+    
+    -- Try exact match first
+    if nm_database.nm_set[name:lower()] then
+        return true
+    end
+    
+    -- Fuzzy match: Wide Scan truncates to 16 chars with no spaces
+    -- Check if the packet name matches the beginning of any NM name (both stripped)
+    for nm_name in pairs(nm_database.nm_set) do
+        local nm_normalized = nm_name:gsub('%s+', ''):gsub('[^%w]', '')
+        
+        -- Check if packet name matches start of NM name (for truncated names)
+        if nm_normalized:sub(1, #normalized_name) == normalized_name or
+           normalized_name:sub(1, #nm_normalized) == nm_normalized then
+            return true
+        end
+    end
+    
+    return false
 end
 
 function nm_database.get_details(name)
     if not name then return nil end
-    return nm_database.nm_details[name:lower()]
+    
+    -- Try exact match first
+    local details = nm_database.nm_details[name:lower()]
+    if details then return details end
+    
+    -- Fuzzy match for Wide Scan packet (truncated to 16 chars, no spaces)
+    local normalized_name = name:lower():gsub('%s+', ''):gsub('[^%w]', '')
+    for nm_name, nm_data in pairs(nm_database.nm_details) do
+        local nm_normalized = nm_name:gsub('%s+', ''):gsub('[^%w]', '')
+        
+        -- Check if packet name matches start of NM name (for truncated names)
+        if nm_normalized:sub(1, #normalized_name) == normalized_name or
+           normalized_name:sub(1, #nm_normalized) == nm_normalized then
+            return nm_data
+        end
+    end
+    
+    return nil
 end
 
 function nm_database.get_count()
