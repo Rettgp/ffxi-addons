@@ -1,6 +1,6 @@
 _addon.name = 'nmscanner'
 _addon.author = 'Rett'
-_addon.version = '1.5'
+_addon.version = '1.6'
 _addon.commands = {'nmscan', 'nmscanner'}
 
 require('luau')
@@ -13,7 +13,7 @@ require('utils')
 -- Configuration
 local config = {
     enabled = true,
-    scan_interval = 1.0,  -- seconds between scans
+    scan_interval = 2.0,  -- seconds between scans (reduced CPU load)
     show_ui = true,
     max_distance = 500,  -- yalms - only alert for NMs within this distance
     alert_sound = true,
@@ -33,6 +33,9 @@ local last_scan_time = 0
 local scan_active = true  -- Start scanning immediately
 local current_zone_id = 0  -- Track zone changes
 local last_widescan_time = 0  -- Track when we last used Wide Scan
+local last_ui_update = 0  -- Track UI update throttling
+local last_pop_check = 0  -- Track pending pop request checks
+local ui_needs_update = false  -- Flag if UI needs updating
 
 -- Logging function
 function log(msg)
@@ -71,9 +74,6 @@ end
 -- Scan for NMs in the mob array
 local function scan_for_nms()
     if not config.enabled then 
-        if config.debug then
-            log('Scan skipped - scanner disabled')
-        end
         return 
     end
     
@@ -82,13 +82,13 @@ local function scan_for_nms()
         return
     end
     
-    if config.debug then
-        log('Running NM scan...')
-    end
-    
     last_scan_time = current_time
     local player_x, player_y, player_z = get_player_position()
     local current_zone = get_current_zone()
+    
+    if nm_database.get_zone_nm_count(current_zone) == 0 then
+        return
+    end
     
     local found_nms = {}  -- Track NMs found in this scan
     local scanned_count = 0
@@ -98,7 +98,7 @@ local function scan_for_nms()
     for index, mob in pairs(ffxi.mob_array) do
         scanned_count = scanned_count + 1
         if mob and mob.name then
-            if nm_database.is_nm(mob.name) then
+            if nm_database.is_nm(mob.name, current_zone) then
                 nm_count = nm_count + 1
                 if mob.pos ~= nil then
                     if config.debug then
@@ -150,6 +150,7 @@ local function scan_for_nms()
                                 data = nm_data,
                                 last_update = current_time
                             }
+                            ui_needs_update = true
                             
                             if config.show_ui then
                                 ui.update_nm(nm_data)
@@ -172,6 +173,7 @@ local function scan_for_nms()
     for id, nm_info in pairs(active_nms) do
         if not found_nms[id] then
             active_nms[id] = nil
+            ui_needs_update = true
             if ui.is_showing() and ui.current_nm and ui.current_nm.mob_id == id then
                 ui.hide()
             end
@@ -208,17 +210,32 @@ end)
 
 -- Main update loop
 windower.register_event('prerender', function()
-    if scan_active then
-        scan_for_nms()
+    -- Early exit if scanner not active or disabled
+    if not scan_active or not config.enabled then
+        return
+    end
+    
+    local current_time = os.clock()
+    
+    -- Run main NM scan (internally throttled by scan_interval)
+    scan_for_nms()
+    
+    -- Throttle UI updates to 10 FPS (0.1 second intervals)
+    if ui_needs_update and current_time - last_ui_update >= 0.1 then
         ui.update()
+        ui_needs_update = false
+        last_ui_update = current_time
+    end
+    
+    -- Check pending pop requests every 0.5 seconds instead of every frame
+    if current_time - last_pop_check >= 0.5 then
+        last_pop_check = current_time
         
-        -- Retry pending pop requests for NMs not yet in mob_array
         for index, request_info in pairs(pending_pop_requests) do
             local mob = ffxi.mob_array[index]
             if mob and type(mob) == 'table' then
                 pending_pop_requests[index] = nil
             else
-                local current_time = os.clock()
                 if current_time - request_info.last_request >= 2 then  -- Retry every 2 seconds
                     utils.request_pop(index)
                     request_info.attempts = request_info.attempts + 1
@@ -231,20 +248,26 @@ windower.register_event('prerender', function()
                 end
             end
         end
+    end
+    
+    -- Auto Wide Scan - only check when interval might have elapsed
+    if config.auto_widescan and config.widescan_monitor then
+        local current_zone = get_current_zone()
         
-        -- Auto Wide Scan
-        if config.enabled and config.auto_widescan and config.widescan_monitor then
-            local current_time = os.clock()
-            -- Random interval
-            local random_interval = math.random(config.auto_widescan_interval / 3 * 100, config.auto_widescan_interval * 100) / 100
-            if current_time - last_widescan_time >= random_interval then
-                last_widescan_time = current_time
-                
-                -- Inject Wide Scan packet (0x0F4)
-                local player = windower.ffxi.get_player()
-                if player then
-                    local packet = packets.new('outgoing', 0x0F4)
-                    packets.inject(packet)
+        if nm_database.get_zone_nm_count(current_zone) > 0 then
+            -- Only check widescan timing if enough time has passed (min interval / 3)
+            if current_time - last_widescan_time >= (config.auto_widescan_interval / 3) then
+                -- Random interval between 1/3 and full interval
+                local random_interval = math.random(config.auto_widescan_interval / 3 * 100, config.auto_widescan_interval * 100) / 100
+                if current_time - last_widescan_time >= random_interval then
+                    last_widescan_time = current_time
+                    
+                    -- Inject Wide Scan packet (0x0F4)
+                    local player = windower.ffxi.get_player()
+                    if player then
+                        local packet = packets.new('outgoing', 0x0F4)
+                        packets.inject(packet)
+                    end
                 end
             end
         end
@@ -265,13 +288,18 @@ windower.register_event('incoming chunk', function(id, data)
     if not config.enabled or not config.widescan_monitor then return end
     
     if id == 0x0F4 then  -- Wide Scan packet
+        local current_zone = get_current_zone()
+        if nm_database.get_zone_nm_count(current_zone) == 0 then
+            return
+        end
+        
         local packet = packets.parse('incoming', data)
         local name = packet['Name']
         local index = packet['Index']
         
         -- Validate index is actually a number
         if name and name ~= '' and index and type(index) == 'number' and index > 0 then
-            if nm_database.is_nm(name) then
+            if nm_database.is_nm(name, current_zone) then
                 if not ffxi.mob_array[index] and not pending_pop_requests[index] then
                     pending_pop_requests[index] = {
                         name = name,
@@ -435,15 +463,23 @@ windower.register_event('addon command', function(command, ...)
         local test_name = table.concat(params, ' ')
         if test_name and test_name ~= '' then
             local current_zone = get_current_zone()
+            local zone = current_zone or 'Test Zone'
+            
             nm_database.nm_set[test_name:lower()] = true
             nm_database.nm_details[test_name:lower()] = {
                 name = test_name,
-                zone = current_zone or 'Test Zone',
+                zone = zone,
                 level = 99,
                 family = 'Test'
             }
+            
+            if not nm_database.by_zone[zone] then
+                nm_database.by_zone[zone] = {}
+            end
+            nm_database.by_zone[zone][test_name:lower()] = true
+            
             log(string.format('Added "%s" as temporary test NM', test_name))
-            log(string.format('Zone: %s', current_zone or 'Test Zone'))
+            log(string.format('Zone: %s', zone))
             log('Use //nmscan find to locate it in the mob array')
             log('Note: This will reset when addon reloads')
         else
