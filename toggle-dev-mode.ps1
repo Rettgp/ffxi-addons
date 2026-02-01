@@ -19,7 +19,8 @@ $addons = @(
     "scoreboard",
     "xivbar",
     "XIVHotbar",
-    "zonename"
+    "zonename",
+    "questie"
 )
 
 $repoPath = Split-Path -Parent $PSCommandPath
