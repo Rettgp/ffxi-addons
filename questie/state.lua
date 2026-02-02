@@ -91,10 +91,13 @@ end
 function state.add_quest(quest_id)
     if not state.is_quest_active(quest_id) then
         table.insert(state.data.active_quests, quest_id)
-        state.data.quest_progress[quest_id] = {
-            completed_steps = {},
-            current_step = 1
-        }
+        -- Only create new progress if it doesn't already exist
+        if not state.data.quest_progress[quest_id] then
+            state.data.quest_progress[quest_id] = {
+                completed_steps = {},
+                current_step = 1
+            }
+        end
         state.save()
         return true
     end
@@ -187,6 +190,27 @@ function state.complete_step(quest_id, step_index)
     
     state.save()
     return true
+end
+
+-- Uncomplete a step (remove completion)
+function state.uncomplete_step(quest_id, step_index)
+    if not state.data.quest_progress[quest_id] then
+        return false
+    end
+    
+    local progress = state.data.quest_progress[quest_id]
+    local completed = progress.completed_steps
+    
+    -- Find and remove the step
+    for i, step_idx in ipairs(completed) do
+        if step_idx == step_index then
+            table.remove(completed, i)
+            state.save()
+            return true
+        end
+    end
+    
+    return false  -- Step wasn't completed
 end
 
 -- Check if a step is completed

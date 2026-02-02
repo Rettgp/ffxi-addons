@@ -6,6 +6,7 @@
 local texts = require('texts')
 local state = require('state')
 local quest_db = require('quest_database')
+local log = require('log')
 
 local ui = {}
 
@@ -13,6 +14,7 @@ local ui = {}
 ui.is_open = true
 ui.collapsed_quests = {}  -- Track which quests are collapsed
 ui.text_obj = nil
+ui.tooltip_obj = nil
 
 -- Text display settings
 local defaults = {
@@ -31,14 +33,35 @@ local defaults = {
     }
 }
 
+local tooltip_defaults = {
+    pos = {x = 0, y = 0},
+    bg = {alpha = 230, red = 20, green = 20, blue = 20, visible = true},
+    flags = {right = false, bottom = false, bold = false, italic = false, draggable = false},
+    padding = 4,
+    text = {
+        size = 11,
+        font = 'Consolas',
+        alpha = 255,
+        red = 255,
+        green = 255,
+        blue = 100,
+        stroke = {width = 0.5, alpha = 255, red = 0, green = 0, blue = 0}
+    }
+}
+
 -- Track step line positions for click detection
 ui.step_lines = {}  -- Map of line_number -> {quest_id, step_number}
+ui.quest_headers = {}  -- Map of line_number -> quest_id
 
 -- Initialize UI
 function ui.init()
     ui.text_obj = texts.new('${content}', defaults)
     ui.text_obj.content = 'Questie - Loading...'
     ui.text_obj:show()
+    
+    ui.tooltip_obj = texts.new('${content}', tooltip_defaults)
+    ui.tooltip_obj:hide()
+    
     ui.update()
     
     -- Register click handler
@@ -187,19 +210,23 @@ function ui.update()
     end
     
     -- Auto-remove completed game missions/quests from tracking
-    for _, quest_id in ipairs(active_quests) do
-        local quest = quest_db.get_quest(quest_id)
-        if quest and (quest.game_id or quest.mission_index ~= nil) then
-            -- This is a game mission/quest (has game_id or mission_index field)
-            -- If it's not in the active game list, remove it
-            if not active_game_ids[quest_id] then
-                state.remove_quest(quest_id)
+    -- ONLY if we actually have game mission data (to avoid wiping on reload before packet received)
+    local has_mission_data = ffxi and ffxi.missions and ffxi.nation ~= nil
+    if has_mission_data and #missions > 0 then
+        for _, quest_id in ipairs(active_quests) do
+            local quest = quest_db.get_quest(quest_id)
+            if quest and (quest.game_id or quest.mission_index ~= nil) then
+                -- This is a game mission/quest (has game_id or mission_index field)
+                -- If it's not in the active game list, remove it
+                if not active_game_ids[quest_id] then
+                    state.remove_quest(quest_id)
+                end
             end
         end
+        
+        -- Refresh active quests list after cleanup
+        active_quests = state.get_active_quests()
     end
-    
-    -- Refresh active quests list after cleanup
-    active_quests = state.get_active_quests()
     
     for _, quest_id in ipairs(active_quests) do
         local quest = quest_db.get_quest(quest_id)
@@ -242,6 +269,7 @@ function ui.update()
     
     -- Reset step line tracking
     ui.step_lines = {}
+    ui.quest_headers = {}
     
     -- Display Missions section
     if #missions > 0 then
@@ -299,22 +327,20 @@ function ui.render_quest_item(content, quest, display_name, from_game)
     local total_steps = #quest.steps
     local completed_count = #progress.completed_steps
     
-    -- Check if collapsed (only for tracked quests)
+    -- Check if collapsed
     local is_collapsed = ui.collapsed_quests[quest_id]
     
-    -- Quest header
-    if from_game or not is_collapsed then
-        table.insert(content, string.format('   \\cs(150,200,255)[%s]\\cr %s \\cs(150,150,150)[%d/%d]\\cr',
-            quest.type == 'mission' and 'M' or 'Q', display_name, completed_count, total_steps))
-    else
-        -- Collapsed tracked quest - show with collapse icon
-        local collapse_icon = '[+]'
-        table.insert(content, string.format('   \\cs(255,200,100)%s\\cr \\cs(150,200,255)[%s]\\cr %s \\cs(150,150,150)[%d/%d]\\cr',
-            collapse_icon, quest.type == 'mission' and 'M' or 'Q', display_name, completed_count, total_steps))
-    end
+    -- Quest header with collapse icon
+    local collapse_icon = is_collapsed and '[+]' or '[-]'
+    table.insert(content, string.format('   \\cs(255,200,100)%s\\cr \\cs(150,200,255)[%s]\\cr %s \\cs(150,150,150)[%d/%d]\\cr',
+        collapse_icon, quest.type == 'mission' and 'M' or 'Q', display_name, completed_count, total_steps))
     
-    -- Show steps if from game or not collapsed
-    if from_game or not is_collapsed then
+    -- Track this line as a quest header (AFTER adding to content)
+    local header_line = #content
+    ui.quest_headers[header_line] = quest_id
+    
+    -- Show steps if not collapsed
+    if not is_collapsed then
         if total_steps > 0 then
             -- Find current step (first uncompleted step)
             local current_step = nil
@@ -325,17 +351,21 @@ function ui.render_quest_item(content, quest, display_name, from_game)
                 end
             end
             
-            -- Show current step with clickable checkbox
+            -- Show current step first (clickable)
             if current_step then
-                local line_num = #content + 1
-                ui.step_lines[line_num] = {quest_id = quest_id, step_num = current_step}
                 table.insert(content, string.format('      \\cs(200,200,200)[ ]\\cr \\cs(255,255,100)%s\\cr', quest.steps[current_step]))
+                -- Track this line as clickable step (AFTER adding to content)
+                local line_num = #content
+                ui.step_lines[line_num] = {quest_id = quest_id, step_num = current_step}
             end
             
-            -- Show completed steps (non-clickable)
+            -- Show completed steps (also clickable for uncomplete)
             for i, step in ipairs(quest.steps) do
                 if state.is_step_completed(quest_id, i) then
-                    table.insert(content, string.format('      \\cs(100,255,100)✓ %s\\cr', step))
+                    table.insert(content, string.format('      \\cs(100,255,100)[X] %s\\cr', step))
+                    -- Track this line as clickable step (AFTER adding to content)
+                    local line_num = #content
+                    ui.step_lines[line_num] = {quest_id = quest_id, step_num = i}
                 end
             end
         end
@@ -347,9 +377,81 @@ function ui.render()
     -- Update happens on demand, not every frame
 end
 
+-- Update tooltip based on mouse position
+function ui.update_tooltip(x, y)
+    if not ui.text_obj or not ui.text_obj:visible() or not ui.tooltip_obj then
+        return
+    end
+    
+    -- Get text object position
+    local pos_x = ui.text_obj:pos_x()
+    local pos_y = ui.text_obj:pos_y()
+    
+    if not pos_x or not pos_y then
+        ui.tooltip_obj:hide()
+        return
+    end
+    
+    local settings = ui.text_obj:settings()
+    local line_height = settings.text.size + 4
+    local padding = settings.padding or defaults.padding or 0
+    
+    -- Check if mouse is within the text box
+    if x < pos_x or x > pos_x + 400 or y < pos_y then
+        ui.tooltip_obj:hide()
+        return
+    end
+    
+    -- Calculate which line is hovered
+    local relative_y = y - pos_y - padding
+    if relative_y < 0 then
+        ui.tooltip_obj:hide()
+        return
+    end
+    
+    local line_hovered = math.floor(relative_y / line_height)
+    
+    -- Check if hovering over a quest header
+    local quest_id = ui.quest_headers[line_hovered]
+    if quest_id then
+        local is_collapsed = ui.collapsed_quests[quest_id]
+        local tooltip_text = is_collapsed and 'Click to Expand' or 'Click to Collapse'
+        ui.tooltip_obj.content = tooltip_text
+        ui.tooltip_obj:pos(x + 15, y)
+        ui.tooltip_obj:show()
+        return
+    end
+    
+    -- Check if hovering over a step
+    local step_data = ui.step_lines[line_hovered]
+    if step_data then
+        local is_completed = state.is_step_completed(step_data.quest_id, step_data.step_num)
+        local tooltip_text
+        if is_completed then
+            tooltip_text = 'Left-click: Mark as Incomplete'
+        else
+            tooltip_text = 'Left-click: Mark as Complete'
+        end
+        ui.tooltip_obj.content = tooltip_text
+        ui.tooltip_obj:pos(x + 15, y)
+        ui.tooltip_obj:show()
+        return
+    end
+    
+    -- Not hovering over anything interactive
+    ui.tooltip_obj:hide()
+end
+
 -- Handle mouse click events
 function ui.handle_mouse_event(event_type, x, y, delta, blocked)
-    if event_type ~= 1 then  -- type 1 = left click
+    -- type 0 = move, type 1 = left click, type 2 = right click
+    if event_type == 0 then
+        -- Mouse move - update tooltip
+        ui.update_tooltip(x, y)
+        return false
+    end
+    
+    if event_type ~= 1 and event_type ~= 2 then
         return false
     end
     
@@ -372,8 +474,6 @@ function ui.handle_mouse_event(event_type, x, y, delta, blocked)
     -- Handle both array and object-style position data
     local pos_x = ui.text_obj:pos_x()
     local pos_y = ui.text_obj:pos_y()
-    print(pos_x, pos_y)
-    print(x, y)
     
     if not pos_x or not pos_y then
         return false
@@ -381,26 +481,39 @@ function ui.handle_mouse_event(event_type, x, y, delta, blocked)
     
     local settings = ui.text_obj:settings()
     local line_height = settings.text.size + 4  -- Font size + some spacing
+    local padding = settings.padding or defaults.padding or 0
     
     -- Check if click is within the text box
     if x < pos_x or x > pos_x + 400 then  -- Approximate width
         return false
     end
     
-    -- Calculate which line was clicked
-    local relative_y = y - pos_y
+    -- Calculate which line was clicked (account for padding)
+    local relative_y = y - pos_y - padding
     if relative_y < 0 then
         return false
     end
     
-    local line_clicked = math.floor(relative_y / line_height) + 1
+    local line_clicked = math.floor(relative_y / line_height)
+    
+    -- Check if this line is a quest header (for collapse/expand)
+    local quest_id = ui.quest_headers[line_clicked]
+    if quest_id and event_type == 1 then  -- Left click on header
+        ui.collapsed_quests[quest_id] = not ui.collapsed_quests[quest_id]
+        ui.update()
+        return true
+    end
     
     -- Check if this line has a clickable step
     local step_data = ui.step_lines[line_clicked]
     if step_data then
-        -- Mark step as completed
-        state.complete_step(step_data.quest_id, step_data.step_num)
-        log.info('Step ' .. step_data.step_num .. ' marked complete!')
+        if event_type == 1 then  -- Left click = complete
+            state.complete_step(step_data.quest_id, step_data.step_num)
+            log.info('Step ' .. step_data.step_num .. ' marked complete!')
+        elseif event_type == 2 then  -- Right click = uncomplete
+            state.uncomplete_step(step_data.quest_id, step_data.step_num)
+            log.info('Step ' .. step_data.step_num .. ' marked incomplete!')
+        end
         
         -- Update UI
         ui.update()

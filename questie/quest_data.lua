@@ -9,53 +9,55 @@ return {
       mission_index = 1,  -- Sequential index within nation (1-based)
       repeatable = false,
       steps = {
-        "Speak with Cid in Metalworks to accept mission",
-        "Enter Zeruhn Mines from Bastok Mines",
-        "Find the Old Toolbox at the end of Zeruhn Mines",
-        "Return to Cid in Metalworks"
+        "Receive mission from any Bastok Gate Guard",
+        "Go to Bastok Mines (D-7) and enter Zeruhn Mines",
+        "Talk to Makarim (H-11) in Zeruhn Mines for Zeruhn Report",
+        "Deliver the report to Naji (J-8) in Metalworks"
       }
     },
     {
       id = "mission_bastok_1_2",
-      name = "The Emissary (Northlands) (1-2)",
+      name = "A Geological Survey (1-2)",
       type = "mission",
       location = "Bastok",
       nation = "bastok",
       mission_index = 2,
       repeatable = false,
       steps = {
-        "Speak with Cid in Metalworks",
-        "Travel to Jeuno and speak with Maat",
-        "Return to Bastok Metalworks"
+        "Talk to Bastok Gate Guard to receive mission",
+        "Talk to Cid (H-8) in Metalworks for Blue Acidity Tester",
+        "Go to Dangruf Wadi geyser (I-8) and stand on it",
+        "Return to Cid in Metalworks"
       }
     },
     {
       id = "mission_bastok_1_3",
-      name = "The Crystal Line (1-3)",
+      name = "Fetichism (1-3)",
       type = "mission",
       location = "Bastok",
       nation = "bastok",
       mission_index = 3,
       repeatable = false,
       steps = {
-        "Speak with Cid in Metalworks",
-        "Go to Palborough Mines and examine the ???",
-        "Defeat the Wight and obtain the mining tools",
-        "Return to Cid in Metalworks"
+        "Receive mission from Bastok Gate Guard",
+        "Obtain Fetich Head, Arms, Torso, and Legs from Quadav",
+        "Trade all 4 fetich parts to a Bastok Gate Guard",
+        "(Optional) Talk to Gumbah (J-7) in Bastok Mines"
       }
     },
     {
       id = "mission_bastok_2_1",
-      name = "The Viz's Scream (2-1)",
+      name = "The Crystal Line (2-1)",
       type = "mission",
       location = "Bastok",
       nation = "bastok",
       mission_index = 4,
       repeatable = false,
       steps = {
-        "Speak with Cid in Metalworks",
-        "Travel to Giddeus and obtain the Faded Crystal",
-        "Return to Bastok Metalworks"
+        "Talk to Cid (H-8) in Metalworks",
+        "Trade a crystal to Crag of Dem telepoint (Konschtat Highlands)",
+        "Trade the Faded Crystal to Cid for C.L. Report",
+        "Talk to Ayame (K-7) in Metalworks to complete"
       }
     },
     {
@@ -65,12 +67,10 @@ return {
       location = "Bastok",
       nation = "bastok",
       mission_index = 5,
-      repeatable = false,
+      repeatable = true,
       steps = {
-        "Speak with Cid in Metalworks",
-        "Travel to Korroloka Tunnel",
-        "Defeat the Cargo Crab Colin and obtain the Sheet of Cargo Manifest",
-        "Return to Bastok Metalworks"
+        "Talk to Bastok Gate Guard for mission",
+        "Trade 1 crystal to complete (repeatable rank missions)"
       }
     },
     {
@@ -82,10 +82,10 @@ return {
       mission_index = 6,
       repeatable = false,
       steps = {
-        "Speak with Cid in Metalworks",
-        "Travel to San d'Oria and speak with Halver in Chateau d'Oraguille",
-        "Return to Bastok and report to Cid",
-        "Complete the mission objectives"
+        "Talk to Naji (J-8) in Metalworks",
+        "Visit San d'Oria: Talk to Helaku/Halver, defeat Warchief Vatgit",
+        "Visit Windurst: Talk to Melek/Kupipi, enter BCNM at Balga's Dais",
+        "Return to Naji with Kindred Report to complete"
       }
     },
     {
@@ -97,10 +97,11 @@ return {
       mission_index = 7,
       repeatable = false,
       steps = {
-        "Speak with Cid in Metalworks",
-        "Head to Beadeaux and find the 4 Quadav Musketeers",
-        "Defeat the Quadav Backscale leader",
-        "Return to Bastok Metalworks and report to Cid"
+        "Talk to Bastok Gate Guard to receive mission",
+        "Talk to Iron Eater twice in Metalworks (J-8)",
+        "Zone into Beadeaux for cutscene",
+        "Kill 20 Copper Quadav in Beadeaux",
+        "Zone into Pashhow Marshlands to complete"
       }
     },
     {
@@ -112,10 +113,12 @@ return {
       mission_index = 8,
       repeatable = false,
       steps = {
-        "Speak with Cid in Metalworks",
-        "Travel to Davoi",
-        "Find and defeat the Hexenpilz",
-        "Return to Bastok Metalworks"
+        "Talk to Bastok Gate Guard to receive mission",
+        "(Optional) Talk to Davyad in Bastok Mines (K-6)",
+        "Obtain Hare Meat (from rabbits or Auction House)",
+        "Trade Hare Meat to ??? at Gusgen Mines (J-7)",
+        "Defeat Blind Moby for Glocolite",
+        "Trade Glocolite to Bastok Gate Guard"
       }
     },
     {
@@ -127,9 +130,12 @@ return {
       mission_index = 9,
       repeatable = false,
       steps = {
-        "Speak with Cid in Metalworks",
-        "Travel to Jeuno and complete the required objectives",
-        "Establish an embassy in Jeuno"
+        "Talk to Bastok Gate Guard to receive mission",
+        "Talk to Lucius in Metalworks (I-9) for Letter to Ambassador",
+        "Talk to Goggehn in Ru'Lude Gardens (H-10)",
+        "Obtain Delkfutt Key from Porphyrion (10th floor)",
+        "Use key at basement Cermet Door (L-9) for cutscene",
+        "Return to Bastokan Embassy in Ru'Lude Gardens"
       }
     },
     {
@@ -141,12 +147,13 @@ return {
       mission_index = 10,
       repeatable = false,
       steps = {
-        "Speak with Cid in Metalworks",
-        "Travel to one of three locations to obtain Magicite",
-        "Option 1: Beadeaux - Fight Zeid and obtain Darksteel Ore",
-        "Option 2: Davoi - Steal the Crimson Orb",
-        "Option 3: Oztroja - Defeat Yagudo Avatar",
-        "Return to Bastok Metalworks and deliver the Magicite"
+        "Talk to Aldo (J-8) in Lower Jeuno at Neptune's Spire to get Silver Bell",
+        "Obtain key items: Crest of Davoi, Yagudo Torch, Coruscant Rosary, Black Matinee Necklace",
+        "Davoi: Disable Wall of Dark Arts (G-7), check Magicite for Optistone",
+        "Beadeaux: Enter Qulun Dome (I-7), check Magicite for Aurastone",
+        "Castle Oztroja: Light Yagudo Torch (H-9/H-10), enter Altar Room, check Magicite for Orastone",
+        "Return to Audience Chamber in Ru'Lude Gardens for Airship Pass",
+        "Complete mission at embassy receptionist for Rank 5"
       }
     },
     {
@@ -158,10 +165,12 @@ return {
       mission_index = 11,
       repeatable = false,
       steps = {
-        "Speak with Cid in Metalworks",
-        "Travel to Fei'Yin",
-        "Investigate the area and complete objectives",
-        "Return to Bastok Metalworks"
+        "Talk to Naji (J-8) in Metalworks to accept mission and get New Fei'Yin Seal",
+        "Zone into Fei'Yin from Beaucedine Glacier for cutscene",
+        "Enter Qu'Bia Arena (K-8) in Fei'Yin",
+        "Examine Burning Circle to enter BCNM 'The Rank 5 Mission'",
+        "Defeat Archlich Taber'quoan (can Silence him) to get Burnt Seal",
+        "Return to Naji in Metalworks to complete mission"
       }
     },
     {
@@ -173,55 +182,65 @@ return {
       mission_index = 12,
       repeatable = false,
       steps = {
-        "Speak with Cid in Metalworks",
-        "Travel to Xarcabard",
-        "Investigate the Shadow Lord's castle",
-        "Return to Bastok Metalworks"
+        "Accept mission from gate guard, talk to President Karst (K-8) in Metalworks",
+        "Travel to Xarcabard (from Beaucedine Glacier F-6)",
+        "Enter Castle Zvahl Baileys (D-7/D-8), navigate to Castle Zvahl Keep",
+        "Navigate Map 3 teleport daises to reach Throne Room (G-7 on Map 4)",
+        "Enter battlefield and defeat Shadow Lord to receive Shadow Fragment",
+        "Return to President Karst to complete mission for Rank 6"
       }
     },
     {
       id = "mission_bastok_6_1",
-      name = "The Pirate's Cove (6-1)",
+      name = "Return of the Talekeeper (6-1)",
       type = "mission",
       location = "Bastok",
       nation = "bastok",
       mission_index = 13,
       repeatable = false,
       steps = {
-        "Speak with Cid in Metalworks",
-        "Travel to Norg",
-        "Complete objectives in the pirate stronghold",
-        "Return to Bastok Metalworks"
+        "Talk to gate guard to receive mission",
+        "Talk to Medicine Eagle (H-5) in Bastok Mines",
+        "Talk to Drake Fang (H-6) in Zeruhn Mines near boat for approval from Iron Eater",
+        "Go to Western Altepa Desert, examine ??? (G-8) to spawn Western and Eastern Sphinx",
+        "Defeat at least one Sphinx, check ??? again for Altepa Moonpebble",
+        "Talk to Tall Mountain (J-7) in Bastok Mines to complete mission"
       }
     },
     {
       id = "mission_bastok_6_2",
-      name = "The Ruins of Fei'Yin (6-2)",
+      name = "The Pirate's Cove (6-2)",
       type = "mission",
       location = "Bastok",
       nation = "bastok",
       mission_index = 14,
       repeatable = false,
       steps = {
-        "Speak with Cid in Metalworks",
-        "Return to Fei'Yin ruins",
-        "Investigate the Qu'Bia Arena",
-        "Complete the battle objective"
+        "Talk to Naji in Metalworks for cutscene",
+        "Talk to Gilgamesh in Norg (through Oaken Door at K-8) for briefing",
+        "Travel to Ifrit's Cauldron (I-5 entrance from Yhoator Jungle)",
+        "At lava puddle (H-7), trade Adaman Ore to ??? to spawn Magma and Salamander",
+        "Defeat Magma to obtain Frag Rock (up to 6 drop)",
+        "Trade Frag Rock to Gilgamesh in Norg for cutscene",
+        "Return to Naji in Metalworks to complete mission for Rank 7"
       }
     },
     {
       id = "mission_bastok_7_1",
-      name = "The Final Seal (7-1)",
+      name = "The Final Image (7-1)",
       type = "mission",
       location = "Bastok",
       nation = "bastok",
       mission_index = 15,
       repeatable = false,
       steps = {
-        "Speak with Cid in Metalworks",
-        "Travel to Tu'Lia",
-        "Break the final seal",
-        "Return to Bastok Metalworks"
+        "Talk to gate guard to receive mission, talk to Cid in Metalworks",
+        "Travel to Ro'Maeve (bring Silent Oils for sound aggro)",
+        "Find and target ??? at one of multiple spawn points (D-10, E-9, E-10, etc.)",
+        "Clear area, check ??? to spawn 2 NM Golems (Mokkurkalfi)",
+        "Defeat at least one Golem (immune to Sleep)",
+        "Track down moved ??? to receive Reinforced Cermet (don't leave zone first!)",
+        "Return to Cid in Metalworks for cutscene"
       }
     },
     {
@@ -233,9 +252,13 @@ return {
       mission_index = 16,
       repeatable = false,
       steps = {
-        "Speak with Cid in Metalworks",
-        "Prepare for the journey to the Northlands",
-        "Complete final preparations"
+        "Talk to President Karst in Metalworks for briefing",
+        "Talk to Hilda (E-6) at Steaming Sheep restaurant in Port Bastok",
+        "Travel to Waughroon Shrine through Palborough Mines",
+        "Enter BCNM 'On My Way' (6-person uncapped)",
+        "Defeat Quadav: Go'Bha Slaughterer (DRK), Ku'Jhu Graniteskin (WAR), Da'Shu Knightslayer (RDM), Sa'Nha Soulsaver (WHM)",
+        "Receive Letter From Werei after victory",
+        "Talk to Gumbah (J-7) in Bastok Mines and President Karst for Rank 8"
       }
     },
     {
@@ -247,10 +270,14 @@ return {
       mission_index = 17,
       repeatable = false,
       steps = {
-        "Speak with Cid in Metalworks",
-        "Travel to required location",
-        "Complete the mission objectives",
-        "Return to Bastok Metalworks"
+        "Talk to gate guard to receive mission, talk to Iron Eater (J-8) in Metalworks",
+        "Travel to Western Altepa Desert (G-5) and enter Quicksand Caves",
+        "Pass Weight Detection doors (H-8, H-10) to reach Galka Statue ??? (G-11)",
+        "Clear room, check ??? to spawn Triarius IV-XIV (BLM), Princeps IV-XLV (PLD), Centurio IV-VII (WAR)",
+        "Defeat NMs (can Sleep them), touch ??? for cutscene",
+        "Travel to D-12 entrance, navigate weighted doors to mural room",
+        "Check ??? at mural for cutscene with Zeid",
+        "Return to Iron Eater in Metalworks for cutscene"
       }
     },
     {
@@ -262,10 +289,13 @@ return {
       mission_index = 18,
       repeatable = false,
       steps = {
-        "Speak with Cid in Metalworks",
-        "Meet with the Talekeeper",
-        "Complete the story objectives",
-        "Return to Bastok Metalworks"
+        "Talk to gate guard to receive mission",
+        "Talk to Drake Fang (H-6) in Zeruhn Mines for cutscene",
+        "Travel to Kuftal Tunnel (H-4 from Western Altepa Desert)",
+        "Examine ??? (H-8) on cliff top near entrance - piece of wood falls",
+        "Clear lower area, check ??? (H-7) at bottom to spawn Dervo's/Gizerl's/Gordov's Ghost",
+        "Defeat NM ghosts (wait ~1 min), check ??? for cutscene and Old Piece of Wood",
+        "Return to Drake Fang in Zeruhn Mines to complete mission for Rank 9"
       }
     },
     {
@@ -277,9 +307,10 @@ return {
       mission_index = 19,
       repeatable = false,
       steps = {
-        "Speak with Cid in Metalworks",
-        "Complete the penultimate mission objectives",
-        "Prepare for the final mission"
+        "Talk to gate guard to receive mission",
+        "Talk to Iron Eater in Metalworks for briefing",
+        "Complete mission objectives",
+        "Return to Iron Eater to complete"
       }
     },
     {
@@ -291,10 +322,13 @@ return {
       mission_index = 20,
       repeatable = false,
       steps = {
-        "Speak with Cid in Metalworks",
-        "Complete the final Bastok mission",
-        "Witness the convergence of paths",
-        "Conclude the Bastok mission storyline"
+        "Talk to gate guard to receive mission, talk to Iron Eater for cutscene",
+        "Travel to Throne Room in Castle Zvahl Keep (Home Point available)",
+        "Enter BCNM 'Where Two Paths Converge' (6-person uncapped)",
+        "Fight Zeid (uses Great Sword WS, Absorb spells, Abyssal Strike/Drain)",
+        "At 70% HP Volker joins (keep him alive!), Shadow of Rage spawns later",
+        "Defeat Zeid, watch cutscene",
+        "Return to Iron Eater in President's Office to complete mission for Rank 10"
       }
     },
     {
