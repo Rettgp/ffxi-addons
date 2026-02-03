@@ -629,7 +629,7 @@ return {
       mission_index = 24,
       repeatable = false,
       steps = {
-        "Obtain boarding permit from Tenshodo (auto-completes on 2-7 cutscene)"
+        "Obtain boarding permit from Tenshodo"
       }
     },
     {
@@ -641,7 +641,7 @@ return {
       mission_index = 25,
       repeatable = false,
       steps = {
-        "Auto-completes"
+        "Return to your home nation for a cutscene"
       }
     },
     {
@@ -653,7 +653,7 @@ return {
       mission_index = 26,
       repeatable = false,
       steps = {
-        "Complete Aht Urhgan Missions up to Mission 12"
+        "Complete Mission 12 - Royal Puppeteer' in the Aht Urhgan to progress"
       }
     },
     {
@@ -754,7 +754,8 @@ return {
       mission_index = 34,
       repeatable = false,
       steps = {
-        "Auto-completes"
+        "If Wings of Goddess not completed: Zone into Southern San d'Oria (S) for a cutscene."
+        "If Wings of Goddess Completed: Examine the ??? next to one of the Cavernous Maws in Batallia Downs, Rolanberry Fields or Sauromugue Champaign for a cutscene."
       }
     },
     {
