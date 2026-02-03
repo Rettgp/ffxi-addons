@@ -332,32 +332,1185 @@ return {
       }
     },
     {
-      id = "mission_windurst_1_1",
-      name = "The Horutoto Ruins Experiment (1-1)",
+      id = "mission_rhapsodies_1_1",
+      name = "Rhapsodies of Vanadiel Mission 1-1",
       type = "mission",
-      location = "Windurst",
-      nation = "windurst",
-      game_id = 1,
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 1,
       repeatable = false,
       steps = {
-        "Speak with Apururu in Heavens Tower to accept mission",
-        "Enter Horutoto Ruins from East Sarutabaruta",
-        "Defeat the enemies and complete the objective",
-        "Return to Apururu in Heavens Tower"
+        "Zone into any starter city (Level 3+) for cutscene",
+        "Or check Tales' Beginning in any starter city zone",
+        "Unlocks Escha - Zi'Tah and Escha - Ru'Aun"
       }
     },
     {
-      id = "jeuno_1",
-      name = "Chocobo's Wounds",
-      type = "quest",
-      location = "Jeuno",
+      id = "mission_rhapsodies_1_2",
+      name = "Rhapsodies of Vanadiel Mission 1-2",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 2,
       repeatable = false,
       steps = {
-        "Speak with Dietmund in Lower Jeuno (H-8)",
-        "Obtain a Gysahl Greens from the Auction House or farm",
-        "Trade the Gysahl Greens to Dietmund",
-        "Wait one game day (approximately 1 real hour)",
-        "Return to Dietmund for your reward"
+        "Zone into Selbina or Mhaura for cutscene"
+      }
+    },
+    {
+      id = "mission_rhapsodies_1_3",
+      name = "Rhapsodies of Vanadiel Mission 1-3",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 3,
+      repeatable = false,
+      steps = {
+        "Selbina: Talk to Naillina (F-9) in Mayor's Residence",
+        "Mhaura: Talk to Numi Adaligo (F-9) in Governor's House"
+      }
+    },
+    {
+      id = "mission_rhapsodies_1_4",
+      name = "Rhapsodies of Vanadiel Mission 1-4",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 4,
+      repeatable = false,
+      steps = {
+        "Selbina: Get 3 Bee Pollen from Huge Wasps (La Theine/Konschtat), trade to Abelard",
+        "Mhaura: Get 3 Mandragora Dewdrops from Pygmaioi (Tahrongi), trade to Ekokoko"
+      }
+    },
+    {
+      id = "mission_rhapsodies_1_5",
+      name = "Rhapsodies of Vanadiel Mission 1-5",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 5,
+      repeatable = false,
+      steps = {
+        "Selbina: Talk to Pacomart (H-10) to go to Norg",
+        "Mhaura: Talk to Tonasav (H-9) to go to Norg",
+        "Examine Oaken Door (K-8) in Norg"
+      }
+    },
+    {
+      id = "mission_rhapsodies_1_6",
+      name = "Rhapsodies of Vanadiel Mission 1-6",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 6,
+      repeatable = false,
+      steps = {
+        "Examine Oaken Door (K-8) in Norg again"
+      }
+    },
+    {
+      id = "mission_rhapsodies_1_7",
+      name = "Rhapsodies of Vanadiel Mission 1-7",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 7,
+      repeatable = false,
+      steps = {
+        "Examine Shattered Telepoint at any Crag (Nation Rank 3+)",
+        "Select Qufim Island option"
+      }
+    },
+    {
+      id = "mission_rhapsodies_1_8",
+      name = "Rhapsodies of Vanadiel Mission 1-8",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 8,
+      repeatable = false,
+      steps = {
+        "Examine Undulating Confluence (G-8) in Qufim Island"
+      }
+    },
+    {
+      id = "mission_rhapsodies_1_9",
+      name = "Rhapsodies of Vanadiel Mission 1-9",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 9,
+      repeatable = false,
+      steps = {
+        "Battle Ophiotaurus at Undulating Confluence (Level 40-50 recommended)",
+        "Examine Undulating Confluence again after victory"
+      }
+    },
+    {
+      id = "mission_rhapsodies_1_10",
+      name = "Rhapsodies of Vanadiel Mission 1-10",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 10,
+      repeatable = false,
+      steps = {
+        "Examine Undulating Confluence to teleport to Escha - Zi'Tah"
+      }
+    },
+    {
+      id = "mission_rhapsodies_1_11",
+      name = "Rhapsodies of Vanadiel Mission 1-11",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 11,
+      repeatable = false,
+      steps = {
+        "Return to Shattered Telepoint at any Crag"
+      }
+    },
+    {
+      id = "mission_rhapsodies_1_12",
+      name = "Rhapsodies of Vanadiel Mission 1-12",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 12,
+      repeatable = false,
+      steps = {
+        "Zone into any starter city for cutscene (need nation rank 5-2 complete)"
+      }
+    },
+    {
+      id = "mission_rhapsodies_1_13",
+      name = "Rhapsodies of Vanadiel Mission 1-13",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 13,
+      repeatable = false,
+      steps = {
+        "Zone into Norg for cutscene",
+        "Examine Gilgamesh's Oaken Door in Norg"
+      }
+    },
+    {
+      id = "mission_rhapsodies_1_14",
+      name = "Rhapsodies of Vanadiel Mission 1-14",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 14,
+      repeatable = false,
+      steps = {
+        "Examine sparkling ??? (J-12) in Sea Serpent Grotto"
+      }
+    },
+    {
+      id = "mission_rhapsodies_1_15",
+      name = "Rhapsodies of Vanadiel Mission 1-15",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 15,
+      repeatable = false,
+      steps = {
+        "Examine sparkling ??? (F-11) in Yuhtunga Jungle"
+      }
+    },
+    {
+      id = "mission_rhapsodies_1_16",
+      name = "Rhapsodies of Vanadiel Mission 1-16",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 16,
+      repeatable = false,
+      steps = {
+        "Battle Siren at ??? (Level 80+ recommended)",
+        "Examine ??? after victory for Rhapsody in Azure"
+      }
+    },
+    {
+      id = "mission_rhapsodies_1_17",
+      name = "Rhapsodies of Vanadiel Mission 1-17",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 17,
+      repeatable = false,
+      steps = {
+        "Examine Gilgamesh's Oaken Door in Norg for Cipher: Zeid II"
+      }
+    },
+    {
+      id = "mission_rhapsodies_1_18",
+      name = "Rhapsodies of Vanadiel Mission 1-18",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 18,
+      repeatable = false,
+      steps = {
+        "Examine Gilgamesh's door in Norg multiple times",
+        "Enter and talk to Gilgamesh for cutscene"
+      }
+    },
+    {
+      id = "mission_rhapsodies_2_1",
+      name = "Rhapsodies of Vanadiel Mission 2-1",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 19,
+      repeatable = false,
+      steps = {
+        "Zone into Lower Delkfutt's Tower from Qufim for cutscene"
+      }
+    },
+    {
+      id = "mission_rhapsodies_2_2",
+      name = "Rhapsodies of Vanadiel Mission 2-2",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 20,
+      repeatable = false,
+      steps = {
+        "Go to Ru'Lude Gardens (H-7) for cutscene (need Promathia 3-2)",
+        "Obtain Cipher: Tenzen II (check Mystic Retriever if missed)"
+      }
+    },
+    {
+      id = "mission_rhapsodies_2_3",
+      name = "Rhapsodies of Vanadiel Mission 2-3",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 21,
+      repeatable = false,
+      steps = {
+        "Zone into Port Jeuno for cutscene"
+      }
+    },
+    {
+      id = "mission_rhapsodies_2_4",
+      name = "Rhapsodies of Vanadiel Mission 2-4",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 22,
+      repeatable = false,
+      steps = {
+        "Examine Door: Marble Bridge (F-7) in Upper Jeuno"
+      }
+    },
+    {
+      id = "mission_rhapsodies_2_5",
+      name = "Rhapsodies of Vanadiel Mission 2-5",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 23,
+      repeatable = false,
+      steps = {
+        "Zone into Aht Urhgan Whitegate for cutscene",
+        "Or talk to Faursel (J-8) in Lower Jeuno Tenshodo for access"
+      }
+    },
+    {
+      id = "mission_rhapsodies_2_6",
+      name = "Rhapsodies of Vanadiel Mission 2-6",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 24,
+      repeatable = false,
+      steps = {
+        "Obtain boarding permit from Tenshodo (auto-completes on 2-7 cutscene)"
+      }
+    },
+    {
+      id = "mission_rhapsodies_2_7",
+      name = "Rhapsodies of Vanadiel Mission 2-7",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 25,
+      repeatable = false,
+      steps = {
+        "Auto-completes"
+      }
+    },
+    {
+      id = "mission_rhapsodies_2_8",
+      name = "Rhapsodies of Vanadiel Mission 2-8",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 26,
+      repeatable = false,
+      steps = {
+        "Complete Aht Urhgan Missions up to Mission 12"
+      }
+    },
+    {
+      id = "mission_rhapsodies_2_9",
+      name = "Rhapsodies of Vanadiel Mission 2-9",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 27,
+      repeatable = false,
+      steps = {
+        "Examine Imperial Whitegate (L-8/9) when Aphmau is in town"
+      }
+    },
+    {
+      id = "mission_rhapsodies_2_10",
+      name = "Rhapsodies of Vanadiel Mission 2-10",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 28,
+      repeatable = false,
+      steps = {
+        "Enter Walahra Temple and talk to Nadeey"
+      }
+    },
+    {
+      id = "mission_rhapsodies_2_11",
+      name = "Rhapsodies of Vanadiel Mission 2-11",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 29,
+      repeatable = false,
+      steps = {
+        "Go to Shararat Teahouse (K-12) for cutscene"
+      }
+    },
+    {
+      id = "mission_rhapsodies_2_12",
+      name = "Rhapsodies of Vanadiel Mission 2-12",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 30,
+      repeatable = false,
+      steps = {
+        "Zone into Alzadaal Undersea Ruins",
+        "Go to Nyzul Isle Staging Point (200 Imperial Standing)"
+      }
+    },
+    {
+      id = "mission_rhapsodies_2_13",
+      name = "Rhapsodies of Vanadiel Mission 2-13",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 31,
+      repeatable = false,
+      steps = {
+        "Click Imperial Whitegate in Aht Urhgan for Rhapsody in Crimson",
+        "With all Aht Urhgan complete: Re-enter Alzadaal Ruins",
+        "With Promathia 3-5 complete: Zone into The Shrouded Maw",
+        "With all Promathia complete: Enter The Garden of Ru'Hmet"
+      }
+    },
+    {
+      id = "mission_rhapsodies_2_14",
+      name = "Rhapsodies of Vanadiel Mission 2-14",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 32,
+      repeatable = false,
+      steps = {
+        "Examine ??? at Cavernous Maw (Batallia/Rolanberry/Sauromugue)",
+        "May need WotG Mission 8+ and quests Champion/Forbidden Reunion"
+      }
+    },
+    {
+      id = "mission_rhapsodies_2_15",
+      name = "Rhapsodies of Vanadiel Mission 2-15",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 33,
+      repeatable = false,
+      steps = {
+        "Examine blue ??? next to Cavernous Maw"
+      }
+    },
+    {
+      id = "mission_rhapsodies_2_16",
+      name = "Rhapsodies of Vanadiel Mission 2-16",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 34,
+      repeatable = false,
+      steps = {
+        "Auto-completes"
+      }
+    },
+    {
+      id = "mission_rhapsodies_2_17",
+      name = "Rhapsodies of Vanadiel Mission 2-17",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 35,
+      repeatable = false,
+      steps = {
+        "With WotG 45 complete: Enter Walk of Echoes from Pashhow/Grauberg (S)",
+        "Or use Lightsworm at ??? near Cavernous Maw outside Jeuno",
+        "Examine Ornate Door in Walk of Echoes"
+      }
+    },
+    {
+      id = "mission_rhapsodies_2_18",
+      name = "Rhapsodies of Vanadiel Mission 2-18",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 36,
+      repeatable = false,
+      steps = {
+        "Arrive at Grauberg (S) Witchfire Glen",
+        "Examine blue ??? NE of Veridical Conflux to spawn Cetus",
+        "Defeat Cetus and re-examine ???",
+        "Re-enter Walk of Echoes via ??? for cutscene"
+      }
+    },
+    {
+      id = "mission_rhapsodies_2_19",
+      name = "Rhapsodies of Vanadiel Mission 2-19",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 37,
+      repeatable = false,
+      steps = {
+        "Examine Gilgamesh's Oaken Door in Norg"
+      }
+    },
+    {
+      id = "mission_rhapsodies_2_20",
+      name = "Rhapsodies of Vanadiel Mission 2-20",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 38,
+      repeatable = false,
+      steps = {
+        "Examine ??? (G-5) next to Undulating Confluence in Misareaux Coast"
+      }
+    },
+    {
+      id = "mission_rhapsodies_2_21",
+      name = "Rhapsodies of Vanadiel Mission 2-21",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 39,
+      repeatable = false,
+      steps = {
+        "Examine ??? at Undulating Confluence again"
+      }
+    },
+    {
+      id = "mission_rhapsodies_2_22",
+      name = "Rhapsodies of Vanadiel Mission 2-22",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 40,
+      repeatable = false,
+      steps = {
+        "Trade food to ??? in Misareaux Coast (15,000 Gil)",
+        "Strength: Beef Stewpot, Style: 30x Spicy Crackers, Endurance: Zaru Soba"
+      }
+    },
+    {
+      id = "mission_rhapsodies_2_23",
+      name = "Rhapsodies of Vanadiel Mission 2-23",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 41,
+      repeatable = false,
+      steps = {
+        "Return to Oaken Door in Norg for cutscene",
+        "If on Zilart 3: Talk to Jakoh Wahcondalo in Kazham (J-9) first"
+      }
+    },
+    {
+      id = "mission_rhapsodies_2_24",
+      name = "Rhapsodies of Vanadiel Mission 2-24",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 42,
+      repeatable = false,
+      steps = {
+        "Enter Temple of Uggalepih (need Zilart 4 complete)",
+        "Navigate to Granite Door (J-6) on Map 3"
+      }
+    },
+    {
+      id = "mission_rhapsodies_2_25",
+      name = "Rhapsodies of Vanadiel Mission 2-25",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 43,
+      repeatable = false,
+      steps = {
+        "Examine Granite Door for cutscene"
+      }
+    },
+    {
+      id = "mission_rhapsodies_2_26",
+      name = "Rhapsodies of Vanadiel Mission 2-26",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 44,
+      repeatable = false,
+      steps = {
+        "Enter Hall of Transference via Shattered Telepoint at any Crag"
+      }
+    },
+    {
+      id = "mission_rhapsodies_2_27",
+      name = "Rhapsodies of Vanadiel Mission 2-27",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 45,
+      repeatable = false,
+      steps = {
+        "Cutscene in Hall of Transference"
+      }
+    },
+    {
+      id = "mission_rhapsodies_2_28",
+      name = "Rhapsodies of Vanadiel Mission 2-28",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 46,
+      repeatable = false,
+      steps = {
+        "Return to Oaken Door in Norg"
+      }
+    },
+    {
+      id = "mission_rhapsodies_2_29",
+      name = "Rhapsodies of Vanadiel Mission 2-29",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 47,
+      repeatable = false,
+      steps = {
+        "Click Undulating Confluence (G-5) in Misareaux Coast",
+        "Enter Escha - Ru'Aun via Undulating Confluence"
+      }
+    },
+    {
+      id = "mission_rhapsodies_2_30",
+      name = "Rhapsodies of Vanadiel Mission 2-30",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 48,
+      repeatable = false,
+      steps = {
+        "Examine blue ??? (H-10) at top of stairs for Siren's plume"
+      }
+    },
+    {
+      id = "mission_rhapsodies_2_31",
+      name = "Rhapsodies of Vanadiel Mission 2-31",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 49,
+      repeatable = false,
+      steps = {
+        "Examine Shattered Telepoint at any Crag"
+      }
+    },
+    {
+      id = "mission_rhapsodies_2_32",
+      name = "Rhapsodies of Vanadiel Mission 2-32",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 50,
+      repeatable = false,
+      steps = {
+        "Examine Gilgamesh's Oaken Door in Norg"
+      }
+    },
+    {
+      id = "mission_rhapsodies_2_33",
+      name = "Rhapsodies of Vanadiel Mission 2-33",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 51,
+      repeatable = false,
+      steps = {
+        "Talk to Shantotto at Manor (K-7) in Windurst Walls"
+      }
+    },
+    {
+      id = "mission_rhapsodies_2_34",
+      name = "Rhapsodies of Vanadiel Mission 2-34",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 52,
+      repeatable = false,
+      steps = {
+        "Enter Escha - Ru'Aun via Undulating Confluence"
+      }
+    },
+    {
+      id = "mission_rhapsodies_2_35",
+      name = "Rhapsodies of Vanadiel Mission 2-35",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 53,
+      repeatable = false,
+      steps = {
+        "Collect Eschan Droplets at each Portal (1-14) to unlock teleports",
+        "Examine ??? at Portal #15 for cutscene"
+      }
+    },
+    {
+      id = "mission_rhapsodies_2_36",
+      name = "Rhapsodies of Vanadiel Mission 2-36",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 54,
+      repeatable = false,
+      steps = {
+        "Battle Balamor at Portal #15 ???",
+        "Check ??? again after victory",
+        "Get Eschan Droplets near portal to return to start"
+      }
+    },
+    {
+      id = "mission_rhapsodies_2_37",
+      name = "Rhapsodies of Vanadiel Mission 2-37",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 55,
+      repeatable = false,
+      steps = {
+        "Return to Oaken Door in Norg"
+      }
+    },
+    {
+      id = "mission_rhapsodies_2_38",
+      name = "Rhapsodies of Vanadiel Mission 2-38",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 56,
+      repeatable = false,
+      steps = {
+        "Click Dimensional Portal at any Crag",
+        "Obtain Cipher: Selh'teus (check Mystic Retriever if missed)"
+      }
+    },
+    {
+      id = "mission_rhapsodies_2_39",
+      name = "Rhapsodies of Vanadiel Mission 2-39",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 57,
+      repeatable = false,
+      steps = {
+        "Examine Transcendental Radiance in Empyreal Paradox",
+        "Battle Disjoined One (15 min limit, easily soloable)"
+      }
+    },
+    {
+      id = "mission_rhapsodies_2_40",
+      name = "Rhapsodies of Vanadiel Mission 2-40",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 58,
+      repeatable = false,
+      steps = {
+        "Examine Oaken Door in Norg"
+      }
+    },
+    {
+      id = "mission_rhapsodies_2_41",
+      name = "Rhapsodies of Vanadiel Mission 2-41",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 59,
+      repeatable = false,
+      steps = {
+        "Zone into starter city with Mog House for Song of hope"
+      }
+    },
+    {
+      id = "mission_rhapsodies_3_1",
+      name = "Rhapsodies of Vanadiel Mission 3-1",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 60,
+      repeatable = false,
+      steps = {
+        "Examine Dimensional Portal at any Crag to travel to Reisenjima",
+        "Talk to Shiftrix for Oseem augmentation access",
+        "Go to Etched Rock (K-9) for cutscene",
+        "Unlock Ethereal Ingress teleports along the way"
+      }
+    },
+    {
+      id = "mission_rhapsodies_3_2",
+      name = "Rhapsodies of Vanadiel Mission 3-2",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 61,
+      repeatable = false,
+      steps = {
+        "Defeat 3 Perfervid Narakas near #6 (20:00-4:00, bring Mollifier)"
+      }
+    },
+    {
+      id = "mission_rhapsodies_3_3",
+      name = "Rhapsodies of Vanadiel Mission 3-3",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 62,
+      repeatable = false,
+      steps = {
+        "Examine Etched Rock (K-9) in Reisenjima"
+      }
+    },
+    {
+      id = "mission_rhapsodies_3_4",
+      name = "Rhapsodies of Vanadiel Mission 3-4",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 63,
+      repeatable = false,
+      steps = {
+        "Enter Ceizak Battlegrounds (via Waypoint/Home Point)"
+      }
+    },
+    {
+      id = "mission_rhapsodies_3_5",
+      name = "Rhapsodies of Vanadiel Mission 3-5",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 64,
+      repeatable = false,
+      steps = {
+        "Zone into Ceizak Battlegrounds for cutscene"
+      }
+    },
+    {
+      id = "mission_rhapsodies_3_6",
+      name = "Rhapsodies of Vanadiel Mission 3-6",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 65,
+      repeatable = false,
+      steps = {
+        "Talk to Ploh Trishbahk at Castle gates (need SoA 2-2 complete)"
+      }
+    },
+    {
+      id = "mission_rhapsodies_3_7",
+      name = "Rhapsodies of Vanadiel Mission 3-7",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 66,
+      repeatable = false,
+      steps = {
+        "Go to Augural Conveyor (B-6) in Rala Waterways",
+        "Examine ??? for cutscene (or use enigmatic device Waypoint)",
+        "Receive Cipher: Arciela II"
+      }
+    },
+    {
+      id = "mission_rhapsodies_3_8",
+      name = "Rhapsodies of Vanadiel Mission 3-8",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 67,
+      repeatable = false,
+      steps = {
+        "Examine Sluice Gate (C-6) in Rala Waterways (need SoA 2-7-1)",
+        "Examine Inconspicuous Barrel for Founder king's orb"
+      }
+    },
+    {
+      id = "mission_rhapsodies_3_9",
+      name = "Rhapsodies of Vanadiel Mission 3-9",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 68,
+      repeatable = false,
+      steps = {
+        "Return to ??? near Augural Conveyor (B-6) in Rala Waterways"
+      }
+    },
+    {
+      id = "mission_rhapsodies_3_10",
+      name = "Rhapsodies of Vanadiel Mission 3-10",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 69,
+      repeatable = false,
+      steps = {
+        "Zone into Celennia Memorial Library in Eastern Adoulin"
+      }
+    },
+    {
+      id = "mission_rhapsodies_3_11",
+      name = "Rhapsodies of Vanadiel Mission 3-11",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 70,
+      repeatable = false,
+      steps = {
+        "Zone into Hall of the Gods for cutscene"
+      }
+    },
+    {
+      id = "mission_rhapsodies_3_12",
+      name = "Rhapsodies of Vanadiel Mission 3-12",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 71,
+      repeatable = false,
+      steps = {
+        "Examine Cermet Grate in Hall of the Gods"
+      }
+    },
+    {
+      id = "mission_rhapsodies_3_13",
+      name = "Rhapsodies of Vanadiel Mission 3-13",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 72,
+      repeatable = false,
+      steps = {
+        "Return to Reisenjima Sanctorium for Dimensional Compass"
+      }
+    },
+    {
+      id = "mission_rhapsodies_3_14",
+      name = "Rhapsodies of Vanadiel Mission 3-14",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 73,
+      repeatable = false,
+      steps = {
+        "Enter Walk of Echoes (not from Batallia Downs)",
+        "May need to complete Champion of Dawn / Forbidden Reunion quests"
+      }
+    },
+    {
+      id = "mission_rhapsodies_3_15",
+      name = "Rhapsodies of Vanadiel Mission 3-15",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 74,
+      repeatable = false,
+      steps = {
+        "Examine white ??? in Walk of Echoes (toward Atomos)",
+        "Teleported to Desuetia for Cait Sith's whisker"
+      }
+    },
+    {
+      id = "mission_rhapsodies_3_16",
+      name = "Rhapsodies of Vanadiel Mission 3-16",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 75,
+      repeatable = false,
+      steps = {
+        "Examine Transcendental Radiance for cutscene"
+      }
+    },
+    {
+      id = "mission_rhapsodies_3_17",
+      name = "Rhapsodies of Vanadiel Mission 3-17",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 76,
+      repeatable = false,
+      steps = {
+        "Battle in No Time Like the Future BCNM",
+        "Get new whisker from Cait Sith if you lose"
+      }
+    },
+    {
+      id = "mission_rhapsodies_3_18",
+      name = "Rhapsodies of Vanadiel Mission 3-18",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 77,
+      repeatable = false,
+      steps = {
+        "Examine Transcendental Radiance after battle for long cutscene",
+        "Replay at Goblin Footprints in Reisenjima (Penance)"
+      }
+    },
+    {
+      id = "mission_rhapsodies_3_19",
+      name = "Rhapsodies of Vanadiel Mission 3-19",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 78,
+      repeatable = false,
+      steps = {
+        "Complete previous cutscene for Rhapsody in Puce"
+      }
+    },
+    {
+      id = "mission_rhapsodies_3_20",
+      name = "Rhapsodies of Vanadiel Mission 3-20",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 79,
+      repeatable = false,
+      steps = {
+        "Return to Reisenjima Sanctorium for cutscene"
+      }
+    },
+    {
+      id = "mission_rhapsodies_3_21",
+      name = "Rhapsodies of Vanadiel Mission 3-21",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 80,
+      repeatable = false,
+      steps = {
+        "Examine ??? (H-5) on hill near ruins in Reisenjima",
+        "Warp to Ethereal Ingress #5 and go west"
+      }
+    },
+    {
+      id = "mission_rhapsodies_3_22",
+      name = "Rhapsodies of Vanadiel Mission 3-22",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 81,
+      repeatable = false,
+      steps = {
+        "Defeat 11 Obstreperous Panopts (F-11, bring Mollifier)",
+        "Rhapsody in Fuschia reduces level to 112"
+      }
+    },
+    {
+      id = "mission_rhapsodies_3_23",
+      name = "Rhapsodies of Vanadiel Mission 3-23",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 82,
+      repeatable = false,
+      steps = {
+        "Examine Etched Rock (K-9) in Reisenjima near Ethereal Ingress #6"
+      }
+    },
+    {
+      id = "mission_rhapsodies_3_24",
+      name = "Rhapsodies of Vanadiel Mission 3-24",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 83,
+      repeatable = false,
+      steps = {
+        "Examine Reisen Crystal in Reisenjima Sanctorium"
+      }
+    },
+    {
+      id = "mission_rhapsodies_3_25",
+      name = "Rhapsodies of Vanadiel Mission 3-25",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 84,
+      repeatable = false,
+      steps = {
+        "Watch cutscene from previous mission",
+        "Transported to Empyreal Paradox during cutscene"
+      }
+    },
+    {
+      id = "mission_rhapsodies_3_26",
+      name = "Rhapsodies of Vanadiel Mission 3-26",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 85,
+      repeatable = false,
+      steps = {
+        "Enter The Winds of Time at Transcendental Radiance in Empyreal Paradox",
+        "Defeat Metus (can use Trusts)",
+        "Cutscene after battle starts next mission"
+      }
+    },
+    Also saved JSON to /Users/gphelps/Projects/ffxi-addons/questie/rhapsodies_missions.json
+
+    {
+      id = "mission_rhapsodies_3_27",
+      name = "Rhapsodies of Vanadiel Mission 3-27",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 86,
+      repeatable = false,
+      steps = {
+        "Watch cutscene after previous battle",
+        "If Tenzen occupied, examine Resume Point in Empyreal Paradox"
+      }
+    },
+    {
+      id = "mission_rhapsodies_3_28",
+      name = "Rhapsodies of Vanadiel Mission 3-28",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 87,
+      repeatable = false,
+      steps = {
+        "Continue watching cutscene for rewards and next mission"
+      }
+    },
+    {
+      id = "mission_rhapsodies_3_29",
+      name = "Rhapsodies of Vanadiel Mission 3-29",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 88,
+      repeatable = false,
+      steps = {
+        "Get Cipher of Iroha from Mystic Retriever if inventory was full",
+        "Zone into starting Nation (Bastok/Windurst/San d'Oria) with Mog House"
+      }
+    },
+    {
+      id = "mission_rhapsodies_3_30",
+      name = "Rhapsodies of Vanadiel Mission 3-30",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 89,
+      repeatable = false,
+      steps = {
+        "Go to Reisenjima Sanctorium for cutscene",
+        "Shortcut: Garden of Ru'Hmet → Empyreal Paradox → Dimensional Portal"
+      }
+    },
+    {
+      id = "mission_rhapsodies_3_31",
+      name = "Rhapsodies of Vanadiel Mission 3-31",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 90,
+      repeatable = false,
+      steps = {
+        "Examine ??? at Stone Circle (G-6) in La Theine Plateau"
+      }
+    },
+    {
+      id = "mission_rhapsodies_3_32",
+      name = "Rhapsodies of Vanadiel Mission 3-32",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 91,
+      repeatable = false,
+      steps = {
+        "Return to Reisenjima Sanctorium for cutscene",
+        "Receive Rhapsody in Mauve (all Rise of the Zilart memories unlocked)"
+      }
+    },
+    {
+      id = "mission_rhapsodies_3_33",
+      name = "Rhapsodies of Vanadiel Mission 3-33",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 92,
+      repeatable = false,
+      steps = {
+        "Touch Reisen Crystal for cutscene"
+      }
+    },
+    {
+      id = "mission_rhapsodies_3_34",
+      name = "Rhapsodies of Vanadiel Mission 3-34",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 93,
+      repeatable = false,
+      steps = {
+        "Examine Reisen Crystal to battle Cloud of Darkness",
+        "If fail, get new Breath of avatars at Stone Circle (G-6) La Theine"
+      }
+    },
+    {
+      id = "mission_rhapsodies_3_35",
+      name = "Rhapsodies of Vanadiel Mission 3-35",
+      type = "mission",
+      location = "Rhapsodies",
+      nation = "rhapsodies",
+      mission_index = 94,
+      repeatable = false,
+      steps = {
+        "Watch ending cutscene for Rhapsody in White"
       }
     }
   }
