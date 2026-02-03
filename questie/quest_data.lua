@@ -6,7 +6,7 @@ return {
       type = "mission",
       location = "Bastok",
       nation = "bastok",
-      mission_index = 1,  -- Sequential index within nation (1-based)
+      mission_index = 1, -- Sequential index within nation (1-based)
       repeatable = false,
       steps = {
         "Receive mission from any Bastok Gate Guard",
@@ -754,7 +754,7 @@ return {
       mission_index = 34,
       repeatable = false,
       steps = {
-        "If Wings of Goddess not completed: Zone into Southern San d'Oria (S) for a cutscene."
+        "If Wings of Goddess not completed: Zone into Southern San d'Oria (S) for a cutscene.",
         "If Wings of Goddess Completed: Examine the ??? next to one of the Cavernous Maws in Batallia Downs, Rolanberry Fields or Sauromugue Champaign for a cutscene."
       }
     },
@@ -1399,8 +1399,6 @@ return {
         "Cutscene after battle starts next mission"
       }
     },
-    Also saved JSON to /Users/gphelps/Projects/ffxi-addons/questie/rhapsodies_missions.json
-
     {
       id = "mission_rhapsodies_3_27",
       name = "Rhapsodies of Vanadiel Mission 3-27",
