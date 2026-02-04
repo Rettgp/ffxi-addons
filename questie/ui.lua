@@ -15,6 +15,7 @@ ui.is_open = true
 ui.collapsed_quests = {} -- Track which quests are collapsed
 ui.text_obj = nil
 ui.tooltip_obj = nil
+ui.line_height = 17
 
 -- Text display settings
 local defaults = {
@@ -58,6 +59,8 @@ function ui.init()
     ui.text_obj = texts.new('${content}', defaults)
     ui.text_obj.content = 'Questie - Loading...'
     ui.text_obj:show()
+
+    ui.line_height = ui.text_obj:settings().text.size + 5
 
     ui.tooltip_obj = texts.new('${content}', tooltip_defaults)
     ui.tooltip_obj:hide()
@@ -420,7 +423,6 @@ function ui.update_tooltip(x, y)
     end
 
     local settings = ui.text_obj:settings()
-    local line_height = settings.text.size + 4
     local padding = settings.padding or defaults.padding or 0
 
     -- Check if mouse is within the text box
@@ -436,7 +438,7 @@ function ui.update_tooltip(x, y)
         return
     end
 
-    local line_hovered = math.floor(relative_y / line_height)
+    local line_hovered = math.floor(relative_y / ui.line_height)
 
     -- Check if hovering over a quest header
     local quest_id = ui.quest_headers[line_hovered]
@@ -507,7 +509,6 @@ function ui.handle_mouse_event(event_type, x, y, delta, blocked)
     end
 
     local settings = ui.text_obj:settings()
-    local line_height = settings.text.size + 4 -- Font size + some spacing
     local padding = settings.padding or defaults.padding or 0
 
     -- Check if click is within the text box
@@ -521,7 +522,7 @@ function ui.handle_mouse_event(event_type, x, y, delta, blocked)
         return false
     end
 
-    local line_clicked = math.floor(relative_y / line_height)
+    local line_clicked = math.floor(relative_y / ui.line_height)
 
     -- Check if this line is a quest header (for collapse/expand)
     local quest_id = ui.quest_headers[line_clicked]
