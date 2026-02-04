@@ -213,7 +213,7 @@ function ui.update()
 
                     local display_name
                     if quest then
-                        display_name = name .. ' ' .. quest.name
+                        display_name = quest.name
                     else
                         display_name = name .. ' Mission (ID: ' .. mission_data.current .. ')'
                     end
@@ -333,6 +333,7 @@ function ui.update()
             if mission_data.quest then
                 ui.render_quest_item(content, mission_data.quest, mission_data.display_name, mission_data.from_game)
             else
+                -- Unknown mission
                 table.insert(content, string.format('   \\cs(255,50,50)%s\\cr', mission_data.display_name))
             end
         end
