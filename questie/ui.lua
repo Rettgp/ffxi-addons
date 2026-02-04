@@ -21,7 +21,7 @@ ui.line_height = 17
 local defaults = {
     pos = { x = 100, y = 100 },
     bg = { alpha = 200, red = 0, green = 0, blue = 0, visible = false },
-    flags = { right = false, bottom = false, bold = false, italic = false, draggable = true },
+    flags = { right = false, bottom = false, bold = true, italic = false, draggable = true },
     padding = 8,
     text = {
         size = 12,
@@ -53,6 +53,43 @@ local tooltip_defaults = {
 -- Track step line positions for click detection
 ui.step_lines = {}    -- Map of line_number -> {quest_id, step_number}
 ui.quest_headers = {} -- Map of line_number -> quest_id
+
+-- Constants
+local MAX_LINE_LENGTH = 50 -- Characters before wrapping
+
+-- Helper function to wrap text at a maximum character width
+local function wrap_text(text, max_width, indent)
+    indent = indent or ''
+    local lines = {}
+    local current_line = ''
+
+    for word in text:gmatch('%S+') do
+        local test_line = current_line == '' and word or current_line .. ' ' .. word
+        if #test_line > max_width then
+            if current_line ~= '' then
+                table.insert(lines, current_line)
+                current_line = word
+            else
+                -- Single word longer than max_width
+                table.insert(lines, word)
+                current_line = ''
+            end
+        else
+            current_line = test_line
+        end
+    end
+
+    if current_line ~= '' then
+        table.insert(lines, current_line)
+    end
+
+    -- Add indent to continuation lines
+    for i = 2, #lines do
+        lines[i] = indent .. lines[i]
+    end
+
+    return lines
+end
 
 -- Initialize UI
 function ui.init()
@@ -102,7 +139,7 @@ function ui.update()
     end
 
     local content = {}
-    table.insert(content, '\\cs(100,150,255)═══ Questie Tracker ═══\\cr')
+    table.insert(content, '\\cs(100,150,255)═══════════════ Questie Tracker ═══════════════\\cr')
     table.insert(content, '\\cs(150,150,150)Commands: //questie help\\cr')
     table.insert(content, '')
 
@@ -300,7 +337,7 @@ function ui.update()
             if mission_data.quest then
                 ui.render_quest_item(content, mission_data.quest, mission_data.display_name, mission_data.from_game)
             else
-                table.insert(content, string.format('   \\cs(150,200,255)[M]\\cr %s', mission_data.display_name))
+                table.insert(content, string.format('   \\cs(150,200,255)%s\\cr', mission_data.display_name))
             end
         end
         table.insert(content, '')
@@ -313,7 +350,7 @@ function ui.update()
             if quest_data.quest then
                 ui.render_quest_item(content, quest_data.quest, quest_data.display_name, quest_data.from_game)
             else
-                table.insert(content, string.format('   \\cs(150,200,255)[Q]\\cr %s', quest_data.display_name))
+                table.insert(content, string.format('   \\cs(150,200,255)%s\\cr', quest_data.display_name))
             end
         end
         table.insert(content, '')
@@ -326,7 +363,7 @@ function ui.update()
         table.insert(content, '')
     end
 
-    table.insert(content, '\\cs(100,150,255)═══════════════════════════════\\cr')
+    table.insert(content, '\\cs(100,150,255)═══════════════════════════════════════════════\\cr')
 
     ui.text_obj.content = table.concat(content, '\n')
 end
@@ -354,9 +391,15 @@ function ui.render_quest_item(content, quest, display_name, from_game)
 
     -- Quest header with collapse icon
     local collapse_icon = is_collapsed and '[+]' or '[-]'
-    table.insert(content,
-        string.format('   \\cs(255,200,100)%s\\cr \\cs(150,200,255)[%s]\\cr %s \\cs(150,150,150)[%d/%d]\\cr',
-            collapse_icon, quest.type == 'mission' and 'M' or 'Q', display_name, completed_count, total_steps))
+    local header_prefix = string.format('   \\cs(255,200,100)%s\\cr ', collapse_icon)
+    local header_suffix = string.format(' \\cs(150,150,150)[%d/%d]\\cr', completed_count, total_steps)
+
+    -- Wrap quest name if too long
+    local wrapped_lines = wrap_text(display_name, MAX_LINE_LENGTH - 10, '      ')
+    table.insert(content, header_prefix .. wrapped_lines[1] .. header_suffix)
+    for i = 2, #wrapped_lines do
+        table.insert(content, wrapped_lines[i])
+    end
 
     -- Track this line as a quest header (AFTER adding to content)
     local header_line = #content
@@ -377,25 +420,39 @@ function ui.render_quest_item(content, quest, display_name, from_game)
             -- Show next step preview (smaller font, non-clickable)
             if current_step and current_step < total_steps then
                 local next_step = current_step + 1
-                table.insert(content, string.format('      \\cs(120,120,120)    Next: %s\\cr', quest.steps[next_step]))
+                local wrapped_next = wrap_text(quest.steps[next_step], MAX_LINE_LENGTH - 12, '            ')
+                table.insert(content, string.format('      \\cs(120,120,120)    Next: %s\\cr', wrapped_next[1]))
+                for i = 2, #wrapped_next do
+                    table.insert(content, string.format('      \\cs(120,120,120)%s\\cr', wrapped_next[i]))
+                end
             end
 
             -- Show current step first (clickable)
             if current_step then
+                local wrapped_current = wrap_text(quest.steps[current_step], MAX_LINE_LENGTH - 8, '         ')
                 table.insert(content,
-                    string.format('      \\cs(200,200,200)[ ]\\cr \\cs(255,255,100)%s\\cr', quest.steps[current_step]))
+                    string.format('      \\cs(200,200,200)[ ]\\cr \\cs(255,255,100)%s\\cr', wrapped_current[1]))
                 -- Track this line as clickable step (AFTER adding to content)
                 local line_num = #content
                 ui.step_lines[line_num] = { quest_id = quest_id, step_num = current_step }
+                -- Add continuation lines (not clickable)
+                for i = 2, #wrapped_current do
+                    table.insert(content, string.format('      \\cs(255,255,100)%s\\cr', wrapped_current[i]))
+                end
             end
 
             -- Show completed steps (also clickable for uncomplete)
             for i, step in ipairs(quest.steps) do
                 if state.is_step_completed(quest_id, i) then
-                    table.insert(content, string.format('      \\cs(100,255,100)[X] %s\\cr', step))
+                    local wrapped_completed = wrap_text(step, MAX_LINE_LENGTH - 8, '         ')
+                    table.insert(content, string.format('      \\cs(100,255,100)[X] %s\\cr', wrapped_completed[1]))
                     -- Track this line as clickable step (AFTER adding to content)
                     local line_num = #content
                     ui.step_lines[line_num] = { quest_id = quest_id, step_num = i }
+                    -- Add continuation lines (not clickable)
+                    for j = 2, #wrapped_completed do
+                        table.insert(content, string.format('      \\cs(100,255,100)%s\\cr', wrapped_completed[j]))
+                    end
                 end
             end
         end
