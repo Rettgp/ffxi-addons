@@ -15,7 +15,7 @@ ui.is_open = true
 ui.collapsed_quests = {} -- Track which quests are collapsed
 ui.text_obj = nil
 ui.tooltip_obj = nil
-ui.line_height = 17
+ui.line_height = 19
 
 -- Text display settings
 local defaults = {
@@ -97,7 +97,7 @@ function ui.init()
     ui.text_obj.content = 'Questie - Loading...'
     ui.text_obj:show()
 
-    ui.line_height = ui.text_obj:settings().text.size + 5
+    ui.line_height = ui.text_obj:settings().text.size + 7
 
     ui.tooltip_obj = texts.new('${content}', tooltip_defaults)
     ui.tooltip_obj:hide()
@@ -140,8 +140,6 @@ function ui.update()
 
     local content = {}
     table.insert(content, '\\cs(100,150,255)═══════════════ Questie Tracker ═══════════════\\cr')
-    table.insert(content, '\\cs(150,150,150)Commands: //questie help\\cr')
-    table.insert(content, '')
 
     -- Collect all missions and quests
     local missions = {}
@@ -153,9 +151,7 @@ function ui.update()
         if ffxi.missions and ffxi.missions.nations and ffxi.nation ~= nil
             and ffxi.missions.nations[ffxi.nation] then
             local nation_names = { [0] = 'sandoria', [1] = 'bastok', [2] = 'windurst' }
-            local nation_display = { [0] = 'San d\'Oria', [1] = 'Bastok', [2] = 'Windurst' }
             local nation = nation_names[ffxi.nation]
-            local nation_name = nation_display[ffxi.nation] or 'Unknown'
 
             -- Count completed missions for this nation
             local completed = ffxi.missions.nations[ffxi.nation].completed or {}
@@ -172,9 +168,9 @@ function ui.update()
 
             local display_name
             if quest then
-                display_name = nation_name .. ' ' .. quest.name
+                display_name = quest.name
             else
-                display_name = nation_name .. ' Mission (Index: ' .. current_mission_index .. ')'
+                display_name = ' Mission (Index: ' .. current_mission_index .. ')'
             end
 
             table.insert(missions, {
@@ -337,7 +333,7 @@ function ui.update()
             if mission_data.quest then
                 ui.render_quest_item(content, mission_data.quest, mission_data.display_name, mission_data.from_game)
             else
-                table.insert(content, string.format('   \\cs(150,200,255)%s\\cr', mission_data.display_name))
+                table.insert(content, string.format('   \\cs(255,50,50)%s\\cr', mission_data.display_name))
             end
         end
         table.insert(content, '')
@@ -441,18 +437,18 @@ function ui.render_quest_item(content, quest, display_name, from_game)
                 end
             end
 
-            -- Show completed steps (also clickable for uncomplete)
-            for i, step in ipairs(quest.steps) do
-                if state.is_step_completed(quest_id, i) then
-                    local wrapped_completed = wrap_text(step, MAX_LINE_LENGTH - 8, '         ')
-                    table.insert(content, string.format('      \\cs(100,255,100)[X] %s\\cr', wrapped_completed[1]))
-                    -- Track this line as clickable step (AFTER adding to content)
-                    local line_num = #content
-                    ui.step_lines[line_num] = { quest_id = quest_id, step_num = i }
-                    -- Add continuation lines (not clickable)
-                    for j = 2, #wrapped_completed do
-                        table.insert(content, string.format('      \\cs(100,255,100)%s\\cr', wrapped_completed[j]))
-                    end
+            -- Show only the most recently completed step (also clickable for uncomplete)
+            if current_step and current_step > 1 then
+                local prev_step = current_step - 1
+                local step = quest.steps[prev_step]
+                local wrapped_completed = wrap_text(step, MAX_LINE_LENGTH - 8, '         ')
+                table.insert(content, string.format('      \\cs(100,255,100)[X] %s\\cr', wrapped_completed[1]))
+                -- Track this line as clickable step (AFTER adding to content)
+                local line_num = #content
+                ui.step_lines[line_num] = { quest_id = quest_id, step_num = prev_step }
+                -- Add continuation lines (not clickable)
+                for j = 2, #wrapped_completed do
+                    table.insert(content, string.format('      \\cs(100,255,100)%s\\cr', wrapped_completed[j]))
                 end
             end
         end
@@ -495,7 +491,7 @@ function ui.update_tooltip(x, y)
         return
     end
 
-    local line_hovered = math.floor(relative_y / ui.line_height)
+    local line_hovered = math.floor(relative_y / ui.line_height) + 1
 
     -- Check if hovering over a quest header
     local quest_id = ui.quest_headers[line_hovered]
@@ -579,7 +575,7 @@ function ui.handle_mouse_event(event_type, x, y, delta, blocked)
         return false
     end
 
-    local line_clicked = math.floor(relative_y / ui.line_height)
+    local line_clicked = math.floor(relative_y / ui.line_height) + 1
 
     -- Check if this line is a quest header (for collapse/expand)
     local quest_id = ui.quest_headers[line_clicked]
