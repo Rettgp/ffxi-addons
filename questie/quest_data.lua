@@ -3286,7 +3286,1392 @@ return {
         "Unlocks: Quest chain \"No Mercy for the Wicked\", Sortie battle content, updated Celennia Memorial Library books.",
       }
     },
+    {
+      id = "mission_zilart_1",
+      name = "Zilart Mission 1",
+      type = "mission",
+      location = "zilart",
+      nation = "zilart",
+      mission_index = 1,
+      game_id = 0,
+      repeatable = false,
+      steps = {
+        "Enter Norg for a cutscene. If postponed, use Tales' Beginning near Home Point #1.",
+        "Reach Norg via: Kazham Airship Pass from Port Jeuno, Pacomart/Tonasav (RoV 1-5+), Norg/Kazham warp runes (Adoulin Waypoints), or Unity Warp (Sea Serpent Grotto CL 125).",
+        "Must be rank 6 in home nation to continue.",
+      }
+    },
+    {
+      id = "mission_zilart_2",
+      name = "Zilart Mission 2",
+      type = "mission",
+      location = "zilart",
+      nation = "zilart",
+      mission_index = 2,
+      game_id = 4,
+      repeatable = false,
+      steps = {
+        "Go to (L-8) in Norg and enter the Oaken Door for a cutscene with Gilgamesh. Re-enter if you see Iroha's cutscene instead.",
+      }
+    },
+    {
+      id = "mission_zilart_3",
+      name = "Zilart Mission 3",
+      type = "mission",
+      location = "zilart",
+      nation = "zilart",
+      mission_index = 3,
+      game_id = 6,
+      repeatable = false,
+      steps = {
+        "Speak with Jakoh Wahcondalo at (J-9) in Kazham to receive Sacrificial Chamber key. Use Kazham Home Point #1 for quick access.",
+      }
+    },
+    {
+      id = "mission_zilart_4",
+      name = "Zilart Mission 4",
+      type = "mission",
+      location = "zilart",
+      nation = "zilart",
+      mission_index = 4,
+      game_id = 8,
+      repeatable = false,
+      steps = {
+        "Lower rancor with Everyone's Grudge quest in Norg before proceeding to avoid damage from Tonberry NMs.",
+        "Quick method: Use Den of Rancor Home Point #1 or Unity Warp (CL 128) to reach Den of Rancor directly.",
+        "Alternate method via Temple of Uggalepih: Obtain Paintbrush of souls and Unlit Lantern.",
+        "Enter Temple of Uggalepih from Yhoator Jungle (J-11/12). Go to (F-5), exit, turn left, re-enter at (H-11).",
+        "Kill Temple Guardian at (I-10) if up. At (I-7), use Paintbrush of souls on empty frame. Wait 30 seconds uninterrupted, check again to open door.",
+        "In Den of Rancor with Sneak/Invisible: Go to (E-5) map 1, trade Unlit Lantern to Altar of Rancor for Rancor Flame.",
+        "Drop to (F-7) northeast hole to map 2. Go to (E-5). Light 4 lanterns with Rancor Flames to access Sacrificial Chamber.",
+        "Get Home Point, enter Sacrificial Chamber, examine door for BCNM 'The Temple of Uggalepih' (uncapped, 3 Tonberry NMs).",
+        "Fight order: Grav'iton (THF, uses Perfect Dodge/Everyone's Rancor, cannot sleep) → Molyb'iton (BLM, uses Manafont) → Tungs'iton (SMN, uses Astral Flow). Silence/Sleep last two.",
+      }
+    },
+    {
+      id = "mission_zilart_5",
+      name = "Zilart Mission 5",
+      type = "mission",
+      location = "zilart",
+      nation = "zilart",
+      mission_index = 5,
+      game_id = 10,
+      repeatable = false,
+      steps = {
+        "Collect 8 fragments from Cermet Headstones. Verify key item received message. Some headstones spawn NMs.",
+        "Dark Fragment: Obtained from Grav'iton in The Temple of Uggalepih.",
+        "Earth Fragment: Unity Warp 125 Western Altepa Desert or enter Quicksand Caves at (J-9). Check Cermet Headstone at (H-8/9).",
+        "Water Fragment: Enter Ordelle's Caves from La Theine Plateau (F-7). Navigate: Map 2 (I-6) → Map 1 (G-8) → (H-9) → (H-11) → Map 3 (I-6) → (H-9) west to exit. Cermet Headstone at (G-11) in La Theine Plateau.",
+        "Ice Fragment: Go to Cloister of Frost in Fei'Yin basement. Check Cermet Headstone. Use Fei'Yin HP #2 or Trial-Size Trial by Ice for access.",
+        "Fire Fragment: Enter Ifrit's Cauldron from Yhoator Jungle (G-6). Bring 3 Ice Clusters for Flame Spouts. Navigate: Map 4 (H-8) → Map 7 (D-12) → Map 5 (J-8) → Map 2 (E-7) → Map 7 (G-7) → Map 8 (C-7) to Yuhtunga Jungle. Avoid Ash Dragon. Go to waterfall tunnel (K-7). Check headstone at (L-6/7) to spawn Carthi and Tipha (Opo-opo NMs). Defeat both, check headstone for Fire fragment.",
+        "Lightning Fragment: Go to Behemoth's Dominion (G-9) via Unity Warp 135. Check headstone to spawn Legendary Weapon (BLM/RDM) and Ancient Weapon (WAR). Defeat both (susceptible to Bind/Gravity, use 1-hr at 50%), check headstone.",
+        "Wind Fragment: Go to Cape Teriggan (F-7) via HP/Unity Warp 128. Find hidden tunnel, go north to (G-5), continue to (H-5). Check headstone to spawn Axesarion the Wanderer (Shadow NM). Defeat, check headstone.",
+        "Light Fragment: Go to The Sanctuary of Zi'Tah (J-9) via Survival Guide. From (J-9) SE corner, hug left to (I-7) NE corner. Check headstone to spawn Doomed Pilgrims NM. Defeat, check headstone.",
+      }
+    },
+    {
+      id = "mission_zilart_6",
+      name = "Zilart Mission 6",
+      type = "mission",
+      location = "zilart",
+      nation = "zilart",
+      mission_index = 6,
+      game_id = 12,
+      repeatable = false,
+      steps = {
+        "Weight pads require: 1 Galka, 3 Tarutaru, or 2 Hume/Elvaan/Mithra. Optional: Loadstone from Open Sesame quest to pass alone.",
+        "Quick access: Quicksand Caves HP #1 or Proto-Waypoint. Otherwise, go to Western Altepa Desert (C/D-11) tunnel to unmarked area.",
+        "With Sneak, enter Quicksand Caves at (D-12). Use weight pads at (I-9) and (H-7), drop down hole, zone to Chamber of Oracles at (D-4).",
+        "BCNM: 3 Antica NMs use Jamming Wave (Silence). Bring Echo Drops. Fight order: Centurio V-III (PLD, Invincible) → Triarius V-VIII (BLM, Manafont) → Princeps V-XI (RNG, Eagle Eye Shot). Sleepga, Silence PLD/BLM.",
+      }
+    },
+    {
+      id = "mission_zilart_7",
+      name = "Zilart Mission 7",
+      type = "mission",
+      location = "zilart",
+      nation = "zilart",
+      mission_index = 7,
+      game_id = 14,
+      repeatable = false,
+      steps = {
+        "Check each of the 8 parts of the device to insert fragments for a cutscene.",
+      }
+    },
+    {
+      id = "mission_zilart_8",
+      name = "Zilart Mission 8",
+      type = "mission",
+      location = "zilart",
+      nation = "zilart",
+      mission_index = 8,
+      game_id = 16,
+      repeatable = false,
+      steps = {
+        "Optional: Speak to Aldo at Tenshodo HQ in Lower Jeuno for cutscene.",
+        "Zone into Lower Delkfutt's Tower for cutscene. With Delkfutt Key: (E-8) cermet door → basement (J-8) → ??? at (H-8) to 10th floor. Without key: climb tower.",
+        "In Upper Delkfutt's Tower with Sneak/Invisible: (F-8) → 11th floor (J-6) → 12th floor (F-10) teleporter to Stellar Fulcrum. Use Upper Delkfutt HP #1 for quick access.",
+        "Click Qe'lov Gate for BCNM vs Kam'lanaut. Uses Great Wheel (AoE ~200, hate reset), Light Blade (700-1200, can stun), Silencega/Dispelga/Slowga, Elemental Blade (heals from same element magic, Dispel it). Immune to Sleep/Silence. ~10,000 HP.",
+      }
+    },
+    {
+      id = "mission_zilart_9",
+      name = "Zilart Mission 9",
+      type = "mission",
+      location = "zilart",
+      nation = "zilart",
+      mission_index = 9,
+      game_id = 18,
+      repeatable = false,
+      steps = {
+        "Optional: Speak to Aldo at Tenshodo.",
+        "In Norg, click Oaken Door at (K-8) and choose 'Open the door' for cutscene with Gilgamesh and Lion.",
+      }
+    },
+    {
+      id = "mission_zilart_10",
+      name = "Zilart Mission 10",
+      type = "mission",
+      location = "zilart",
+      nation = "zilart",
+      mission_index = 10,
+      game_id = 20,
+      repeatable = false,
+      steps = {
+        "Go to Ro'Maeve with Sneak/Invisible (use oils/powders, everything detects magic). Use Survival Guide or Unity Warp 125.",
+        "Go to (H-5), zone to Hall of the Gods. Check Cermet Grate twice.",
+      }
+    },
+    {
+      id = "mission_zilart_11",
+      name = "Zilart Mission 11",
+      type = "mission",
+      location = "zilart",
+      nation = "zilart",
+      mission_index = 11,
+      game_id = 22,
+      repeatable = false,
+      steps = {
+        "Return to Norg, open door, speak to Gilgamesh about a Mithra selling a crystal.",
+      }
+    },
+    {
+      id = "mission_zilart_12",
+      name = "Zilart Mission 12",
+      type = "mission",
+      location = "zilart",
+      nation = "zilart",
+      mission_index = 12,
+      game_id = 23,
+      repeatable = false,
+      steps = {
+        "Speak to Maryoh Comyujah at (G-7) in Rabao (HP #2, windmill). Choose 'Sounds fair'.",
+        "Go to Quicksand Caves via Western Altepa Desert (C/D-11) or Rabao Proto-Waypoint (G-8). Map 5 (K-8) → Map 6 (G-8), drop down hole.",
+        "Check ??? to spawn Ancient Vessel (Pot NM). Defeat, check ??? for Scrap of papyrus.",
+        "Return to Maryoh Comyujah for Cerulean crystal. Go to Hall of the Gods, touch sealed gate, examine Shimmering Circle for cutscenes.",
+      }
+    },
+    {
+      id = "mission_zilart_13",
+      name = "Zilart Mission 13",
+      type = "mission",
+      location = "zilart",
+      nation = "zilart",
+      mission_index = 13,
+      game_id = 24,
+      repeatable = false,
+      steps = {
+        "Access to Tu'Lia granted. Use Shimmering Circle to return.",
+        "Zone into Ru'Aun Gardens for cutscene. Grab Survival Guide. If Prishe's Boots +1 quest active, re-enter for correct cutscene.",
+      }
+    },
+    {
+      id = "mission_zilart_14",
+      name = "Zilart Mission 14",
+      type = "mission",
+      location = "zilart",
+      nation = "zilart",
+      mission_index = 14,
+      game_id = 26,
+      repeatable = false,
+      steps = {
+        "Alternative: Divine Might quest fights all 5 bosses simultaneously (requires Ark Pentasphere during full moon).",
+        "Enter Ru'Aun Gardens for cutscene with Zeid/Aldo. Enter The Shrine of Ru'Avitau (H-8), examine blank target at (G/H-11), return to Ru'Aun Gardens.",
+        "Fight 5 Ark Angels in La'Loff Amphitheater (6-person BCs). Navigate: Use red portals to tower islands. After each fight, activate pincerstone on island to enable blue portal to next island (counter-clockwise). Avoid dolls on blue wall pads.",
+        "AA HM (WAR/NIN): Uses Mighty Strikes, Mijin Gakure, Cross Reaver (cone 500-900, Stun). Mitigate Mijin with Shell/Rampart.",
+        "AA TT (DRK/BLM): Uses Manafont, Blood Weapon, Amon Drive (AoE 100-300, Paralysis/Petrification). Teleports. Avoid AoE range.",
+        "AA MR (BST/THF): Uses Perfect Dodge, Charm, Havoc Spiral (AoE 100-300, Sleep). Summons pet (sleep it). Can charm tank.",
+        "AA EV (PLD/WHM): Uses Invincible, Benediction, Dominion Slash (AoE 100-300, Silence/Dispel), Shield Strike (cone 100, Stun). Bring Echo Drops. Kite to avoid Spirits Within.",
+        "AA GK (DRG/SAM): Uses Call Wyvern, Meikyo Shisui, Dragonfall (AoE 100-300, Bind). NIN tank recommended.",
+      }
+    },
+    {
+      id = "mission_zilart_15",
+      name = "Zilart Mission 15",
+      type = "mission",
+      location = "zilart",
+      nation = "zilart",
+      mission_index = 15,
+      game_id = 27,
+      repeatable = false,
+      steps = {
+        "If completed via Divine Might: Enter Shrine of Ru'Avitau (H-9) to force log update or claim earring reward.",
+        "Speak to Gilgamesh in Norg.",
+        "Enter Shrine of Ru'Avitau from any entrance for cutscene. (I-6) near HP #1 recommended.",
+      }
+    },
+    {
+      id = "mission_zilart_16",
+      name = "Zilart Mission 16",
+      type = "mission",
+      location = "zilart",
+      nation = "zilart",
+      mission_index = 16,
+      game_id = 28,
+      repeatable = false,
+      steps = {
+        "In Shrine of Ru'Avitau with Sneak/Invisible (use oils/powders or Ninjutsu, magic aggro): (I-6) entrance → south past (J-7) yellow door → west to (H-7) → south around (H-10) → north to Celestial Nexus (H-9).",
+        "BCNM: Eald'narche (2 forms). Form 1: Exoplates (~10k HP) use Gaea Stream (200), Uranos Cascade (AoE 200-400), Cronos Sling (cone 300-600), Phase Shift (AoE 600-1300, Stun/Bind at 66%/33%/1%). Eald'narche (~2k HP) casts Sleepga II. 2 Orbitals respawn (Sleep them). Defeat Exoplates fast, heal/shadows before Phase Shift.",
+        "Form 2: Eald'narche only (~2.5k HP). Uses Vortex (AoE 100, Terror/Bind), Stellar Burst (AoE 100, Silence), Omega Javelin (150, Petrification), Bindga. Teleports, fast melee. 1 min before aggro. Poison/Stun effective.",
+      }
+    },
+    {
+      id = "mission_zilart_17",
+      name = "Zilart Mission 17",
+      type = "mission",
+      location = "zilart",
+      nation = "zilart",
+      mission_index = 17,
+      game_id = 30,
+      repeatable = false,
+      steps = {
+        "Enter Norg for cutscene with Gilgamesh (or speak to him in Captain's Chamber).",
+        "Click Neptune's Spire Inn door in Lower Jeuno for cutscene with Aldo. Complete both to enable Shadows of the Departed quest in Ru'Lude Gardens (requires progress in other questlines).",
+      }
+    },
+    {
+      id = "mission_cop_1_1",
+      name = "Promathia Mission 1-1",
+      type = "mission",
+      location = "promathia",
+      nation = "promathia",
+      mission_index = 1,
+      game_id = 110,
+      repeatable = false,
+      steps = {
+        "Zone into Lower Delkfutt's Tower (Qufim Island) for cutscene (Chapter 1 start).",
+        "Zone into Upper Jeuno for cutscene, then speak with Monberaux at Infirmary (G-10, Home Point #3) to receive Mysterious amulet.",
+        "If postponed: Use Tales' Beginning book at Lower Delkfutt's Tower (H-10) to start.",
+      }
+    },
+    {
+      id = "mission_cop_1_2",
+      name = "Promathia Mission 1-2",
+      type = "mission",
+      location = "promathia",
+      nation = "promathia",
+      mission_index = 2,
+      game_id = 120,
+      repeatable = false,
+      steps = {
+        "Speak with Pherimociel at Ru'Lude Gardens (G-6) in palace. Complete all three Promyvions (any order) - see The Mothercrystals walkthrough.",
+        "Optional: Speak with Rainhard (H-6) and Harith (H-5) for dialogue. Trade Recollection items to Harith with 2000 gil for Anima (boss weakening).",
+        "Access Promyvions via Shattered Telepoints at crags: Konschtat Highlands (Promyvion-Dem), Tahrongi Canyon (Promyvion-Mea), La Theine Plateau (Promyvion-Holla).",
+      }
+    },
+    {
+      id = "mission_cop_1_3",
+      name = "Promathia Mission 1-3",
+      type = "mission",
+      location = "promathia",
+      nation = "promathia",
+      mission_index = 3,
+      game_id = 130,
+      repeatable = false,
+      steps = {
+        "The goal of this mission is to reach the Spire found at the end of each of the 3 Promyvion zones and defeat all 3 of the bosses in the \"Ancient Flames Beckon\" battlefields. Defeating each boss gives a key item. Once you have all 3 key items the mission is completed, and the next mission starts.",
+        "With the lifting of the level cap in Promathia areas, this quest is now relatively trivial in difficulty. The walkthrough below was written for a level cap of 30. Trusts may be called through the entire climb and Spire fight, making it possible to solo this at 40 or even earlier. However, be aware that there are new, high-level Apex enemies ranging from level 139 to 142 in these areas. They may be avoided by taking alternate paths around them, see the Apex page for maps which show the locations of these dangerous enemies.",
+        "Do make sure to avoid any Apex Mobs as those will aggro with True Sound detection and require multiple endgame players to fight.",
+        "Note : Your mission log won't change to \"The Mothercrystals\" until clearing one of the Promyvion areas. Since the walkthrough for all 3 Promyvions are similar, they are all included in this section.",
+        "After you are geared up and have your group ready to go, head to any of the 3 crags.",
+        "Enter Hall of Transference at crags. Click Large Apparatus to enter Promyvion. Navigate 4 floors by defeating Memory Receptacles (spawn Memory Stream portals). Avoid True Sight/True Sound mobs.",
+        "On 4th floor, navigate to spire entrances: Dem (H-8 southwest), Holla (K-8 north), Mea (I-6 southeast). Zone into spire.",
+        "Enter BCNM \\\"Ancient Flames Beckon\\\". Use Animas if desired (30sec each, don't stack). Fight boss with spawning adds.",
+        "Defeat all 3 Promyvion bosses to receive Light of Dem/Holla/Mea. After 3rd victory, appear in Lufaise Meadows (K-9) - Chapter 2 begins.",
+      }
+    },
+    {
+      id = "mission_cop_2_2",
+      name = "Promathia Mission 2-2",
+      type = "mission",
+      location = "promathia",
+      nation = "promathia",
+      mission_index = 4,
+      game_id = 220,
+      repeatable = false,
+      steps = {
+        "Optional: Get Survival Guide outside Safehold (I-5). Start quest Unforgiven at Elysia (G-10) for Safehold map.",
+        "Enter Walnut Door on top floor (K-9), speak with Despachiaire (K-10). Optional: Speak with Justinius (J-6).",
+        "Check Sewer Entrance on lowest level (I-7).",
+      }
+    },
+    {
+      id = "mission_cop_2_3",
+      name = "Promathia Mission 2-3",
+      type = "mission",
+      location = "promathia",
+      nation = "promathia",
+      mission_index = 5,
+      game_id = 230,
+      repeatable = false,
+      steps = {
+        "Enter Phomiuna Aqueducts from Sewer entrance in Tavnazian Safehold.",
+        "Navigate to Map 2 (J-2): Climb ladder (F-6), proceed to (F-4/K-10), head north. Take ladder at (I-6), drop at (K-5). Defeat Minotaur (avoid Mortal Ray Doom by turning away).",
+        "Find Iron Gate (G-8). Pick lock with Skeleton Key or defeat Fomors for Bronze Key. Pass through, find Wooden Ladder (E-8) for cutscene with Nag'molada.",
+        "Go up ladder, north through door. Click ??? on bookshelf (SW corner) to open secret door. Avoid trap ??? on east wall. Light oil lamps matching current day and strong-against element to open west door.",
+        "Proceed to second Ornate Gate for cutscene. Exit aqueducts, speak with Justinius at Tavnazian Safehold (J-6, Home Point #3).",
+      }
+    },
+    {
+      id = "mission_cop_2_4",
+      name = "Promathia Mission 2-4",
+      type = "mission",
+      location = "promathia",
+      nation = "promathia",
+      mission_index = 6,
+      game_id = 240,
+      repeatable = false,
+      steps = {
+        "Visit north Walnut Door (K-7) on top floor of Tavnazian Safehold for cutscene, receive Mysterious amulet. Optional: Speak with Justinius (J-6).",
+        "Travel to Dilapidated Gate at (I-11) in Misareaux Coast for cutscene.",
+        "Return to Tavnazian Safehold, approach bridge (H/I-8) on main floor for cutscene.",
+      }
+    },
+    {
+      id = "mission_cop_2_5",
+      name = "Promathia Mission 2-5",
+      type = "mission",
+      location = "promathia",
+      nation = "promathia",
+      mission_index = 7,
+      game_id = 250,
+      repeatable = false,
+      steps = {
+        "Go to Dilapidated Gate (F-7) in Misareaux Coast. Check Spatial Displacement for cutscene, enter Riverne - Site #A01.",
+        "Defeat Firedrakes for 2 Giant Scales. Navigate west, trade 1 scale at Unstable Displacement (G-10), then 1 scale at (E-10). Avoid Hippogryphs (True Sight).",
+        "Head north into Monarch Linn. Enter BCNM \"Ancient Vows\" (uncapped).",
+        "Fight Mammets: Silence staff form (Psychomancy AOE Aspir). Stop all damage during Transmogrification (heals enemy). Use Yellow Liquid to lock Mammets in polearm form (preferred).",
+      }
+    },
+    {
+      id = "mission_cop_3_2",
+      name = "Promathia Mission 3-2",
+      type = "mission",
+      location = "promathia",
+      nation = "promathia",
+      mission_index = 8,
+      game_id = 0,
+      repeatable = false,
+      steps = {
+        "Enter Neptune's Spire in Lower Jeuno (F-7), click Tenshodo headquarters door for cutscene.",
+        "Visit Ru'Lude Gardens (H-7), approach palace Audience Chamber stairs for cutscene.",
+      }
+    },
+    {
+      id = "mission_cop_3_3",
+      name = "Promathia Mission 3-3",
+      type = "mission",
+      location = "promathia",
+      nation = "promathia",
+      mission_index = 9,
+      game_id = 0,
+      repeatable = false,
+      steps = {
+        "San d'Oria Path: Zone into Northern San d'Oria for cutscene. Speak with Arnau at Cathedral altar (M-6), then Chasalvige in Manuscript room (L-6).",
+        "Go to Carpenters' Landing via Jugner Forest (E-6). Speak with Guilloud (H-10) to spawn Overgrown Ivy, defeat it, speak with Guilloud again.",
+        "Speak with Hinaree in Southern San d'Oria Count's Manor (B-6) upstairs to complete San d'Oria path.",
+        "Windurst Path: Zone into Windurst Waters for cutscene. Speak with Ohbiru-Dohbiru at Rhinostery (J-9, Home Point #3). Speak with Yoran-Oran in Windurst Walls (E-5, Home Point #1).",
+        "Speak with Kyume-Romeh in Windurst Waters Tavern (F-10). Speak with Honoi-Gomoi in Windurst Waters (E-7, Home Point #3) to receive Cracked Mimeo Mirror. Return to Yoran-Oran (E-5).",
+        "Travel to Attohwa Chasm (K-8) to Loose Sand. Defeat Lioumere (pull away from sand to prevent HP recovery). Obtain Mimeo Jewel (30 min timer, breaks on zone/mount).",
+        "Climb Parradamo Tor to reach Cradle of Rebirth at top, check for Mimeo Feather, Second Mimeo Feather, Third Mimeo Feather.",
+        "Return to Yoran-Oran in Windurst Walls. Speak with Yujuju in Port Windurst (M-6, Home Point #3). Speak with Tosuka-Porika in Windurst Waters Optistery (G-8, Home Point #1). Return to Yoran-Oran (E-5) to complete Windurst path.",
+        "Visit Cid at Metalworks (Home Point #1) to complete mission.",
+      }
+    },
+    {
+      id = "mission_cop_3_4",
+      name = "Promathia Mission 3-4",
+      type = "mission",
+      location = "promathia",
+      nation = "promathia",
+      mission_index = 10,
+      game_id = 320,
+      repeatable = false,
+      steps = {
+        "Zone into Lower Jeuno for cutscene.",
+        "Enter Neptune's Spire, click Tenshodo headquarters door for cutscene.",
+      }
+    },
+    {
+      id = "mission_cop_3_5",
+      name = "Promathia Mission 3-5",
+      type = "mission",
+      location = "promathia",
+      nation = "promathia",
+      mission_index = 11,
+      game_id = 330,
+      repeatable = false,
+      steps = {
+        "Speak with Monberaux at Upper Jeuno Infirmary (G-10, Home Point #3). Optional: Start sidequest A Reputation in Ruins from Migliorozz at Temple of the Goddess (H-9).",
+        "Speak with Ghebi Damomohe in Neptune's Spire (Lower Jeuno). Farm colored chips from mobs in Pso'Xja entrances in Beaucedine Glacier (H-8 easiest for Gray Chip from Diremites).",
+        "Trade chip to Ghebi Damomohe for 500 gil and Pso'Xja pass. Enter Pso'Xja at Beaucedine (H-8). Pass through colored walls: Red, Black/Purple, Red, Black/Purple at (H-7) and (I-7).",
+        "Take elevator at (H-8) to bottom, follow northwest path to Stone Gate, zone into The Shrouded Maw. Register Home Point. Enter BCNM \\\"Darkness Named\\\" at Memento Circle.",
+        "Fight Diabolos: Stun Nightmare (Sleep+Bio). Cure/Benediction to wake. Tank with back to wall to avoid Camisado knockback. Defeat and return to Monberaux in Upper Jeuno.",
+      }
+    },
+    {
+      id = "mission_cop_4_2",
+      name = "Promathia Mission 4-2",
+      type = "mission",
+      location = "promathia",
+      nation = "promathia",
+      mission_index = 12,
+      game_id = 420,
+      repeatable = false,
+      steps = {
+        "Optional: Trade 2 Hippogryph Tailfeathers to Ferchinne (G-9, Tavnazian Safehold) for Mistmelt via quest Fly High (recommended for Ouryu fight).",
+        "Check Dilapidated Gate at Misareaux Coast (F-7), zone into Riverne - Site B01. Farm Giant Scale from Pyrodrake (level 50-53) or Ignidrake (57) near southwest Spatial Displacement.",
+        "Trade Giant Scale to Unstable Displacement (G-8), pass through. Head northwest to next Spatial Displacement, then south to reach Monarch Linn.",
+        "Enter BCNM \"The Savage\" at Spatial Displacement. Fight Ouryu: Use Mistmelt to ground her, Dispel Stoneskin/Invincible. Fight ends at 30% HP. Defeat and speak with Justinius (J-6, Tavnazian Safehold Home Point #3).",
+      }
+    },
+    {
+      id = "mission_cop_4_3",
+      name = "Promathia Mission 4-3",
+      type = "mission",
+      location = "promathia",
+      nation = "promathia",
+      mission_index = 13,
+      game_id = 430,
+      repeatable = false,
+      steps = {
+        "Check Walnut Door (K-7, Tavnazian Safehold top floor). Check Iron Gate (G-4, Misareaux Coast) to enter Sacrarium. Navigate southeast maze to connection point B (Map 1 to Map 2 southwest, maze changes by day).",
+        "Get past door at (H-7) Map 2: Quest method: Farm Coral Crest Key (Fomors Map 2) + Sealion Crest Key (Keremet NM, night 20:00-04:00). Defeat Splinterspine Grukjuk (H-10 Lufaise Meadows), trade keys to Quelveuiat (I-10 Tavnazian Safehold) for Temple Knight key. Party method: Farm 2x Coral Crest Key + Sealion Crest Key, trade both to door (H-7) with precise timing.",
+        "Pass door at (H-7), take right fork to Wooden Gate (G-8) for cutscene. Return to hallway through door (H-7).",
+        "Find Old Professor Mariselle at desk ??? in 6 nearby classrooms (3 north, 3 south). Defeat Mariselle + 2 Mariselle's Pupils. Check ??? for Reliquiarium key. Return to door (H-7), pass through, check Wooden Gate (G-8) to complete mission.",
+      }
+    },
+    {
+      id = "mission_cop_4_4",
+      name = "Promathia Mission 4-4",
+      type = "mission",
+      location = "promathia",
+      nation = "promathia",
+      mission_index = 14,
+      game_id = 440,
+      repeatable = false,
+      steps = {
+        "Speak with Despachiaire at Walnut Door (K-10, Tavnazian Safehold top floor, Home Point #3). Zone into Sealion's Den (bottom floor, Home Point #2). Check Iron Gate in Sealion's Den.",
+      }
+    },
+    {
+      id = "mission_cop_5_2",
+      name = "Promathia Mission 5-2",
+      type = "mission",
+      location = "promathia",
+      nation = "promathia",
+      mission_index = 15,
+      game_id = 520,
+      repeatable = false,
+      steps = {
+        "Navigate Promyvion-Vahzl floors 1-2 normally via Memory Receptacles. Floors 3-5 require defeating NMs at Memory Fluxes: Floor 3 (J-8): Check flux to spawn Propagator, defeat, check flux for cutscene. Floor 4 (M-6): Spawn Solicitor, defeat, check for cutscene. Floor 5 (D-6): Spawn Ponderer, defeat, check for cutscene.",
+        "Zone into Spire of Vahzl (F-8). Enter BCNM \\\"Desires of Emptiness\\\" at Web of Recollections. Must defeat all 3 Memory Flux NMs for access.",
+        "Fight 3 Emptiness bosses. Optional: Use anima on approaching boss. Agonizer dispels buffs/food, fight first. Defeat all 3 and return to Beaucedine Glacier.",
+        "Speak with Cid at Metalworks (Home Point #1) to complete mission.",
+      }
+    },
+    {
+      id = "mission_cop_5_3",
+      name = "Promathia Mission 5-3",
+      type = "mission",
+      location = "promathia",
+      nation = "promathia",
+      mission_index = 16,
+      game_id = 530,
+      repeatable = false,
+      steps = {
+        "Speak with Cid at Bastok Metalworks (Home Point #1) to begin. This mission has 3 independent paths (Louverance, Tenzen, Ulmia) that can be done in any order or simultaneously.",
+        "LOUVERANCE'S PATH: Talk to Despachiaire (K-10, Tavnazian Safehold HP #3). Speak with Perih Vashai (K-7, Windurst Woods HP #1). Check ??? Warmachine at Purgonorgo Isle (H-11, Bibiki Bay). Reach via Manaclipper at Bibiki Bay (H-7) or Voidwatch Atmacite Refiner teleport.",
+        "Zone into Oldton Movalpolos for cutscene. Reach Mine Shaft #2716 via: Newton Movalpolos HP #1 (fastest), trade Snow Lily to Tarnotik (K-10 Oldton), or gamble with Twinkbrix (E-13 Oldton). Attune to Newton HP outside shaft before battle.",
+        "Enter BCNM 'A Century of Hardship' at Mine Shaft #2716. Fight Moblins and Bugbby (use Silence on mages, focus BLM first). Return to Cid. Farm Gold Key from Moblins in Newton Movalpolos (near Oldton zone). Return to Mine Shaft #2716, trade Gold Key to entrance. Return to Cid to complete path.",
+        "TENZEN'S PATH: Check ??? at La Theine Plateau (G-6) for Carbuncle/Tenzen cutscene. Enter Pso'Xja tower (J-8, Beaucedine Glacier). Navigate through 16 Stone Doors (each spawns Gargoyle, doors one-way, Cryptonberries aggro sight, Magic Millstones aggro magic). Sneak, descend elevator, check Avatar Gate.",
+        "Speak with Monberaux (G-10, Upper Jeuno HP #3) for Envelope. Speak with Pherimociel (G-6, Ru'Lude Gardens HP #1). Return to Monberaux. Check ??? in Batallia Downs (K-8/9 near Upper Jeuno exit) twice for cutscene and Delkfutt recognition device.",
+        "Enter Lower Delkfutt's Tower, go to first floor (H-5). Check Cermet Door to spawn Disaster Idol (casts tier 3-ga and tier 4 spells based on day). Defeat and check door again. Enter Pso'Xja (H-10, Beaucedine). Navigate: perimeter to (I-8) → west through wall → drop hole → south exit → north room → elevator down to Avatar Gate. Return to Cid to complete path.",
+        "ULMIA'S PATH: Speak with Hinaree (A-6, Southern San d'Oria HP #4, second floor). Zone to Port San d'Oria. Speak with Chasalvige (L-6, Northern San d'Oria Cathedral Manuscript Room). Speak with Kerutoto (J-8, Windurst Waters HP #3, Rhinostery north wing). Speak with Yoran-Oran (E-5, Windurst Walls HP #1). Enter Boneyard Gully (H-6, Attohwa Chasm).",
+        "Enter BCNM 'Head Wind'. Fight 6 Mithran Trackers (3 Shikarees with pets). Use Sleepga at start, kill masters before pets, attack Shikaree Y from sides/back (Counters), Shikaree X/Z have Utsusemi/Blink. Return to Cid.",
+        "Optional: Complete quest 'Mithran Delicacies' from Anguenet (J-10, Carpenters' Landing) for Blackened Siredon (stops TP gain). Optional: Complete quest 'Bombs Away!' from Buffalostalker Dodzbraz (F-9, Uleguerand Range) for Shu'Meyo Salt (delays Snoll Tzar explosion 20s).",
+        "Enter Bearclaw Pinnacle hole at Uleguerand Range (J-9, near HP #2). Enter BCNM 'Flames for the Dead'. Fight Snoll Tzar (45s time limit, use Shu'Meyo Salt to extend, uses Hyperthermal Combustion 3x, 3rd ejects). Use 2-hours (Mighty Strikes/Hundred Fists/Meikyo Shisui/Astral Flow). Defeat boss, return to Cid to complete path.",
+        "After completing all 3 paths, speak to Cid for final cutscene. Optional: Speak to Perih Vashai (K-7, Windurst Woods HP #1) to obtain Shikaree Z trust (requires Windurst Trust permit).",
+      }
+    },
+    {
+      id = "mission_cop_6_2",
+      name = "Promathia Mission 6-2",
+      type = "mission",
+      location = "promathia",
+      nation = "promathia",
+      mission_index = 17,
+      game_id = 620,
+      repeatable = false,
+      steps = {
+        "Approach Palace in Ru'Lude Gardens. Speak with Pherimociel (G-6).",
+        "Check Dilapidated Gate (I-11, Misareaux Coast) to spawn Warder Thalia, Warder Aglaia, and Warder Euphrosyne (Detector NMs). Defeat all 3 (can be slept, resist after time). Check gate again.",
+      }
+    },
+    {
+      id = "mission_cop_6_3",
+      name = "Promathia Mission 6-3",
+      type = "mission",
+      location = "promathia",
+      nation = "promathia",
+      mission_index = 18,
+      game_id = 630,
+      repeatable = false,
+      steps = {
+        "Speak with Pherimociel (G-6, Ru'Lude Gardens Home Point #1). Check Audience Chamber upstairs.",
+        "Speak with Mathilde (H-9, Selbina Weaver's Guild office) to complete mission.",
+      }
+    },
+    {
+      id = "mission_cop_6_4",
+      name = "Promathia Mission 6-4",
+      type = "mission",
+      location = "promathia",
+      nation = "promathia",
+      mission_index = 19,
+      game_id = 640,
+      repeatable = false,
+      steps = {
+        "Optional: Farm/buy CCB Polymer Pumps (quest Chips or Auction House) to disable Omega/Ultima for 30 seconds.",
+        "Speak with Cid at Metalworks. Zone into Sealion's Den (Tavnazian Safehold bottom, Home Point #2). Check Iron Gate, board airship, click door for BCNM \\\"One to be Feared\\\".",
+        "3-stage fight: Stage 1: 5 Mammets (change forms, Transmogrification absorbs physical damage). Silence Staff form, stop damage on Transmogrification. Stage 2: Omega (AOE moves, Stun attacks, use Slow/Elegy, CCB Polymer Pump at 25%). Stage 3: Ultima (Paralysis attacks, Double Attack, Antimatter spam below 20%, CCB Polymer Pump at 30%, stun Antimatter pattern: Particle Shield → Antimatter → Antimatter).",
+        "Defeat Ultima to appear at Dilapidated Gate (Lufaise Meadows) and receive Ducal Guard's Ring.",
+      }
+    },
+    {
+      id = "mission_cop_7_2",
+      name = "Promathia Mission 7-2",
+      type = "mission",
+      location = "promathia",
+      nation = "promathia",
+      mission_index = 20,
+      game_id = 720,
+      repeatable = false,
+      steps = {
+        "Check north Dilapidated Gate (F-7, Misareaux Coast). Return to Sealion's Den and speak with Sueleen.",
+        "Head toward Palace in Ru'Lude Gardens. Check door of Marble Bridge Tavern in Upper Jeuno.",
+      }
+    },
+    {
+      id = "mission_cop_7_3",
+      name = "Promathia Mission 7-3",
+      type = "mission",
+      location = "promathia",
+      nation = "promathia",
+      mission_index = 21,
+      game_id = 730,
+      repeatable = false,
+      steps = {
+        "Reach Mine Shaft #2716: Use Newton Movalpolos Home Point #1, trade Snow Lily to Tarnotik (K-10 Oldton Movalpolos), or gamble Shaft 2716 operating lever from Twinkbrix (E-13 Oldton Movalpolos, 2000 gil warp). Check Shaft Entrance.",
+        "Speak with Cid at Metalworks. Wait for new Vana'diel day, speak with Cid again to begin next mission.",
+      }
+    },
+    {
+      id = "mission_cop_7_4",
+      name = "Promathia Mission 7-4",
+      type = "mission",
+      location = "promathia",
+      nation = "promathia",
+      mission_index = 22,
+      game_id = 740,
+      repeatable = false,
+      steps = {
+        "After conversation with Cid, fight 3 NMs in any order. Check triggers after fights or NMs reset.",
+        "Misareaux Coast (E-7): Check Storage Compartment to spawn Boggelmann (Bugard, high defense, Blood Weapon). Defeat, check compartment for Vessel of light.",
+        "Carpenters' Landing (I-9): Check ??? near water to spawn Cryptonberry Executor (NIN) + 3 Cryptonberry Assassins (THF/SMN/BLM). Kill Executor first to avoid Mijin Gakure, then SMN. Check ??? after.",
+        "Bibiki Bay (F-6 cave): Check ??? to spawn Dalham (Kraken, increasing attack speed, no true 2-hour). Defeat, check ???. Return to Cid for Letters from Ulmia and Prishe. Speak with Sueleen in Sealion's Den (H-6).",
+      }
+    },
+    {
+      id = "mission_cop_7_5",
+      name = "Promathia Mission 7-5",
+      type = "mission",
+      location = "promathia",
+      nation = "promathia",
+      mission_index = 23,
+      game_id = 750,
+      repeatable = false,
+      steps = {
+        "Zone into Sealion's Den, click Iron Gate. Enter BCNM \"The Warrior's Path\".",
+        "Fight ??? (SAM): Pull to far side to avoid platform BLM/WHM/RNG above (unkillable). Prevent skillchains during Meikyo Shisui (can repeat). Use Stun/Bind/Shadowbind to stop weapon skills. Avoid Cosmic Elucidation (level 4 SC, ejects from battle).",
+        "Defeat ??? to appear in Al'Taieu and complete mission. Fight ends at 15-20% HP.",
+      }
+    },
+    {
+      id = "mission_cop_8_2",
+      name = "Promathia Mission 8-2",
+      type = "mission",
+      location = "promathia",
+      nation = "promathia",
+      mission_index = 24,
+      game_id = 820,
+      repeatable = false,
+      steps = {
+        "Check eastern Particle Gate (H-8, Grand Palace of Hu'Xzoi) to start mission. Note: Cannot save progress, must restart if you wipe.",
+        "Escort Quasilumin NPCs through Hu'Xzoi by checking Cermet Alcoves to spawn escorts. Protect them to open Particle Gates. Route: M1 (J-8) escort → (L-7) transport → M2 (L-8) escort → (I-10) escort → (G-12) transport → M1 (G-10) escort → (G-4) transport → M2 (H-8) for NM.",
+        "Check Cermet Portal to spawn Ix'ghrah NM (4 forms): Spider (Mighty Strikes, Sickle Slash), Bird (Perfect Dodge, Damnation Dive), Orb (-ga III spells, Manafont, Hexidiscs), Humanoid (Invincible, Vorpal Blade). Defeat and check portal.",
+        "Return to the palace entrance and examine the Gate of the Gods to enter The Garden of Ru'Hmet . While it is possible to go back through all of the Cermet Portals , it is far faster to Warp / Warp Ring and teleport to Home Point #1 in the Grand Palace of Hu'Xzoi (via Lumoria .)",
+        "While it is possible to go back through all of the Cermet Portals , it is far faster to Warp / Warp Ring and teleport to Home Point #1 in the Grand Palace of Hu'Xzoi (via Lumoria .)",
+      }
+    },
+    {
+      id = "mission_cop_8_3",
+      name = "Promathia Mission 8-3",
+      type = "mission",
+      location = "promathia",
+      nation = "promathia",
+      mission_index = 25,
+      game_id = 830,
+      repeatable = false,
+      steps = {
+        "Check Gate of the Gods at Garden of Ru'Hmet (Home Point). Climb to 4th floor of race tower: Light of Mea (E, Elvaan), Light of Dem (W, Mithra), Light of Holla (SW, Tarutaru), Light of Vahzl (N, Hume), Light of Al'Taieu (SE, Galka). Check Ebon Panel twice for key item.",
+        "Navigate to central elevator (run East → North → West). Avoid Qn'zdei true sight by hugging wall (only 2 can see you). Qn'zdei immune to Sleep/Lullaby/Repose, 5min respawn. Ascend elevator, grab Home Point.",
+        "Collect Brand of Twilight (south) and Brand of Dawn (north) on floor 2. Warp Distortions de-summon Trusts. Return to elevator with both brands, ascend twice to floor 3.",
+        "Check Particle Gate to enter BC. Fight 4 Ix'zdei pot NMs (2 large RDM, 2 small BLM). Immune to Silence, highly resist Sleep (need Elemental Seal). Stun/WS to prevent HP regen flee. Defeat pots, check Luminous Convergence. Exit to Al'Taieu via south Particle Gate.",
+      }
+    },
+    {
+      id = "mission_cop_8_4",
+      name = "Promathia Mission 8-4",
+      type = "mission",
+      location = "promathia",
+      nation = "promathia",
+      mission_index = 26,
+      game_id = 840,
+      repeatable = false,
+      steps = {
+        "Use Garden of Ru'Hmet Home Point #1. Descend elevator to Empyreal Paradox. Check Transcendental Radiance to enter BCNM \"Dawn\".",
+        "Fight Promathia with Prishe (healable, can Raise, Auroral Uppercut, Nullifying Dropkick breaks shields, Hundred Fists, Benediction) and Selh'teus (not healable, Luminous Lance stuns, Redemption heals, failure if KO'd). Form 1 (~8000 HP): Empty Salvation, Pestilent Penance, Malevolent Blessing, Infernal Deliverance, Chains of races, Comet. Form 2 (~12000 HP): Adds Seal of Quiescence (Mute 75s), Winds of Oblivion (Amnesia 75s), Meteor (every minute), Bastion of Twilight (Magic Shield, red ring), Wheel of Impregnability (Invincible, green ring).",
+        "Wait for Japanese midnight. Complete 5 epilogue paths: Louverance - Hinaree (B-6 S.Sand), zone Uleguerand Range, Count Caffaule Manor (B-6). Chebukkis - Chipmy-Popmy (C-8 Port Windurst), ??? Warmachine (H-11 Purgonorgo Isle). Shikarees - Zone Mhaura. Jabbos - Zone Oldton Movalpolos. Tenzen - Cid (H-8 Metalworks).",
+        "Approach Palace (Ru'Lude Gardens). Check Marble Bridge door (Upper Jeuno), choose ring (Rajas/Sattva/Tamas).",
+        "Check Walnut Door (K-7 Tavnazian Safehold). Approach Blueblade Fell (J-6 Lufaise Meadows, first barrel) to complete mission.",
+      }
+    },
+    {
+      id = "mission_toau_1",
+      name = "Aht Urhgan Mission 1",
+      type = "mission",
+      location = "aht_urhgan",
+      nation = "aht_urhgan",
+      mission_index = 1,
+      game_id = 1,
+      repeatable = false,
+      steps = {
+        "Complete quest 'The Road to Aht Urhgan'. Travel to Aht Urhgan Whitegate (boat from Mhaura, or Unity Warp Wajaom Woodlands lv.125, or 500k gil skip). Attune Home Point.",
+        "Approach Naja Salaheem (I-10, Salaheem's Sentinels upstairs) to receive Supplies package.",
+      }
+    },
+    {
+      id = "mission_toau_2",
+      name = "Aht Urhgan Mission 2",
+      type = "mission",
+      location = "aht_urhgan",
+      nation = "aht_urhgan",
+      mission_index = 2,
+      game_id = 2,
+      repeatable = false,
+      steps = {
+        "Rewards: PSC Wildcat Badge, 150 Imperial Standing, Mog Locker access, Sanction, Assault access.",
+        "Deliver Supplies package to any Staging Point (except Nyzul Isle). Talk to blue-clad Immortal NPC first before using Runic Portal. Quick route: Voidwatch warp to Caedarva Mire (H-10 Whitegate → Ironbound Gate → Camille, lv.75+/Rank 3, 1000 cruor) or Atmacite Refiner.",
+        "After delivery, use Runic Portal to return to Aht Urhgan Whitegate. Speak to Naja Salaheem to complete.",
+      }
+    },
+    {
+      id = "mission_toau_3",
+      name = "Aht Urhgan Mission 3",
+      type = "mission",
+      location = "aht_urhgan",
+      nation = "aht_urhgan",
+      mission_index = 3,
+      game_id = 3,
+      repeatable = false,
+      steps = {
+        "Zone out and return for cutscenes. Speak to Rytaal (K-10, Commissions Agency through K-9 door) to unlock Assault.",
+        "Speak to Naja Salaheem twice to complete mission. Optional: Fubruhn (F-11) for Mog Locker. Optional: Abquhbah for Trust (requires RoV 2-7).",
+      }
+    },
+    {
+      id = "mission_toau_4",
+      name = "Aht Urhgan Mission 4",
+      type = "mission",
+      location = "aht_urhgan",
+      nation = "aht_urhgan",
+      mission_index = 4,
+      game_id = 4,
+      repeatable = false,
+      steps = {
+        "Speak to Cacaroon (G-11, across from Mog House). Trade 1,000 gil or Imperial Bronze Piece.",
+        "Enter Walahra Temple (K-8). Head to Shararat Teahouse (K-12).",
+        "Answer questions: Pick all 3 options, then 'Raillefal's secret', 'A San d'Orian Prince', 'Prince Trion'.",
+      }
+    },
+    {
+      id = "mission_toau_5",
+      name = "Aht Urhgan Mission 5",
+      type = "mission",
+      location = "aht_urhgan",
+      nation = "aht_urhgan",
+      mission_index = 5,
+      game_id = 5,
+      repeatable = false,
+      steps = {
+        "Enter Chateau d'Oraguille from Northern San d'Oria (I-6).",
+        "Speak to Halver (I-9).",
+      }
+    },
+    {
+      id = "mission_toau_6",
+      name = "Aht Urhgan Mission 6",
+      type = "mission",
+      location = "aht_urhgan",
+      nation = "aht_urhgan",
+      mission_index = 6,
+      game_id = 6,
+      repeatable = false,
+      steps = {
+        "Wait 1 Earth minute after previous mission. Approach Palace in Ru'Lude Gardens.",
+        "Answer questions. Choose 'Yes' + 'That's what I'm here for!' for 10 Imperial Bronze Pieces, or 'What am I, a donkey?' to forfeit reward.",
+      }
+    },
+    {
+      id = "mission_toau_7",
+      name = "Aht Urhgan Mission 7",
+      type = "mission",
+      location = "aht_urhgan",
+      nation = "aht_urhgan",
+      mission_index = 7,
+      game_id = 7,
+      repeatable = false,
+      steps = {
+        "Rewards: Raillefal's note, Imperial Silver Piece x2.",
+        "Head to Shararat Teahouse (K-11) for cutscene and Raillefal's note (choices don't affect mission). Receive Imperial Silver Piece.",
+        "Speak to Naja Salaheem (I-10) for second Imperial Silver Piece. May require Imp Wing for Promotion: Private First Class quest.",
+      }
+    },
+    {
+      id = "mission_toau_8",
+      name = "Aht Urhgan Mission 8",
+      type = "mission",
+      location = "aht_urhgan",
+      nation = "aht_urhgan",
+      mission_index = 8,
+      game_id = 8,
+      repeatable = false,
+      steps = {
+        "Zone, and return to Salaheem's Sentinels (I-10) for a cutscene.",
+      }
+    },
+    {
+      id = "mission_toau_9",
+      name = "Aht Urhgan Mission 9",
+      type = "mission",
+      location = "aht_urhgan",
+      nation = "aht_urhgan",
+      mission_index = 9,
+      game_id = 9,
+      repeatable = false,
+      steps = {
+        "Reward: Astral compass.",
+        "If Nyzul Isle Staging Point not unlocked: Trade Imperial Silver Piece to Kamih Mapokhalam (F-6, Bhaflau Thickets Map 1) OR Tyamah (J-10, Caedarva Mire east of Nashmau). Optional: Trade 3 Imperial Mythril Pieces for Alzadaal Undersea Ruins map.",
+        "Approach Gilded Doors (H-8, Map 7). Before leaving, unlock Nyzul Isle Runic Portal: Enter Gilded Doors → left transporter (Map 3) → left portal → south exit → east to Gilded Doors → east to Nyzul Isle Staging Point.",
+        "If already unlocked: Chamber of Passage → Nyzul Isle Runic Portal → southeast transport (H-9) to Bhaflau Remnants → right (east) transport to Alzadaal Undersea Ruins. Cutscene on zone in.",
+      }
+    },
+    {
+      id = "mission_toau_10",
+      name = "Aht Urhgan Mission 10",
+      type = "mission",
+      location = "aht_urhgan",
+      nation = "aht_urhgan",
+      mission_index = 10,
+      game_id = 10,
+      repeatable = false,
+      steps = {
+        "Return to Naja Salaheem (I-10) for cutscene.",
+        "Reward (Puppetmaster only): Automaton Frame.",
+        "Enter Nashmau from east. Check Bronze Door (L-8, first door). Solo BCNM 'Nashmeira's Plea': defeat 3x Ashu Talif Crew (different jobs each attempt). If defeated or unsatisfied with crew lineup, re-enter Bronze Door to retry.",
+      }
+    },
+    {
+      id = "mission_toau_11",
+      name = "Aht Urhgan Mission 11",
+      type = "mission",
+      location = "aht_urhgan",
+      nation = "aht_urhgan",
+      mission_index = 11,
+      game_id = 11,
+      repeatable = false,
+      steps = {
+        "Wait 1 game day, zone, return to Naja Salaheem.",
+        "Enter Leujaoam Sanctum via Mamook Runic Portal (Chamber of Passage). Talk to Luzaf (J-10). Note: Cannot progress until Lebros Cavern Assault completed (rescues Gessho). If not unlocked, continue Assault Missions until available.",
+      }
+    },
+    {
+      id = "mission_toau_12",
+      name = "Aht Urhgan Mission 12",
+      type = "mission",
+      location = "aht_urhgan",
+      nation = "aht_urhgan",
+      mission_index = 12,
+      game_id = 12,
+      repeatable = false,
+      steps = {
+        "Wait 1 game day, zone, return to Salaheem's Sentinels (I-10). Unlocks RoV progress past 'Ever Forward'.",
+        "Speak to Pyopyoroon (H-7, Nashmau). Trade Jody's Acid (drops from Ameretats in Bhaflau Thickets/Wajaom Woodlands, Great Ameretats in Wajaom Woodlands/Aydeewa Subterrane) to receive Vial of spectral scent.",
+      }
+    },
+    {
+      id = "mission_toau_13",
+      name = "Aht Urhgan Mission 13",
+      type = "mission",
+      location = "aht_urhgan",
+      nation = "aht_urhgan",
+      mission_index = 13,
+      game_id = 13,
+      repeatable = false,
+      steps = {
+        "Head to Caedarva Mire from Nashmau west exit. Check Jazaratt's Headstone (E-10, SE of HP#1).",
+        "Check headstone again to spawn Fomor NM Jazaraat. Defeat, then check headstone third time for Ephramadian gold coin.",
+        "Note: For next mission's battle, other players need this coin to participate. Have them touch the headstone.",
+      }
+    },
+    {
+      id = "mission_toau_14",
+      name = "Aht Urhgan Mission 14",
+      type = "mission",
+      location = "aht_urhgan",
+      nation = "aht_urhgan",
+      mission_index = 14,
+      game_id = 14,
+      repeatable = false,
+      steps = {
+        "Return to Naja Salaheem for a cutscene. After this cutscene you will automatically be on the next mission, The Black Coffin.",
+      }
+    },
+    {
+      id = "mission_toau_15",
+      name = "Aht Urhgan Mission 15",
+      type = "mission",
+      location = "aht_urhgan",
+      nation = "aht_urhgan",
+      mission_index = 15,
+      game_id = 15,
+      repeatable = false,
+      steps = {
+        "Go to Cutter (H-8, Map 5, Arrapago Reef). Route 1: Survival Guide to Caedarva Mire → south to Arrapago Reef (G-8, NOT G-6) → south to Cutter. Route 2: Dvucca Isle Staging Point (requires Imperial Silver Piece or 200 Standing if <Captain rank) → west to F-9 Arrapago entrance → north to Cutter. Optional: Nyzul Staging Point NW teleporter (G-8) to Arrapago Remnants → west teleporter → exit to Arrapago Reef.",
+        "Approach Cutter. Examine to enter battlefield. All party members need Ephramadian gold coin (get from Jazaratt's Headstone, Caedarva Mire E-10).",
+        "Gessho assists. Battle: Defeat 5x Ashu Talif Crew (2 RNG, 2 RDM, 1 COR). Resistant to sleep unless Elemental Seal. After defeat, 4 more spawn + Ashu Talif Captain. Reduce Captain HP to ~20% to win. Completed players return to Nashmau, others return to Cutter.",
+      }
+    },
+    {
+      id = "mission_toau_16",
+      name = "Aht Urhgan Mission 16",
+      type = "mission",
+      location = "aht_urhgan",
+      nation = "aht_urhgan",
+      mission_index = 16,
+      game_id = 16,
+      repeatable = false,
+      steps = {
+        "Back at Aht Urhgan Whitegate , speak to Naja Salaheem for a cutscene.",
+      }
+    },
+    {
+      id = "mission_toau_17",
+      name = "Aht Urhgan Mission 17",
+      type = "mission",
+      location = "aht_urhgan",
+      nation = "aht_urhgan",
+      mission_index = 17,
+      game_id = 17,
+      repeatable = false,
+      steps = {
+        "Speak to Naja Salaheem. She requires palace-appropriate attire.",
+        "Equip body armor (no weapons/shields) + gloves + legs + boots. Multi-slot gear doesn't count. Acceptable body armor examples: Adaman Cuirass, Aketon, Amir Korazin, Arhat's Gi, Barone Corazza, Black Cloak, Black Cotehardie, Blessed Bliaut, Byrnie, Brigandine (free via RoE Conflict: Beadeaux), Cardinal Vest, Chasuble, Dragon Harness, Errant Houppelande, Hachiman Domaru, Haubergeon, Hauberk, Holy Breastplate, Homam Corazza, Igqira Weskit, Jaridah Peti, Justaucorps, Nashira Manteel, Noble's Tunic, Pahluwan Khazagand, Plastron, Rasetsu Samue, Scorpion Harness, Sipahi Jawshan, Sha'ir Manteel, Vermillion Cloak, Yigit Gomlek.",
+        "Check Imperial Whitegate door (L-8) with proper attire equipped for Imperial Mythril Piece. Ensure inventory space before cutscene.",
+      }
+    },
+    {
+      id = "mission_toau_18",
+      name = "Aht Urhgan Mission 18",
+      type = "mission",
+      location = "aht_urhgan",
+      nation = "aht_urhgan",
+      mission_index = 18,
+      game_id = 18,
+      repeatable = false,
+      steps = {
+        "Wait 1 game day, zone, return to Naja Salaheem. Unlocks Ashu Talif Assault. Cipher: Gessho available at cushion (J-12, Whitegate).",
+      }
+    },
+    {
+      id = "mission_toau_19",
+      name = "Aht Urhgan Mission 19",
+      type = "mission",
+      location = "aht_urhgan",
+      nation = "aht_urhgan",
+      mission_index = 19,
+      game_id = 19,
+      repeatable = false,
+      steps = {
+        "Enter the Shararat Teahouse in Aht Urhgan Whitegate for a cutscene.",
+      }
+    },
+    {
+      id = "mission_toau_20",
+      name = "Aht Urhgan Mission 20",
+      type = "mission",
+      location = "aht_urhgan",
+      nation = "aht_urhgan",
+      mission_index = 20,
+      game_id = 20,
+      repeatable = false,
+      steps = {
+        "Travel to Aydeewa Subterrane. Route 1: Survival Guide to Aydeewa Subterrane. Route 2: Unity Warp CL135 (Wajaom Woodlands, entrance behind you) or CL145 (Aydeewa Subterrane). Route 3: Wajaom Woodlands G-7.",
+        "Navigate to SW room (E-9/F-9) → west down ramp to Map 5 → blank target at F-8/G-8. Requires Sneak+Invisible (70+ mobs aggro).",
+      }
+    },
+    {
+      id = "mission_toau_21",
+      name = "Aht Urhgan Mission 21",
+      type = "mission",
+      location = "aht_urhgan",
+      nation = "aht_urhgan",
+      mission_index = 21,
+      game_id = 21,
+      repeatable = false,
+      steps = {
+        "Enter Salaheem's Sentinels for a cutscene.",
+      }
+    },
+    {
+      id = "mission_toau_22",
+      name = "Aht Urhgan Mission 22",
+      type = "mission",
+      location = "aht_urhgan",
+      nation = "aht_urhgan",
+      mission_index = 22,
+      game_id = 22,
+      repeatable = false,
+      steps = {
+        "Travel to Navukgo Execution Chamber. Route: Mount Zhayolm Home Point (or Unity Warp >135 >Mount Zhayolm) → turn around → forward → east junction at C-7/C-8 line to zone.",
+        "Examine Decorative Bronze Gate twice (second time enters battlefield).",
+        "Battle: Defeat Khimaira 13 with Lady Karababa's assistance. Khimaira abilities: Dreadstorm (AoE DMG+terrorize, removes Utsusemi), Tenebrous Mist (TP reset to 0), Thunderstrike (AoE DMG+stun, removes Utsusemi), Tourbillion (AoE DMG+knockback, removes Utsusemi). Lady Karababa casts high-level spells (Ancient Magic II preference). Heal her or she warps out (mission fails).",
+      }
+    },
+    {
+      id = "mission_toau_23",
+      name = "Aht Urhgan Mission 23",
+      type = "mission",
+      location = "aht_urhgan",
+      nation = "aht_urhgan",
+      mission_index = 23,
+      game_id = 23,
+      repeatable = false,
+      steps = {
+        "Enter Salaheem's Sentinels for a cutscene.",
+      }
+    },
+    {
+      id = "mission_toau_24",
+      name = "Aht Urhgan Mission 24",
+      type = "mission",
+      location = "aht_urhgan",
+      nation = "aht_urhgan",
+      mission_index = 24,
+      game_id = 24,
+      repeatable = false,
+      steps = {
+        "Enter Salaheem's Sentinels again after zoning and one game day has passed.",
+      }
+    },
+    {
+      id = "mission_toau_25",
+      name = "Aht Urhgan Mission 25",
+      type = "mission",
+      location = "aht_urhgan",
+      nation = "aht_urhgan",
+      mission_index = 25,
+      game_id = 25,
+      repeatable = false,
+      steps = {
+        "Speak to Naja Salaheem again after zoning and one game day has passed for a cutscene.",
+        "Choosing Aphmau in the cutscene will continue the mission.",
+      }
+    },
+    {
+      id = "mission_toau_26",
+      name = "Aht Urhgan Mission 26",
+      type = "mission",
+      location = "aht_urhgan",
+      nation = "aht_urhgan",
+      mission_index = 26,
+      game_id = 26,
+      repeatable = false,
+      steps = {
+        "Unequip your weapon and examine the Imperial Whitegate door at (L-9) in Aht Urhgan Whitegate .",
+      }
+    },
+    {
+      id = "mission_toau_27",
+      name = "Aht Urhgan Mission 27",
+      type = "mission",
+      location = "aht_urhgan",
+      nation = "aht_urhgan",
+      mission_index = 27,
+      game_id = 27,
+      repeatable = false,
+      steps = {
+        "Travel to Aydeewa Subterrane. Route 1: Survival Guide to Aydeewa Subterrane. Route 2: Unity Warp CL135 (Wajaom Woodlands, entrance behind you) or CL145 (Aydeewa Subterrane). Route 3: Wajaom Woodlands G-7 entrance.",
+        "Navigate to SW room (E-9/F-9) → west down ramp to Map 5 → blank target at F-8/G-8 (same location as Mission 20). Requires Sneak+Invisible (mobs aggro).",
+      }
+    },
+    {
+      id = "mission_toau_28",
+      name = "Aht Urhgan Mission 28",
+      type = "mission",
+      location = "aht_urhgan",
+      nation = "aht_urhgan",
+      mission_index = 28,
+      game_id = 28,
+      repeatable = false,
+      steps = {
+        "Enter the Walahra Temple in Aht Urhgan Whitegate for a cutscene.",
+      }
+    },
+    {
+      id = "mission_toau_29",
+      name = "Aht Urhgan Mission 29",
+      type = "mission",
+      location = "aht_urhgan",
+      nation = "aht_urhgan",
+      mission_index = 29,
+      game_id = 29,
+      repeatable = false,
+      steps = {
+        "Travel to Jade Sepulcher. Route: Bhaflau Thickets HP#1 (or Mamool Ja Staging Point → north to I-9 zoneline). Requires Sneak+Invisible or mount.",
+        "Examine Ornamental Door. Check again, select 'Puppet in Peril' to enter battlefield.",
+        "Battle: Defeat Lancelord Gaheel Ja (Paladin). Spells: Flash, Holy, Cure-Cure IV. Abilities: Clobber (large AoE DMG), Granite Skin (undispellable Stoneskin, front attacks nullified, attack from behind, wears quickly), Blazing Angon (AoE DMG on target).",
+      }
+    },
+    {
+      id = "mission_toau_30",
+      name = "Aht Urhgan Mission 30",
+      type = "mission",
+      location = "aht_urhgan",
+      nation = "aht_urhgan",
+      mission_index = 30,
+      game_id = 30,
+      repeatable = false,
+      steps = {
+        "Zone into Arrapago Reef for a cutscene first. Best route as of the August 2025 Version Update: Purchase an Arrapago Ring with 100 Imperial standing accolades from Asrahd at Aht Urhgan Whitegate (I-8). This will put you very close to the next step of the mission as well. Option 1, use the Survival Guide in Caedarva Mire and head North / Northwest before turning South to the Arrapago Reef (4) entrance. Option 2, use Dvucca Isle Staging Point and use the Caedarva Mire map #2 to zone into the Arrapago Reef (3) off-map/hidden G-9 entrance. Option 3, use the Ilrusi Atoll Staging Point to receive the initial cutscene, but may be further from the Cutter for the remaining mission requirements. Option 4, go to the Survival Guide in Arrapago Reef directly for the cutscene, but it won't put you near the Cutter for the next part of the mission.",
+        "After the cutscene from zoning into Arrapago Reef , approach the Cutter to receive another cutscene that finishes this mission. If you entered from Caedarva Mire at (G-9), you are already at the correct entrance. Just walk north to find the boat. L70 Shades are near the boat area.",
+        "DO NOT WARP OUT -- The next mission is easily accessible on foot from here. Head south from the Cutter and into Caedarva Mire .",
+        "Best route as of the August 2025 Version Update: Purchase an Arrapago Ring with 100 Imperial standing accolades from Asrahd at Aht Urhgan Whitegate (I-8). This will put you very close to the next step of the mission as well.",
+        "Option 1, use the Survival Guide in Caedarva Mire and head North / Northwest before turning South to the Arrapago Reef (4) entrance.",
+        "Option 2, use Dvucca Isle Staging Point and use the Caedarva Mire map #2 to zone into the Arrapago Reef (3) off-map/hidden G-9 entrance.",
+        "Option 3, use the Ilrusi Atoll Staging Point to receive the initial cutscene, but may be further from the Cutter for the remaining mission requirements.",
+        "Option 4, go to the Survival Guide in Arrapago Reef directly for the cutscene, but it won't put you near the Cutter for the next part of the mission.",
+        "If you entered from Caedarva Mire at (G-9), you are already at the correct entrance. Just walk north to find the boat. L70 Shades are near the boat area.",
+      }
+    },
+    {
+      id = "mission_toau_31",
+      name = "Aht Urhgan Mission 31",
+      type = "mission",
+      location = "aht_urhgan",
+      nation = "aht_urhgan",
+      mission_index = 31,
+      game_id = 31,
+      repeatable = false,
+      steps = {
+        "Go to Dvucca Isle Staging Point (Caedarva Mire). From Cutter: south to Caedarva Mire, near staging point.",
+        "Enter Periqia via Runic Seal (west of staging point arrival). Battle: Defeat K23H1-LAMIA until battle ends (up to 10x, random amount). Location: H-9, all together, true sight+link, poison on attacks, WS Venomous Tail (80+ HP/tick poison). Trusts allowed. If defeated: get new permit from Nahshib after 1 game day. Already completed: no permit needed to assist.",
+      }
+    },
+    {
+      id = "mission_toau_32",
+      name = "Aht Urhgan Mission 32",
+      type = "mission",
+      location = "aht_urhgan",
+      nation = "aht_urhgan",
+      mission_index = 32,
+      game_id = 32,
+      repeatable = false,
+      steps = {
+        "Speak to Naja Salaheem .",
+      }
+    },
+    {
+      id = "mission_toau_33",
+      name = "Aht Urhgan Mission 33",
+      type = "mission",
+      location = "aht_urhgan",
+      nation = "aht_urhgan",
+      mission_index = 33,
+      game_id = 33,
+      repeatable = false,
+      steps = {
+        "Wait 1 game day, zone, speak to Naja Salaheem. Optional: Get Ephramadian gold coin for next mission from Jazaratt's Headstone (E-10, Caedarva Mire, use HP or Nashmau west exit).",
+      }
+    },
+    {
+      id = "mission_toau_34",
+      name = "Aht Urhgan Mission 34",
+      type = "mission",
+      location = "aht_urhgan",
+      nation = "aht_urhgan",
+      mission_index = 34,
+      game_id = 34,
+      repeatable = false,
+      steps = {
+        "Get Ephramadian gold coin from Jazaratt's Headstone (E-10, Caedarva Mire HP#1 or Nashmau west exit).",
+        "Travel to Cutter. Route 1: Dvucca Isle Staging Point → exit to Mire → west G-9 to Arrapago Reef → north H-8. Route 2: Survival Guide to Caedarva Mire → south to Arrapago zone (NOT zone directly behind, find open area with Qutrub/Lamia) → south to zone. Route 3: Arrapago Ring (100 Standing, Asrahd I-8 Whitegate). After cutscene: arrive in Talacca Cove (don't warp, next mission here).",
+      }
+    },
+    {
+      id = "mission_toau_35",
+      name = "Aht Urhgan Mission 35",
+      type = "mission",
+      location = "aht_urhgan",
+      nation = "aht_urhgan",
+      mission_index = 35,
+      game_id = 35,
+      repeatable = false,
+      steps = {
+        "After Mission 34: arrive in Talacca Cove. Others: teleport to Caedarva Mire HP#1.",
+        "Examine Rock Slab to enter 30min BC. Battle: Gessho (Ninja, uses Ninjutsu, Mijin Gakure, ranged, warps around). TP moves: Hane Fubuki (ranged+poison), Happobarai (AoE DMG+stun, absorbed by shadows), Hiden Sokyaku (knockback+stun), Rinpyotosha (Warcry), Shiko no Mitate (Def Boost), Shibaraku (AoE DMG+knockback, shadows). Spawns 3-6 clones (~2k HP each, despawn ~20s, use Ninjutsu/abilities/Mijin Gakure together with Gessho for massive damage, immune to Sleep). Gessho surrenders at ~15% HP.",
+      }
+    },
+    {
+      id = "mission_toau_36",
+      name = "Aht Urhgan Mission 36",
+      type = "mission",
+      location = "aht_urhgan",
+      nation = "aht_urhgan",
+      mission_index = 36,
+      game_id = 36,
+      repeatable = false,
+      steps = {
+        "Zone into Hazhalm Testing Grounds (D-9, Caedarva Mire Map#1). Route 1: From Mission 35 go left, first tunnel. Route 2: Caedarva Mire HP#1. Route 3: Nashmau HP → west exit.",
+        "Check Entry Gate for final cutscene.",
+      }
+    },
+    {
+      id = "mission_toau_37",
+      name = "Aht Urhgan Mission 37",
+      type = "mission",
+      location = "aht_urhgan",
+      nation = "aht_urhgan",
+      mission_index = 37,
+      game_id = 37,
+      repeatable = false,
+      steps = {
+        "Enter Salaheem's Sentinels for a cutscene.",
+      }
+    },
+    {
+      id = "mission_toau_38",
+      name = "Aht Urhgan Mission 38",
+      type = "mission",
+      location = "aht_urhgan",
+      nation = "aht_urhgan",
+      mission_index = 38,
+      game_id = 38,
+      repeatable = false,
+      steps = {
+        "Wait until end of game day, zone, go to Shararat Teahouse.",
+      }
+    },
+    {
+      id = "mission_toau_39",
+      name = "Aht Urhgan Mission 39",
+      type = "mission",
+      location = "aht_urhgan",
+      nation = "aht_urhgan",
+      mission_index = 39,
+      game_id = 39,
+      repeatable = false,
+      steps = {
+        "Go to Ru'Lude Gardens, approach palace doors. Ensure cutscene involves speaking directly with Trion.",
+      }
+    },
+    {
+      id = "mission_toau_40",
+      name = "Aht Urhgan Mission 40",
+      type = "mission",
+      location = "aht_urhgan",
+      nation = "aht_urhgan",
+      mission_index = 40,
+      game_id = 40,
+      repeatable = false,
+      steps = {
+        "Optional: Speak to Pherimociel (G-6, Ru'Lude Gardens).",
+        "Wait 1 game day, zone, speak to Pherimociel again. After cutscene: arrive at Leypoint (Wajaom Woodlands).",
+      }
+    },
+    {
+      id = "mission_toau_41",
+      name = "Aht Urhgan Mission 41",
+      type = "mission",
+      location = "aht_urhgan",
+      nation = "aht_urhgan",
+      mission_index = 41,
+      game_id = 41,
+      repeatable = false,
+      steps = {
+        "Speak to Rodin-Comidin (I-7, Automaton Workshop, Aht Urhgan Whitegate). Prepare for battle at Nyzul Isle Staging Point.",
+      }
+    },
+    {
+      id = "mission_toau_42",
+      name = "Aht Urhgan Mission 42",
+      type = "mission",
+      location = "aht_urhgan",
+      nation = "aht_urhgan",
+      mission_index = 42,
+      game_id = 42,
+      repeatable = false,
+      steps = {
+        "At Nyzul Isle Staging Point: activate blank target (J-9, next to Runic Portal), select Yes.",
+        "Check Runic Seal (I-9) to enter BC 'Path of Darkness'. Trusts allowed. Naja Salaheem assists (must keep alive). If failed: return to Rodin-Comidin (Whitegate) for new key item.",
+        "Fight 1: Amnaf + 4x Imperial Gears (spawn after Amnaf aggro'd). Use AoE to control gears (can kill Naja quickly). Gears: susceptible to Gravity/Bind, hard to Sleep. Amnaf: can be slept. Defeat all, Amnaf warps to next room.",
+        "Fight 2: Amnaf + 4x Imperial Gears (Triple Gears, easier to Sleep). Amnaf surrenders at ~25% HP.",
+        "Fight 3: Amnaf (Soulflayer form). Sleepga resets hate. Defeat to complete BC.",
+      }
+    },
+    {
+      id = "mission_toau_43",
+      name = "Aht Urhgan Mission 43",
+      type = "mission",
+      location = "aht_urhgan",
+      nation = "aht_urhgan",
+      mission_index = 43,
+      game_id = 43,
+      repeatable = false,
+      steps = {
+        "Approach Naja Salaheem back in Aht Urhgan Whitegate for a cutscene.",
+      }
+    },
+    {
+      id = "mission_toau_44",
+      name = "Aht Urhgan Mission 44",
+      type = "mission",
+      location = "aht_urhgan",
+      nation = "aht_urhgan",
+      mission_index = 44,
+      game_id = 44,
+      repeatable = false,
+      steps = {
+        "Check the blank target at the Nyzul Isle Staging Point for a cutscene.",
+        "Head to the Runic Seal (I-9) to enter the battlefield.",
+        "The time limit for this fight is 45 minutes. This fight was initially capped at level 75. Level 99 players should have little to no difficulty with it. Trusts can be summoned in this fight.",
+        "This fight is broken into three separate battles.",
+        "This fight was initially capped at level 75. Level 99 players should have little to no difficulty with it.",
+        "Trusts can be summoned in this fight.",
+        "Raubahn re-raises twice during this fight, meaning you must defeat him three times to move on.",
+        "He has access to all Blue Mage spells and abilities.",
+        "Each time he re-raises , his job abilities, including his Azure Lore timer are reset.",
+        "He seems to favor the spell Eyes On Me and will cast it often. The damage from this spell goes up considerably when parred with Azure Lore , doing well over 1,000 damage.",
+        "Every time he uses Azure Lore he will follow it up with Eyes On Me .",
+        "He has access to sword Weapon Skills . Mages should be especially careful of his Circle Blade .",
+        "The final time he re-raises , he will have an immunity to either melee, magic, or ranged damage. The immunity is determined by what form of damage you used to deal the most damage to him. If you used mostly melee damage for the first 2 rounds, he will be immune to melee in the third round, ect. If you mix the type of damage you deal, i.e. magic round one and melee round 2, he will have no immunity the third round, but he will have increased defense.",
+        "The damage from this spell goes up considerably when parred with Azure Lore , doing well over 1,000 damage.",
+        "Mages should be especially careful of his Circle Blade .",
+        "The immunity is determined by what form of damage you used to deal the most damage to him. If you used mostly melee damage for the first 2 rounds, he will be immune to melee in the third round, ect.",
+        "If you mix the type of damage you deal, i.e. magic round one and melee round 2, he will have no immunity the third round, but he will have increased defense.",
+        "He is unable to move at all during the fight.",
+        "He is a Paladin type monster and has access to Banish IV, Banishga III, Dia III , and Holy II.",
+        "At 50% HP he uses Perfect Defense and becomes immune to all forms of damage for a short time.",
+        "This part of the battle is likely to take the longest to finish so plan accordingly.",
+        "Like Razfahd he cannot move at all during the fight.",
+        "He is a Paladin type monster and has access to Banish IV, Banishga III, Dia III , and Holy II and Mega Holy.",
+        "He has access to the following abilities: Draw In: Used only when the person with hate moves too far away. Radiant Sacrament: AoE and wipes Utsusemi . Additional Effect: Magic Defense Down . Void of Repentance: Terrorizes target. Gospel of the Lost: Heals for around 900-1100 HP and removes debuffs. This move can be stunned , but it has a very quick casting time. Divine Spear: Damage + additional effect of attack -25%. Divine Judgement: AoE 1000+ damage and clears Utsusemi . He will use this ability at 50% of his HP and several times again as his health decreases. He will say \"ΩΩΩΩΩΩΩ\" just before using this move. Perfect Defense : He becomes immune to all forms of damage for a short time.",
+        "The battle is over once Alexander is defeated.",
+        "Draw In: Used only when the person with hate moves too far away.",
+        "Radiant Sacrament: AoE and wipes Utsusemi . Additional Effect: Magic Defense Down .",
+        "Void of Repentance: Terrorizes target.",
+        "Gospel of the Lost: Heals for around 900-1100 HP and removes debuffs. This move can be stunned , but it has a very quick casting time.",
+        "Divine Spear: Damage + additional effect of attack -25%.",
+        "Divine Judgement: AoE 1000+ damage and clears Utsusemi . He will use this ability at 50% of his HP and several times again as his health decreases. He will say \"ΩΩΩΩΩΩΩ\" just before using this move.",
+        "Perfect Defense : He becomes immune to all forms of damage for a short time.",
+        "This move can be stunned , but it has a very quick casting time.",
+        "If you fail this fight, return to Naja Salaheem for another key item to try again.",
+        "If you win this fight, you'll watch one last cutscene that finishes this mission.",
+      }
+    },
+    {
+      id = "mission_toau_45",
+      name = "Aht Urhgan Mission 45",
+      type = "mission",
+      location = "aht_urhgan",
+      nation = "aht_urhgan",
+      mission_index = 45,
+      game_id = 45,
+      repeatable = false,
+      steps = {
+        "Approach Naja Salaheem for a cutscene.",
+      }
+    },
+    {
+      id = "mission_toau_46",
+      name = "Aht Urhgan Mission 46",
+      type = "mission",
+      location = "aht_urhgan",
+      nation = "aht_urhgan",
+      mission_index = 46,
+      game_id = 46,
+      repeatable = false,
+      steps = {
+        "Naja requires palace-appropriate attire. Equip body armor (no weapons/shields) + gloves + legs + boots. Acceptable examples: Adaman Cuirass, Aketon, Amir Korazin, Arhat's Gi, Barone Corazza, Black Cloak, Black Cotehardie, Blessed Bliaut, Blue Cotehardie, Byrnie, Brigandine (free RoE: Conflict Beadeaux), Cardinal Vest, Chasuble, Dusk Jerkin, Dragon Harness, Errant Houppelande, Hachiman Domaru, Haubergeon, Hauberk, Holy Breastplate, Homam Corazza, Igqira Weskit, Jaridah Peti, Justaucorps, Nashira Manteel, Noble's Tunic, Pahluwan Khazagand, Plastron, Rasetsu Samue, Scorpion Harness, Sipahi Jawshan, Sha'ir Manteel, Vermillion Cloak, Yigit Gomlek.",
+        "Check Imperial Whitegate door (L-8) with proper attire.",
+      }
+    },
+    {
+      id = "mission_toau_47",
+      name = "Aht Urhgan Mission 47",
+      type = "mission",
+      location = "aht_urhgan",
+      nation = "aht_urhgan",
+      mission_index = 47,
+      game_id = 47,
+      repeatable = false,
+      steps = {
+        "Choose ring reward (Khimaira, Whale, Jalzahn, or Pahluwan). Receive Imperial Standard. Can change reward: dispose ring, speak to Nadeey (J-7, Whitegate). Timer resets next conquest tally (Sunday 0:00 JST).",
+      }
+    },
+    {
+      id = "mission_toau_48",
+      name = "Aht Urhgan Mission 48",
+      type = "mission",
+      location = "aht_urhgan",
+      nation = "aht_urhgan",
+      mission_index = 48,
+      game_id = 48,
+      repeatable = false,
+      steps = {
+        "Approach Naja Salaheem for final cutscene, receive Glory Crown. Nashmeira trust unlocked (Imperial Whitegate).",
+      }
+    },
   }
 }
-
-
