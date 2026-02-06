@@ -1,0 +1,423 @@
+-- Missions
+-- Auto-generated from bg-wiki
+
+local missions = {
+  {
+    id = "mission_cop_1_1",
+    name = "Promathia Mission 1-1",
+    type = "mission",
+    location = "promathia",
+    nation = "promathia",
+    mission_index = 1,
+    game_id = 110,
+    repeatable = false,
+    steps = {
+      "Zone into Lower Delkfutt's Tower (Qufim Island) for cutscene (Chapter 1 start).",
+      "Zone into Upper Jeuno for cutscene, then speak with Monberaux at Infirmary (G-10, Home Point #3) to receive Mysterious amulet.",
+      "If postponed: Use Tales' Beginning book at Lower Delkfutt's Tower (H-10) to start.",
+    }
+  },
+  {
+    id = "mission_cop_1_2",
+    name = "Promathia Mission 1-2",
+    type = "mission",
+    location = "promathia",
+    nation = "promathia",
+    mission_index = 2,
+    game_id = 120,
+    repeatable = false,
+    steps = {
+      "Speak with Pherimociel at Ru'Lude Gardens (G-6) in palace. Complete all three Promyvions (any order) - see The Mothercrystals walkthrough.",
+      "Optional: Speak with Rainhard (H-6) and Harith (H-5) for dialogue. Trade Recollection items to Harith with 2000 gil for Anima (boss weakening).",
+      "Access Promyvions via Shattered Telepoints at crags: Konschtat Highlands (Promyvion-Dem), Tahrongi Canyon (Promyvion-Mea), La Theine Plateau (Promyvion-Holla).",
+    }
+  },
+  {
+    id = "mission_cop_1_3",
+    name = "Promathia Mission 1-3",
+    type = "mission",
+    location = "promathia",
+    nation = "promathia",
+    mission_index = 3,
+    game_id = 130,
+    repeatable = false,
+    steps = {
+      "The goal of this mission is to reach the Spire found at the end of each of the 3 Promyvion zones and defeat all 3 of the bosses in the \"Ancient Flames Beckon\" battlefields. Defeating each boss gives a key item. Once you have all 3 key items the mission is completed, and the next mission starts.",
+      "With the lifting of the level cap in Promathia areas, this quest is now relatively trivial in difficulty. The walkthrough below was written for a level cap of 30. Trusts may be called through the entire climb and Spire fight, making it possible to solo this at 40 or even earlier. However, be aware that there are new, high-level Apex enemies ranging from level 139 to 142 in these areas. They may be avoided by taking alternate paths around them, see the Apex page for maps which show the locations of these dangerous enemies.",
+      "Do make sure to avoid any Apex Mobs as those will aggro with True Sound detection and require multiple endgame players to fight.",
+      "Note : Your mission log won't change to \"The Mothercrystals\" until clearing one of the Promyvion areas. Since the walkthrough for all 3 Promyvions are similar, they are all included in this section.",
+      "After you are geared up and have your group ready to go, head to any of the 3 crags.",
+      "Enter Hall of Transference at crags. Click Large Apparatus to enter Promyvion. Navigate 4 floors by defeating Memory Receptacles (spawn Memory Stream portals). Avoid True Sight/True Sound mobs.",
+      "On 4th floor, navigate to spire entrances: Dem (H-8 southwest), Holla (K-8 north), Mea (I-6 southeast). Zone into spire.",
+      "Enter BCNM \\\"Ancient Flames Beckon\\\". Use Animas if desired (30sec each, don't stack). Fight boss with spawning adds.",
+      "Defeat all 3 Promyvion bosses to receive Light of Dem/Holla/Mea. After 3rd victory, appear in Lufaise Meadows (K-9) - Chapter 2 begins.",
+    }
+  },
+  {
+    id = "mission_cop_2_2",
+    name = "Promathia Mission 2-2",
+    type = "mission",
+    location = "promathia",
+    nation = "promathia",
+    mission_index = 4,
+    game_id = 220,
+    repeatable = false,
+    steps = {
+      "Optional: Get Survival Guide outside Safehold (I-5). Start quest Unforgiven at Elysia (G-10) for Safehold map.",
+      "Enter Walnut Door on top floor (K-9), speak with Despachiaire (K-10). Optional: Speak with Justinius (J-6).",
+      "Check Sewer Entrance on lowest level (I-7).",
+    }
+  },
+  {
+    id = "mission_cop_2_3",
+    name = "Promathia Mission 2-3",
+    type = "mission",
+    location = "promathia",
+    nation = "promathia",
+    mission_index = 5,
+    game_id = 230,
+    repeatable = false,
+    steps = {
+      "Enter Phomiuna Aqueducts from Sewer entrance in Tavnazian Safehold.",
+      "Navigate to Map 2 (J-2): Climb ladder (F-6), proceed to (F-4/K-10), head north. Take ladder at (I-6), drop at (K-5). Defeat Minotaur (avoid Mortal Ray Doom by turning away).",
+      "Find Iron Gate (G-8). Pick lock with Skeleton Key or defeat Fomors for Bronze Key. Pass through, find Wooden Ladder (E-8) for cutscene with Nag'molada.",
+      "Go up ladder, north through door. Click ??? on bookshelf (SW corner) to open secret door. Avoid trap ??? on east wall. Light oil lamps matching current day and strong-against element to open west door.",
+      "Proceed to second Ornate Gate for cutscene. Exit aqueducts, speak with Justinius at Tavnazian Safehold (J-6, Home Point #3).",
+    }
+  },
+  {
+    id = "mission_cop_2_4",
+    name = "Promathia Mission 2-4",
+    type = "mission",
+    location = "promathia",
+    nation = "promathia",
+    mission_index = 6,
+    game_id = 240,
+    repeatable = false,
+    steps = {
+      "Visit north Walnut Door (K-7) on top floor of Tavnazian Safehold for cutscene, receive Mysterious amulet. Optional: Speak with Justinius (J-6).",
+      "Travel to Dilapidated Gate at (I-11) in Misareaux Coast for cutscene.",
+      "Return to Tavnazian Safehold, approach bridge (H/I-8) on main floor for cutscene.",
+    }
+  },
+  {
+    id = "mission_cop_2_5",
+    name = "Promathia Mission 2-5",
+    type = "mission",
+    location = "promathia",
+    nation = "promathia",
+    mission_index = 7,
+    game_id = 250,
+    repeatable = false,
+    steps = {
+      "Go to Dilapidated Gate (F-7) in Misareaux Coast. Check Spatial Displacement for cutscene, enter Riverne - Site #A01.",
+      "Defeat Firedrakes for 2 Giant Scales. Navigate west, trade 1 scale at Unstable Displacement (G-10), then 1 scale at (E-10). Avoid Hippogryphs (True Sight).",
+      "Head north into Monarch Linn. Enter BCNM \"Ancient Vows\" (uncapped).",
+      "Fight Mammets: Silence staff form (Psychomancy AOE Aspir). Stop all damage during Transmogrification (heals enemy). Use Yellow Liquid to lock Mammets in polearm form (preferred).",
+    }
+  },
+  {
+    id = "mission_cop_3_2",
+    name = "Promathia Mission 3-2",
+    type = "mission",
+    location = "promathia",
+    nation = "promathia",
+    mission_index = 8,
+    game_id = 0,
+    repeatable = false,
+    steps = {
+      "Enter Neptune's Spire in Lower Jeuno (F-7), click Tenshodo headquarters door for cutscene.",
+      "Visit Ru'Lude Gardens (H-7), approach palace Audience Chamber stairs for cutscene.",
+    }
+  },
+  {
+    id = "mission_cop_3_3",
+    name = "Promathia Mission 3-3",
+    type = "mission",
+    location = "promathia",
+    nation = "promathia",
+    mission_index = 9,
+    game_id = 0,
+    repeatable = false,
+    steps = {
+      "San d'Oria Path: Zone into Northern San d'Oria for cutscene. Speak with Arnau at Cathedral altar (M-6), then Chasalvige in Manuscript room (L-6).",
+      "Go to Carpenters' Landing via Jugner Forest (E-6). Speak with Guilloud (H-10) to spawn Overgrown Ivy, defeat it, speak with Guilloud again.",
+      "Speak with Hinaree in Southern San d'Oria Count's Manor (B-6) upstairs to complete San d'Oria path.",
+      "Windurst Path: Zone into Windurst Waters for cutscene. Speak with Ohbiru-Dohbiru at Rhinostery (J-9, Home Point #3). Speak with Yoran-Oran in Windurst Walls (E-5, Home Point #1).",
+      "Speak with Kyume-Romeh in Windurst Waters Tavern (F-10). Speak with Honoi-Gomoi in Windurst Waters (E-7, Home Point #3) to receive Cracked Mimeo Mirror. Return to Yoran-Oran (E-5).",
+      "Travel to Attohwa Chasm (K-8) to Loose Sand. Defeat Lioumere (pull away from sand to prevent HP recovery). Obtain Mimeo Jewel (30 min timer, breaks on zone/mount).",
+      "Climb Parradamo Tor to reach Cradle of Rebirth at top, check for Mimeo Feather, Second Mimeo Feather, Third Mimeo Feather.",
+      "Return to Yoran-Oran in Windurst Walls. Speak with Yujuju in Port Windurst (M-6, Home Point #3). Speak with Tosuka-Porika in Windurst Waters Optistery (G-8, Home Point #1). Return to Yoran-Oran (E-5) to complete Windurst path.",
+      "Visit Cid at Metalworks (Home Point #1) to complete mission.",
+    }
+  },
+  {
+    id = "mission_cop_3_4",
+    name = "Promathia Mission 3-4",
+    type = "mission",
+    location = "promathia",
+    nation = "promathia",
+    mission_index = 10,
+    game_id = 320,
+    repeatable = false,
+    steps = {
+      "Zone into Lower Jeuno for cutscene.",
+      "Enter Neptune's Spire, click Tenshodo headquarters door for cutscene.",
+    }
+  },
+  {
+    id = "mission_cop_3_5",
+    name = "Promathia Mission 3-5",
+    type = "mission",
+    location = "promathia",
+    nation = "promathia",
+    mission_index = 11,
+    game_id = 330,
+    repeatable = false,
+    steps = {
+      "Speak with Monberaux at Upper Jeuno Infirmary (G-10, Home Point #3). Optional: Start sidequest A Reputation in Ruins from Migliorozz at Temple of the Goddess (H-9).",
+      "Speak with Ghebi Damomohe in Neptune's Spire (Lower Jeuno). Farm colored chips from mobs in Pso'Xja entrances in Beaucedine Glacier (H-8 easiest for Gray Chip from Diremites).",
+      "Trade chip to Ghebi Damomohe for 500 gil and Pso'Xja pass. Enter Pso'Xja at Beaucedine (H-8). Pass through colored walls: Red, Black/Purple, Red, Black/Purple at (H-7) and (I-7).",
+      "Take elevator at (H-8) to bottom, follow northwest path to Stone Gate, zone into The Shrouded Maw. Register Home Point. Enter BCNM \\\"Darkness Named\\\" at Memento Circle.",
+      "Fight Diabolos: Stun Nightmare (Sleep+Bio). Cure/Benediction to wake. Tank with back to wall to avoid Camisado knockback. Defeat and return to Monberaux in Upper Jeuno.",
+    }
+  },
+  {
+    id = "mission_cop_4_2",
+    name = "Promathia Mission 4-2",
+    type = "mission",
+    location = "promathia",
+    nation = "promathia",
+    mission_index = 12,
+    game_id = 420,
+    repeatable = false,
+    steps = {
+      "Optional: Trade 2 Hippogryph Tailfeathers to Ferchinne (G-9, Tavnazian Safehold) for Mistmelt via quest Fly High (recommended for Ouryu fight).",
+      "Check Dilapidated Gate at Misareaux Coast (F-7), zone into Riverne - Site B01. Farm Giant Scale from Pyrodrake (level 50-53) or Ignidrake (57) near southwest Spatial Displacement.",
+      "Trade Giant Scale to Unstable Displacement (G-8), pass through. Head northwest to next Spatial Displacement, then south to reach Monarch Linn.",
+      "Enter BCNM \"The Savage\" at Spatial Displacement. Fight Ouryu: Use Mistmelt to ground her, Dispel Stoneskin/Invincible. Fight ends at 30% HP. Defeat and speak with Justinius (J-6, Tavnazian Safehold Home Point #3).",
+    }
+  },
+  {
+    id = "mission_cop_4_3",
+    name = "Promathia Mission 4-3",
+    type = "mission",
+    location = "promathia",
+    nation = "promathia",
+    mission_index = 13,
+    game_id = 430,
+    repeatable = false,
+    steps = {
+      "Check Walnut Door (K-7, Tavnazian Safehold top floor). Check Iron Gate (G-4, Misareaux Coast) to enter Sacrarium. Navigate southeast maze to connection point B (Map 1 to Map 2 southwest, maze changes by day).",
+      "Get past door at (H-7) Map 2: Quest method: Farm Coral Crest Key (Fomors Map 2) + Sealion Crest Key (Keremet NM, night 20:00-04:00). Defeat Splinterspine Grukjuk (H-10 Lufaise Meadows), trade keys to Quelveuiat (I-10 Tavnazian Safehold) for Temple Knight key. Party method: Farm 2x Coral Crest Key + Sealion Crest Key, trade both to door (H-7) with precise timing.",
+      "Pass door at (H-7), take right fork to Wooden Gate (G-8) for cutscene. Return to hallway through door (H-7).",
+      "Find Old Professor Mariselle at desk ??? in 6 nearby classrooms (3 north, 3 south). Defeat Mariselle + 2 Mariselle's Pupils. Check ??? for Reliquiarium key. Return to door (H-7), pass through, check Wooden Gate (G-8) to complete mission.",
+    }
+  },
+  {
+    id = "mission_cop_4_4",
+    name = "Promathia Mission 4-4",
+    type = "mission",
+    location = "promathia",
+    nation = "promathia",
+    mission_index = 14,
+    game_id = 440,
+    repeatable = false,
+    steps = {
+      "Speak with Despachiaire at Walnut Door (K-10, Tavnazian Safehold top floor, Home Point #3). Zone into Sealion's Den (bottom floor, Home Point #2). Check Iron Gate in Sealion's Den.",
+    }
+  },
+  {
+    id = "mission_cop_5_2",
+    name = "Promathia Mission 5-2",
+    type = "mission",
+    location = "promathia",
+    nation = "promathia",
+    mission_index = 15,
+    game_id = 520,
+    repeatable = false,
+    steps = {
+      "Navigate Promyvion-Vahzl floors 1-2 normally via Memory Receptacles. Floors 3-5 require defeating NMs at Memory Fluxes: Floor 3 (J-8): Check flux to spawn Propagator, defeat, check flux for cutscene. Floor 4 (M-6): Spawn Solicitor, defeat, check for cutscene. Floor 5 (D-6): Spawn Ponderer, defeat, check for cutscene.",
+      "Zone into Spire of Vahzl (F-8). Enter BCNM \\\"Desires of Emptiness\\\" at Web of Recollections. Must defeat all 3 Memory Flux NMs for access.",
+      "Fight 3 Emptiness bosses. Optional: Use anima on approaching boss. Agonizer dispels buffs/food, fight first. Defeat all 3 and return to Beaucedine Glacier.",
+      "Speak with Cid at Metalworks (Home Point #1) to complete mission.",
+    }
+  },
+  {
+    id = "mission_cop_5_3",
+    name = "Promathia Mission 5-3",
+    type = "mission",
+    location = "promathia",
+    nation = "promathia",
+    mission_index = 16,
+    game_id = 530,
+    repeatable = false,
+    steps = {
+      "Speak with Cid at Bastok Metalworks (Home Point #1) to begin. This mission has 3 independent paths (Louverance, Tenzen, Ulmia) that can be done in any order or simultaneously.",
+      "LOUVERANCE'S PATH: Talk to Despachiaire (K-10, Tavnazian Safehold HP #3). Speak with Perih Vashai (K-7, Windurst Woods HP #1). Check ??? Warmachine at Purgonorgo Isle (H-11, Bibiki Bay). Reach via Manaclipper at Bibiki Bay (H-7) or Voidwatch Atmacite Refiner teleport.",
+      "Zone into Oldton Movalpolos for cutscene. Reach Mine Shaft #2716 via: Newton Movalpolos HP #1 (fastest), trade Snow Lily to Tarnotik (K-10 Oldton), or gamble with Twinkbrix (E-13 Oldton). Attune to Newton HP outside shaft before battle.",
+      "Enter BCNM 'A Century of Hardship' at Mine Shaft #2716. Fight Moblins and Bugbby (use Silence on mages, focus BLM first). Return to Cid. Farm Gold Key from Moblins in Newton Movalpolos (near Oldton zone). Return to Mine Shaft #2716, trade Gold Key to entrance. Return to Cid to complete path.",
+      "TENZEN'S PATH: Check ??? at La Theine Plateau (G-6) for Carbuncle/Tenzen cutscene. Enter Pso'Xja tower (J-8, Beaucedine Glacier). Navigate through 16 Stone Doors (each spawns Gargoyle, doors one-way, Cryptonberries aggro sight, Magic Millstones aggro magic). Sneak, descend elevator, check Avatar Gate.",
+      "Speak with Monberaux (G-10, Upper Jeuno HP #3) for Envelope. Speak with Pherimociel (G-6, Ru'Lude Gardens HP #1). Return to Monberaux. Check ??? in Batallia Downs (K-8/9 near Upper Jeuno exit) twice for cutscene and Delkfutt recognition device.",
+      "Enter Lower Delkfutt's Tower, go to first floor (H-5). Check Cermet Door to spawn Disaster Idol (casts tier 3-ga and tier 4 spells based on day). Defeat and check door again. Enter Pso'Xja (H-10, Beaucedine). Navigate: perimeter to (I-8) → west through wall → drop hole → south exit → north room → elevator down to Avatar Gate. Return to Cid to complete path.",
+      "ULMIA'S PATH: Speak with Hinaree (A-6, Southern San d'Oria HP #4, second floor). Zone to Port San d'Oria. Speak with Chasalvige (L-6, Northern San d'Oria Cathedral Manuscript Room). Speak with Kerutoto (J-8, Windurst Waters HP #3, Rhinostery north wing). Speak with Yoran-Oran (E-5, Windurst Walls HP #1). Enter Boneyard Gully (H-6, Attohwa Chasm).",
+      "Enter BCNM 'Head Wind'. Fight 6 Mithran Trackers (3 Shikarees with pets). Use Sleepga at start, kill masters before pets, attack Shikaree Y from sides/back (Counters), Shikaree X/Z have Utsusemi/Blink. Return to Cid.",
+      "Optional: Complete quest 'Mithran Delicacies' from Anguenet (J-10, Carpenters' Landing) for Blackened Siredon (stops TP gain). Optional: Complete quest 'Bombs Away!' from Buffalostalker Dodzbraz (F-9, Uleguerand Range) for Shu'Meyo Salt (delays Snoll Tzar explosion 20s).",
+      "Enter Bearclaw Pinnacle hole at Uleguerand Range (J-9, near HP #2). Enter BCNM 'Flames for the Dead'. Fight Snoll Tzar (45s time limit, use Shu'Meyo Salt to extend, uses Hyperthermal Combustion 3x, 3rd ejects). Use 2-hours (Mighty Strikes/Hundred Fists/Meikyo Shisui/Astral Flow). Defeat boss, return to Cid to complete path.",
+      "After completing all 3 paths, speak to Cid for final cutscene. Optional: Speak to Perih Vashai (K-7, Windurst Woods HP #1) to obtain Shikaree Z trust (requires Windurst Trust permit).",
+    }
+  },
+  {
+    id = "mission_cop_6_2",
+    name = "Promathia Mission 6-2",
+    type = "mission",
+    location = "promathia",
+    nation = "promathia",
+    mission_index = 17,
+    game_id = 620,
+    repeatable = false,
+    steps = {
+      "Approach Palace in Ru'Lude Gardens. Speak with Pherimociel (G-6).",
+      "Check Dilapidated Gate (I-11, Misareaux Coast) to spawn Warder Thalia, Warder Aglaia, and Warder Euphrosyne (Detector NMs). Defeat all 3 (can be slept, resist after time). Check gate again.",
+    }
+  },
+  {
+    id = "mission_cop_6_3",
+    name = "Promathia Mission 6-3",
+    type = "mission",
+    location = "promathia",
+    nation = "promathia",
+    mission_index = 18,
+    game_id = 630,
+    repeatable = false,
+    steps = {
+      "Speak with Pherimociel (G-6, Ru'Lude Gardens Home Point #1). Check Audience Chamber upstairs.",
+      "Speak with Mathilde (H-9, Selbina Weaver's Guild office) to complete mission.",
+    }
+  },
+  {
+    id = "mission_cop_6_4",
+    name = "Promathia Mission 6-4",
+    type = "mission",
+    location = "promathia",
+    nation = "promathia",
+    mission_index = 19,
+    game_id = 640,
+    repeatable = false,
+    steps = {
+      "Optional: Farm/buy CCB Polymer Pumps (quest Chips or Auction House) to disable Omega/Ultima for 30 seconds.",
+      "Speak with Cid at Metalworks. Zone into Sealion's Den (Tavnazian Safehold bottom, Home Point #2). Check Iron Gate, board airship, click door for BCNM \\\"One to be Feared\\\".",
+      "3-stage fight: Stage 1: 5 Mammets (change forms, Transmogrification absorbs physical damage). Silence Staff form, stop damage on Transmogrification. Stage 2: Omega (AOE moves, Stun attacks, use Slow/Elegy, CCB Polymer Pump at 25%). Stage 3: Ultima (Paralysis attacks, Double Attack, Antimatter spam below 20%, CCB Polymer Pump at 30%, stun Antimatter pattern: Particle Shield → Antimatter → Antimatter).",
+      "Defeat Ultima to appear at Dilapidated Gate (Lufaise Meadows) and receive Ducal Guard's Ring.",
+    }
+  },
+  {
+    id = "mission_cop_7_2",
+    name = "Promathia Mission 7-2",
+    type = "mission",
+    location = "promathia",
+    nation = "promathia",
+    mission_index = 20,
+    game_id = 720,
+    repeatable = false,
+    steps = {
+      "Check north Dilapidated Gate (F-7, Misareaux Coast). Return to Sealion's Den and speak with Sueleen.",
+      "Head toward Palace in Ru'Lude Gardens. Check door of Marble Bridge Tavern in Upper Jeuno.",
+    }
+  },
+  {
+    id = "mission_cop_7_3",
+    name = "Promathia Mission 7-3",
+    type = "mission",
+    location = "promathia",
+    nation = "promathia",
+    mission_index = 21,
+    game_id = 730,
+    repeatable = false,
+    steps = {
+      "Reach Mine Shaft #2716: Use Newton Movalpolos Home Point #1, trade Snow Lily to Tarnotik (K-10 Oldton Movalpolos), or gamble Shaft 2716 operating lever from Twinkbrix (E-13 Oldton Movalpolos, 2000 gil warp). Check Shaft Entrance.",
+      "Speak with Cid at Metalworks. Wait for new Vana'diel day, speak with Cid again to begin next mission.",
+    }
+  },
+  {
+    id = "mission_cop_7_4",
+    name = "Promathia Mission 7-4",
+    type = "mission",
+    location = "promathia",
+    nation = "promathia",
+    mission_index = 22,
+    game_id = 740,
+    repeatable = false,
+    steps = {
+      "After conversation with Cid, fight 3 NMs in any order. Check triggers after fights or NMs reset.",
+      "Misareaux Coast (E-7): Check Storage Compartment to spawn Boggelmann (Bugard, high defense, Blood Weapon). Defeat, check compartment for Vessel of light.",
+      "Carpenters' Landing (I-9): Check ??? near water to spawn Cryptonberry Executor (NIN) + 3 Cryptonberry Assassins (THF/SMN/BLM). Kill Executor first to avoid Mijin Gakure, then SMN. Check ??? after.",
+      "Bibiki Bay (F-6 cave): Check ??? to spawn Dalham (Kraken, increasing attack speed, no true 2-hour). Defeat, check ???. Return to Cid for Letters from Ulmia and Prishe. Speak with Sueleen in Sealion's Den (H-6).",
+    }
+  },
+  {
+    id = "mission_cop_7_5",
+    name = "Promathia Mission 7-5",
+    type = "mission",
+    location = "promathia",
+    nation = "promathia",
+    mission_index = 23,
+    game_id = 750,
+    repeatable = false,
+    steps = {
+      "Zone into Sealion's Den, click Iron Gate. Enter BCNM \"The Warrior's Path\".",
+      "Fight ??? (SAM): Pull to far side to avoid platform BLM/WHM/RNG above (unkillable). Prevent skillchains during Meikyo Shisui (can repeat). Use Stun/Bind/Shadowbind to stop weapon skills. Avoid Cosmic Elucidation (level 4 SC, ejects from battle).",
+      "Defeat ??? to appear in Al'Taieu and complete mission. Fight ends at 15-20% HP.",
+    }
+  },
+  {
+    id = "mission_cop_8_2",
+    name = "Promathia Mission 8-2",
+    type = "mission",
+    location = "promathia",
+    nation = "promathia",
+    mission_index = 24,
+    game_id = 820,
+    repeatable = false,
+    steps = {
+      "Check eastern Particle Gate (H-8, Grand Palace of Hu'Xzoi) to start mission. Note: Cannot save progress, must restart if you wipe.",
+      "Escort Quasilumin NPCs through Hu'Xzoi by checking Cermet Alcoves to spawn escorts. Protect them to open Particle Gates. Route: M1 (J-8) escort → (L-7) transport → M2 (L-8) escort → (I-10) escort → (G-12) transport → M1 (G-10) escort → (G-4) transport → M2 (H-8) for NM.",
+      "Check Cermet Portal to spawn Ix'ghrah NM (4 forms): Spider (Mighty Strikes, Sickle Slash), Bird (Perfect Dodge, Damnation Dive), Orb (-ga III spells, Manafont, Hexidiscs), Humanoid (Invincible, Vorpal Blade). Defeat and check portal.",
+      "Return to the palace entrance and examine the Gate of the Gods to enter The Garden of Ru'Hmet . While it is possible to go back through all of the Cermet Portals , it is far faster to Warp / Warp Ring and teleport to Home Point #1 in the Grand Palace of Hu'Xzoi (via Lumoria .)",
+      "While it is possible to go back through all of the Cermet Portals , it is far faster to Warp / Warp Ring and teleport to Home Point #1 in the Grand Palace of Hu'Xzoi (via Lumoria .)",
+    }
+  },
+  {
+    id = "mission_cop_8_3",
+    name = "Promathia Mission 8-3",
+    type = "mission",
+    location = "promathia",
+    nation = "promathia",
+    mission_index = 25,
+    game_id = 830,
+    repeatable = false,
+    steps = {
+      "Check Gate of the Gods at Garden of Ru'Hmet (Home Point). Climb to 4th floor of race tower: Light of Mea (E, Elvaan), Light of Dem (W, Mithra), Light of Holla (SW, Tarutaru), Light of Vahzl (N, Hume), Light of Al'Taieu (SE, Galka). Check Ebon Panel twice for key item.",
+      "Navigate to central elevator (run East → North → West). Avoid Qn'zdei true sight by hugging wall (only 2 can see you). Qn'zdei immune to Sleep/Lullaby/Repose, 5min respawn. Ascend elevator, grab Home Point.",
+      "Collect Brand of Twilight (south) and Brand of Dawn (north) on floor 2. Warp Distortions de-summon Trusts. Return to elevator with both brands, ascend twice to floor 3.",
+      "Check Particle Gate to enter BC. Fight 4 Ix'zdei pot NMs (2 large RDM, 2 small BLM). Immune to Silence, highly resist Sleep (need Elemental Seal). Stun/WS to prevent HP regen flee. Defeat pots, check Luminous Convergence. Exit to Al'Taieu via south Particle Gate.",
+    }
+  },
+  {
+    id = "mission_cop_8_4",
+    name = "Promathia Mission 8-4",
+    type = "mission",
+    location = "promathia",
+    nation = "promathia",
+    mission_index = 26,
+    game_id = 840,
+    repeatable = false,
+    steps = {
+      "Use Garden of Ru'Hmet Home Point #1. Descend elevator to Empyreal Paradox. Check Transcendental Radiance to enter BCNM \"Dawn\".",
+      "Fight Promathia with Prishe (healable, can Raise, Auroral Uppercut, Nullifying Dropkick breaks shields, Hundred Fists, Benediction) and Selh'teus (not healable, Luminous Lance stuns, Redemption heals, failure if KO'd). Form 1 (~8000 HP): Empty Salvation, Pestilent Penance, Malevolent Blessing, Infernal Deliverance, Chains of races, Comet. Form 2 (~12000 HP): Adds Seal of Quiescence (Mute 75s), Winds of Oblivion (Amnesia 75s), Meteor (every minute), Bastion of Twilight (Magic Shield, red ring), Wheel of Impregnability (Invincible, green ring).",
+      "Wait for Japanese midnight. Complete 5 epilogue paths: Louverance - Hinaree (B-6 S.Sand), zone Uleguerand Range, Count Caffaule Manor (B-6). Chebukkis - Chipmy-Popmy (C-8 Port Windurst), ??? Warmachine (H-11 Purgonorgo Isle). Shikarees - Zone Mhaura. Jabbos - Zone Oldton Movalpolos. Tenzen - Cid (H-8 Metalworks).",
+      "Approach Palace (Ru'Lude Gardens). Check Marble Bridge door (Upper Jeuno), choose ring (Rajas/Sattva/Tamas).",
+      "Check Walnut Door (K-7 Tavnazian Safehold). Approach Blueblade Fell (J-6 Lufaise Meadows, first barrel) to complete mission.",
+    }
+  },
+}

@@ -1,0 +1,15 @@
+# Data Directory
+
+This directory stores character-specific quest progress files.
+
+Each character gets their own save file named: `CharacterName_state.json`
+
+These files are automatically created and managed by the addon.
+
+**Do not manually edit these files unless you know what you're doing!**
+
+The save files contain:
+
+- Active quest IDs
+- Completed steps for each quest
+- Current step progress
