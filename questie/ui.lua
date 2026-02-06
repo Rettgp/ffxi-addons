@@ -534,7 +534,7 @@ function ui.handle_mouse_event(event_type, x, y, delta, blocked)
         return false
     end
 
-    if event_type ~= 1 and event_type ~= 2 then
+    if event_type ~= 1 then
         return false
     end
 
