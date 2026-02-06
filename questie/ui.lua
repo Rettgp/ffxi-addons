@@ -78,11 +78,22 @@ end
 -- Initialize UI
 function ui.init(settings)
     ui.settings = settings
-    ui.text_obj = texts.new('${content}', settings)
+
+    -- Create a plain table copy of settings for texts.new()
+    -- (Config objects have metatables that may interfere with the texts library)
+    local text_settings = {
+        pos = settings.pos,
+        bg = settings.bg,
+        flags = settings.flags,
+        padding = settings.padding,
+        text = settings.text
+    }
+
+    ui.text_obj = texts.new('${content}', text_settings)
     ui.text_obj.content = 'Questie - Loading...'
     ui.text_obj:show()
 
-    ui.line_height = ui.text_obj:settings().text.size + 7
+    ui.line_height = ui.settings.text.size + 7
 
     ui.tooltip_obj = texts.new('${content}', tooltip_defaults)
     ui.tooltip_obj:hide()
@@ -461,8 +472,7 @@ function ui.update_tooltip(x, y)
         return
     end
 
-    local settings = ui.text_obj:settings()
-    local padding = settings.padding or ui.settings.padding or 0
+    local padding = ui.settings.padding or 0
 
     -- Check if mouse is within the text box
     if x < pos_x or x > pos_x + 400 or y < pos_y then
@@ -547,8 +557,7 @@ function ui.handle_mouse_event(event_type, x, y, delta, blocked)
         return false
     end
 
-    local settings = ui.text_obj:settings()
-    local padding = settings.padding or ui.settings.padding or 0
+    local padding = ui.settings.padding or 0
 
     -- Check if click is within the text box
     if x < pos_x or x > pos_x + 400 then -- Approximate width
