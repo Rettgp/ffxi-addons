@@ -113,6 +113,7 @@ return {
       mission_index = 8,
       repeatable = false,
       steps = {
+        "THIS MISSION IS OPTIONAL: Trade 4 crystals to the conquest NPC and talk to Bastok Gate Guard for the Jeuno mission",
         "Talk to Bastok Gate Guard to receive mission",
         "(Optional) Talk to Davyad in Bastok Mines (K-6)",
         "Obtain Hare Meat (from rabbits or Auction House)",
