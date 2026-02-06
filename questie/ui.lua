@@ -16,23 +16,7 @@ ui.collapsed_quests = {} -- Track which quests are collapsed
 ui.text_obj = nil
 ui.tooltip_obj = nil
 ui.line_height = 19
-
--- Text display settings
-local defaults = {
-    pos = { x = 100, y = 100 },
-    bg = { alpha = 200, red = 0, green = 0, blue = 0, visible = false },
-    flags = { right = false, bottom = false, bold = true, italic = false, draggable = true },
-    padding = 8,
-    text = {
-        size = 12,
-        font = 'Consolas',
-        alpha = 255,
-        red = 255,
-        green = 255,
-        blue = 255,
-        stroke = { width = 0.5, alpha = 255, red = 0, green = 0, blue = 0 }
-    }
-}
+ui.settings = nil -- Will be set by init()
 
 local tooltip_defaults = {
     pos = { x = 0, y = 0 },
@@ -92,8 +76,9 @@ local function wrap_text(text, max_width, indent)
 end
 
 -- Initialize UI
-function ui.init()
-    ui.text_obj = texts.new('${content}', defaults)
+function ui.init(settings)
+    ui.settings = settings
+    ui.text_obj = texts.new('${content}', settings)
     ui.text_obj.content = 'Questie - Loading...'
     ui.text_obj:show()
 
@@ -477,7 +462,7 @@ function ui.update_tooltip(x, y)
     end
 
     local settings = ui.text_obj:settings()
-    local padding = settings.padding or defaults.padding or 0
+    local padding = settings.padding or ui.settings.padding or 0
 
     -- Check if mouse is within the text box
     if x < pos_x or x > pos_x + 400 or y < pos_y then
@@ -563,7 +548,7 @@ function ui.handle_mouse_event(event_type, x, y, delta, blocked)
     end
 
     local settings = ui.text_obj:settings()
-    local padding = settings.padding or defaults.padding or 0
+    local padding = settings.padding or ui.settings.padding or 0
 
     -- Check if click is within the text box
     if x < pos_x or x > pos_x + 400 then -- Approximate width

@@ -11,10 +11,30 @@ _addon.commands = {'questie', 'quest'}
 -- Required libraries
 require('luau')
 require('ffxi')
+config = require('config')
 local log = require('log')
 local state = require('state')
 local ui = require('ui')
 local quest_db = require('quest_database')
+
+-- Default settings
+local defaults = {
+    pos = { x = 100, y = 100 },
+    bg = { alpha = 200, red = 0, green = 0, blue = 0, visible = false },
+    flags = { right = false, bottom = false, bold = true, italic = false, draggable = true },
+    padding = 8,
+    text = {
+        size = 12,
+        font = 'Consolas',
+        alpha = 255,
+        red = 255,
+        green = 255,
+        blue = 255,
+        stroke = { width = 0.5, alpha = 255, red = 0, green = 0, blue = 0 }
+    }
+}
+
+local settings = config.load(defaults)
 
 -- Initialize addon
 windower.register_event('load', function()
@@ -24,8 +44,8 @@ windower.register_event('load', function()
     -- Load character state
     state.load()
     
-    -- Initialize UI
-    ui.init()
+    -- Initialize UI with settings
+    ui.init(settings)
 end)
 
 
@@ -33,6 +53,7 @@ end)
 -- Save state on logout/unload
 windower.register_event('logout', 'unload', function()
     state.save()
+    settings:save()
 end)
 
 -- Register UI update callback for when quest/mission data changes
