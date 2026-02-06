@@ -12,6 +12,9 @@
         "nmscanner": {
             "version": "1.7"
         },
+        "questie": {
+            "version": "1.0"
+        },
         "scoreboard": {
             "version": "1.16"
         },
