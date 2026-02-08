@@ -149,6 +149,8 @@ return {
       repeatable = false,
       steps = {
         "Trade 4+ crystals to the conquest NPC",
+        "Speak with Goggehn then click the Door: Bastokan Emb. in Ru'Lude Gardens (H-10) for Archducal audience permit",
+        "Click on the door to the Audience Chamber in Ru'Lude Gardens (H-5) for a cutscene and the Key Item Letter to Aldo",
         "Talk to Aldo (J-8) in Lower Jeuno at Neptune's Spire to get Silver Bell",
         "Obtain key items: Crest of Davoi, Yagudo Torch, Coruscant Rosary, Black Matinee Necklace",
         "Davoi: Disable Wall of Dark Arts (G-7), check Magicite for Optistone",
