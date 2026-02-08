@@ -3569,6 +3569,19 @@ return {
       }
     },
     {
+      id = "mission_cop_1_1(1)",
+      name = "Promathia Mission 1-1",
+      type = "mission",
+      location = "chains_of_promathia",
+      nation = "chains_of_promathia",
+      mission_index = 1,
+      game_id = 115,
+      repeatable = false,
+      steps = {
+        "Zone into Upper Jeuno for cutscene, then speak with Monberaux at Infirmary (G-10, Home Point #3) to receive Mysterious amulet.",
+      }
+    },
+    {
       id = "mission_cop_1_2",
       name = "Promathia Mission 1-2",
       type = "mission",
