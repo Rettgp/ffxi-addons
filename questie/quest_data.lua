@@ -3588,7 +3588,7 @@ return {
       location = "chains_of_promathia",
       nation = "chains_of_promathia",
       mission_index = 2,
-      game_id = 120,
+      game_id = 118,
       repeatable = false,
       steps = {
         "Speak with Pherimociel at Ru'Lude Gardens (G-6) in palace. Complete all three Promyvions (any order) - see The Mothercrystals walkthrough.",
