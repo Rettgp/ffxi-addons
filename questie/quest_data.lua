@@ -148,6 +148,7 @@ return {
       mission_index = 10,
       repeatable = false,
       steps = {
+        "Trade 4+ crystals to the conquest NPC",
         "Talk to Aldo (J-8) in Lower Jeuno at Neptune's Spire to get Silver Bell",
         "Obtain key items: Crest of Davoi, Yagudo Torch, Coruscant Rosary, Black Matinee Necklace",
         "Davoi: Disable Wall of Dark Arts (G-7), check Magicite for Optistone",
