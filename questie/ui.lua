@@ -12,11 +12,13 @@ local ui = {}
 
 -- UI State
 ui.is_open = true
+ui.panel_visible = true  -- Track if full panel is shown (icon always visible)
 ui.collapsed_quests = {} -- Track which quests are collapsed
 ui.text_obj = nil
 ui.tooltip_obj = nil
+ui.toggle_icon = nil -- Small clickable icon to toggle panel
 ui.line_height = 19
-ui.settings = nil -- Will be set by init()
+ui.settings = nil    -- Will be set by init()
 
 local tooltip_defaults = {
     pos = { x = 0, y = 0 },
@@ -31,6 +33,23 @@ local tooltip_defaults = {
         green = 255,
         blue = 100,
         stroke = { width = 0.5, alpha = 255, red = 0, green = 0, blue = 0 }
+    }
+}
+
+-- Toggle icon settings (small square always visible)
+local toggle_icon_defaults = {
+    pos = { x = 100, y = 100 },
+    bg = { alpha = 200, red = 30, green = 50, blue = 80, visible = true },
+    flags = { right = false, bottom = false, bold = true, italic = false, draggable = true },
+    padding = 6,
+    text = {
+        size = 14,
+        font = 'Consolas',
+        alpha = 255,
+        red = 100,
+        green = 150,
+        blue = 255,
+        stroke = { width = 1, alpha = 255, red = 0, green = 0, blue = 0 }
     }
 }
 
@@ -98,34 +117,65 @@ function ui.init(settings)
     ui.tooltip_obj = texts.new('${content}', tooltip_defaults)
     ui.tooltip_obj:hide()
 
+    -- Create toggle icon (small clickable square, always visible)
+    local icon_settings = {
+        pos = settings.pos, -- Use same position as main window
+        bg = toggle_icon_defaults.bg,
+        flags = toggle_icon_defaults.flags,
+        padding = toggle_icon_defaults.padding,
+        text = toggle_icon_defaults.text
+    }
+    ui.toggle_icon = texts.new('${content}', icon_settings)
+    ui.toggle_icon.content = '\\cs(100,150,255)Q\\cr' -- Q for Questie
+    ui.toggle_icon:show()                             -- Always visible when addon is open
+
     ui.update()
 
     -- Register click handler
     windower.register_event('mouse', ui.handle_mouse_event)
 end
 
--- Toggle window visibility
+-- Toggle entire addon visibility (icon + panel)
 function ui.toggle()
     ui.is_open = not ui.is_open
     if ui.is_open then
+        ui.toggle_icon:show()
+        if ui.panel_visible then
+            ui.text_obj:show()
+        end
+        ui.update()
+    else
+        ui.text_obj:hide()
+        ui.toggle_icon:hide()
+    end
+end
+
+-- Show addon (icon always, panel if enabled)
+function ui.show()
+    ui.is_open = true
+    ui.toggle_icon:show()
+    if ui.panel_visible then
+        ui.text_obj:show()
+    end
+    ui.update()
+end
+
+-- Hide entire addon
+function ui.hide()
+    ui.is_open = false
+    ui.text_obj:hide()
+    ui.toggle_icon:hide()
+end
+
+-- Toggle panel visibility (called when clicking the icon)
+function ui.toggle_panel()
+    ui.panel_visible = not ui.panel_visible
+    if ui.panel_visible then
         ui.text_obj:show()
         ui.update()
     else
         ui.text_obj:hide()
     end
-end
-
--- Show window
-function ui.show()
-    ui.is_open = true
-    ui.text_obj:show()
-    ui.update()
-end
-
--- Hide window
-function ui.hide()
-    ui.is_open = false
-    ui.text_obj:hide()
 end
 
 -- Update the display
@@ -536,6 +586,22 @@ function ui.handle_mouse_event(event_type, x, y, delta, blocked)
     -- Ensure x and y are numbers
     if type(x) ~= 'number' or type(y) ~= 'number' then
         return false
+    end
+
+    -- Check if click is on toggle icon
+    if ui.toggle_icon and ui.toggle_icon:visible() then
+        local icon_x = ui.toggle_icon:pos_x()
+        local icon_y = ui.toggle_icon:pos_y()
+        if icon_x and icon_y then
+            -- Approximate icon size (padding + text)
+            local icon_width = 30
+            local icon_height = 30
+            if x >= icon_x and x <= icon_x + icon_width and y >= icon_y and y <= icon_y + icon_height then
+                -- Click on toggle icon - show/hide panel
+                ui.toggle_panel()
+                return true
+            end
+        end
     end
 
     -- Check if click is within text object bounds

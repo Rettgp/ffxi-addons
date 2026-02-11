@@ -5,7 +5,7 @@
 
 _addon.name = 'questie'
 _addon.author = 'Rett'
-_addon.version = '1.05'
+_addon.version = '1.06'
 _addon.commands = { 'questie', 'quest' }
 
 -- Required libraries
