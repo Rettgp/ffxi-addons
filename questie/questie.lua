@@ -5,7 +5,7 @@
 
 _addon.name = 'questie'
 _addon.author = 'Rett'
-_addon.version = '1.06'
+_addon.version = '1.07'
 _addon.commands = { 'questie', 'quest' }
 
 -- Required libraries
@@ -35,6 +35,15 @@ local defaults = {
 }
 
 local settings = config.load(defaults)
+
+-- Validate position to prevent crazy values
+if settings.pos.x < 0 or settings.pos.x > 5000 then
+    settings.pos.x = defaults.pos.x
+end
+if settings.pos.y < 0 or settings.pos.y > 5000 then
+    settings.pos.y = defaults.pos.y
+end
+
 config.save(settings)
 
 -- Initialize addon

@@ -40,7 +40,7 @@ local tooltip_defaults = {
 local toggle_icon_defaults = {
     pos = { x = 100, y = 100 },
     bg = { alpha = 200, red = 30, green = 50, blue = 80, visible = true },
-    flags = { right = false, bottom = false, bold = true, italic = false, draggable = true },
+    flags = { right = false, bottom = false, bold = true, italic = false, draggable = false },
     padding = 6,
     text = {
         size = 14,
@@ -52,6 +52,9 @@ local toggle_icon_defaults = {
         stroke = { width = 1, alpha = 255, red = 0, green = 0, blue = 0 }
     }
 }
+
+-- Icon width for positioning
+local ICON_WIDTH = 20
 
 -- Track step line positions for click detection
 ui.step_lines = {}    -- Map of line_number -> {quest_id, step_number}
@@ -98,8 +101,9 @@ end
 function ui.init(settings)
     ui.settings = settings
 
-    -- Create a plain table copy of settings for texts.new()
-    -- (Config objects have metatables that may interfere with the texts library)
+    -- Create settings for texts.new()
+    -- Main panel uses settings.pos directly so position changes are persisted
+    -- The toggle icon uses a separate computed position (not settings.pos) to avoid conflicts
     local text_settings = {
         pos = settings.pos,
         bg = settings.bg,
@@ -118,8 +122,11 @@ function ui.init(settings)
     ui.tooltip_obj:hide()
 
     -- Create toggle icon (small clickable square, always visible)
+    -- Use a COPY of the position, not the settings reference, to avoid config conflicts
+    local icon_x = settings.pos.x - ICON_WIDTH
+    local icon_y = settings.pos.y - ICON_WIDTH / 2
     local icon_settings = {
-        pos = settings.pos, -- Use same position as main window
+        pos = { x = icon_x, y = icon_y },
         bg = toggle_icon_defaults.bg,
         flags = toggle_icon_defaults.flags,
         padding = toggle_icon_defaults.padding,
@@ -133,6 +140,17 @@ function ui.init(settings)
 
     -- Register click handler
     windower.register_event('mouse', ui.handle_mouse_event)
+
+    -- Keep icon synced with panel position during drag
+    windower.register_event('prerender', function()
+        if ui.toggle_icon and ui.text_obj and ui.panel_visible and ui.text_obj:visible() then
+            local px = ui.text_obj:pos_x()
+            local py = ui.text_obj:pos_y()
+            if px and py then
+                ui.toggle_icon:pos(px - ICON_WIDTH, py + ICON_WIDTH / 2)
+            end
+        end
+    end)
 end
 
 -- Toggle entire addon visibility (icon + panel)
@@ -429,8 +447,8 @@ function ui.render_quest_item(content, quest, display_name, from_game)
     local total_steps = #quest.steps
     local completed_count = #progress.completed_steps
 
-    -- Check if collapsed
-    local is_collapsed = ui.collapsed_quests[quest_id]
+    -- Check if collapsed (default to collapsed, nil means collapsed)
+    local is_collapsed = ui.collapsed_quests[quest_id] ~= false
 
     -- Quest header with collapse icon
     local collapse_icon = is_collapsed and '[+]' or '[-]'
@@ -542,7 +560,7 @@ function ui.update_tooltip(x, y)
     -- Check if hovering over a quest header
     local quest_id = ui.quest_headers[line_hovered]
     if quest_id then
-        local is_collapsed = ui.collapsed_quests[quest_id]
+        local is_collapsed = ui.collapsed_quests[quest_id] ~= false
         local tooltip_text = is_collapsed and 'Click to Expand' or 'Click to Collapse'
         ui.tooltip_obj.content = tooltip_text
         ui.tooltip_obj:pos(x + 15, y)
@@ -641,21 +659,26 @@ function ui.handle_mouse_event(event_type, x, y, delta, blocked)
     -- Check if this line is a quest header (for collapse/expand)
     local quest_id = ui.quest_headers[line_clicked]
     if quest_id and event_type == 1 then -- Left click on header
-        ui.collapsed_quests[quest_id] = not ui.collapsed_quests[quest_id]
+        -- Toggle: nil (collapsed) -> false (expanded), false -> nil
+        if ui.collapsed_quests[quest_id] == false then
+            ui.collapsed_quests[quest_id] = nil
+        else
+            ui.collapsed_quests[quest_id] = false
+        end
         ui.update()
         return true
     end
 
     -- Check if this line has a clickable step
     local step_data = ui.step_lines[line_clicked]
-    if step_data then
-        if event_type == 1 then -- Left click = complete
-            state.complete_step(step_data.quest_id, step_data.step_num)
+    if event_type == 1 and step_data then
+        local is_completed = state.is_step_completed(step_data.quest_id, step_data.step_num)
+        if is_completed then
             log.info('Step ' .. step_data.step_num .. ' marked complete!')
-        elseif event_type == 2 then -- Right click = uncomplete
-            state.uncomplete_step(step_data.quest_id, step_data.step_num)
+        else
             log.info('Step ' .. step_data.step_num .. ' marked incomplete!')
         end
+        state.toggle_step(step_data.quest_id, step_data.step_num)
 
         -- Update UI
         ui.update()
