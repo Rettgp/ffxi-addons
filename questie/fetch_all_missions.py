@@ -12,69 +12,28 @@ from mission_scraper import scrape_mission
 
 # List of all SoA missions based on the provided list
 MISSIONS = [
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-    "11",
-    "12",
-    "13",
-    "14",
-    "15",
-    "16",
-    "17",
-    "18",
-    "19",
-    "20",
-    "21",
-    "22",
-    "23",
-    "24",
-    "25",
-    "26",
-    "27",
-    "28",
-    "29",
-    "30",
-    "31",
-    "32",
-    "33",
-    "34",
-    "35",
-    "36",
-    "37",
-    "38",
-    "39",
-    "40",
-    "41",
-    "41-1",
-    "41-1-1",
-    "41-1-2",
-    "41-1-3",
-    "41-2",
-    "41-3",
-    "41-4",
-    "42",
-    "43",
-    "44",
-    "45",
-    "46",
-    "47",
-    "48",
-    "49",
-    "50",
-    "51",
-    "52",
-    "53",
-    "54",
+"1-1",
+"1-2",
+"1-3",
+"2-1",
+"2-2",
+"2-3",
+"3-1",
+"3-2",
+"3-3",
+"4-1",
+"5-1",
+"5-2",
+"6-1",
+"6-2",
+"7-1",
+"7-2",
+"8-1",
+"8-2",
+"9-1",
+"9-2"
 ]
-EXPANSION_NAME = "Wings of the Goddess"
+EXPANSION_NAME = "Windurst"
 
 
 def extract_walkthrough_steps(html):
@@ -146,8 +105,7 @@ def get_mission_name(html):
     title_tag = soup.find("h1", {"class": "firstHeading"})
     if title_tag:
         title = title_tag.get_text(strip=True)
-        # Remove "Seekers of Adoulin Mission" prefix if present
-        title = re.sub(rf"^+w Mission\s+\d+-\d+(-\d+)?:\s*", "", title)
+        title = re.sub(rf"^\w+ Mission\s+\d+-\d+(-\d+)?:?\s*", "", title)
         return title
 
     return None
@@ -156,8 +114,8 @@ def get_mission_name(html):
 def main():
     """Fetch all missions."""
 
-    base_url = "https://www.bg-wiki.com/ffxi/Aht_Urhgan_Mission_{}"
-    output_file = "aht_urhgan_missions.lua"
+    base_url = "https://www.bg-wiki.com/ffxi/Windurst_Mission_{}"
+    output_file = "windurst_missions.lua"
 
     results = []
 
@@ -177,6 +135,7 @@ def main():
                 print(f"  ⚠ Mission {mission_id} page does not exist", file=sys.stderr)
                 continue
 
+            print(f"  ✓ Successfully fetched {mission_id}", file=sys.stderr)
             name = get_mission_name(html)
             steps = extract_walkthrough_steps(html)
 
@@ -211,7 +170,7 @@ def main():
         for i, mission in enumerate(results):
             lua_id = mission["id"].replace("-", "_")
             f.write("    {\n")
-            f.write(f'      id = "mission_toau_{lua_id}",\n')
+            f.write(f'      id = "mission_windurst_{lua_id}",\n')
             f.write(f'      name = "{mission["name"]}",\n')
             f.write('      type = "mission",\n')
             f.write(f'      location = "{EXPANSION_NAME.lower().replace(" ", "_")}",\n')
