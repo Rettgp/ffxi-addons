@@ -34,7 +34,7 @@
 
 _addon.name = 'XIVHotbar'
 _addon.author = 'Edeon, Akirane'
-_addon.version = '1.0.1'
+_addon.version = '1.0.2'
 _addon.language = 'english'
 _addon.commands = { 'xivhotbar', 'htb', 'execute' }
 
