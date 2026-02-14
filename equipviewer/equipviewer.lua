@@ -26,7 +26,7 @@
         SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ]]
 _addon.name = 'Equipviewer'
-_addon.version = '3.3.1'
+_addon.version = '3.3.2'
 _addon.author = 'Tako, Rubenator'
 _addon.commands = { 'equipviewer', 'ev' }
 
@@ -63,6 +63,13 @@ for i=0,15 do
 end
 local ammo_count_text = nil
 local bg_image = nil
+
+-- Drag state variables
+local drag = {
+    active = false,
+    offset_x = 0,
+    offset_y = 0
+}
 
 local defaults = {
     pos = {
@@ -373,6 +380,39 @@ function clear_all_equipment_slots()
     end
 end
 
+-- Checks if point (x,y) is within the UI bounds
+function is_within_ui_bounds(x, y)
+    local ui_x = settings.pos.x
+    local ui_y = settings.pos.y
+    local ui_width = settings.size * 4
+    local ui_height = settings.size * 4
+    return x >= ui_x and x <= ui_x + ui_width and y >= ui_y and y <= ui_y + ui_height
+end
+
+-- Updates all UI element positions based on current settings.pos
+function update_all_positions()
+    if bg_image then
+        bg_image:pos(settings.pos.x, settings.pos.y)
+    end
+    for key, slot in pairs(equipment_data) do
+        if slot.image then
+            position(slot)
+        end
+    end
+    for key, slot in pairs(encumbrance_data) do
+        if slot.image then
+            position(slot)
+        end
+    end
+    if ammo_count_text then
+        if settings.left_justify then
+            ammo_count_text:pos(settings.pos.x + settings.size*3, settings.pos.y + settings.size*0.58)
+        else
+            ammo_count_text:pos((windower.get_windower_settings().ui_x_res - (settings.pos.x + settings.size*4))*-1, settings.pos.y + settings.size*0.58)
+        end
+    end
+end
+
 -- Shows and hides appropriate encumbrance ui objects and possibly updates encumbrance
 -- flags based on provided bitfield number
 function display_encumbrance(bitfield)
@@ -409,6 +449,38 @@ windower.register_event('status change', function(new_status_id)
     else
         show()
     end
+end)
+
+-- Mouse event handler for drag and move functionality
+windower.register_event('mouse', function(type, x, y, delta, blocked)
+    if blocked then return end
+    
+    -- Type 1: Left click down
+    if type == 1 then
+        if is_within_ui_bounds(x, y) then
+            drag.active = true
+            drag.offset_x = settings.pos.x - x
+            drag.offset_y = settings.pos.y - y
+            return true
+        end
+    -- Type 2: Left click release
+    elseif type == 2 then
+        if drag.active then
+            drag.active = false
+            config.save(settings)
+            return true
+        end
+    -- Type 0: Mouse move
+    elseif type == 0 then
+        if drag.active then
+            settings.pos.x = x + drag.offset_x
+            settings.pos.y = y + drag.offset_y
+            update_all_positions()
+            return true
+        end
+    end
+    
+    return false
 end)
 
 -- Called when our addon is unloaded.

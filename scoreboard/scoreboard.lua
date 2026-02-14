@@ -1,8 +1,8 @@
 -- Scoreboard addon for Windower4. See readme.md for a complete description.
 
 _addon.name = 'Scoreboard'
-_addon.author = 'Suji'
-_addon.version = '1.16'
+_addon.author = 'Rett'
+_addon.version = '2.0'
 _addon.commands = {'sb', 'scoreboard'}
 
 require('tables')
@@ -13,7 +13,8 @@ require('actions')
 local file = require('files')
 config = require('config')
 
-local Display = require('display')
+local Jobs = require('jobs')
+local Display = require('display_bars')
 local display
 dps_clock = require('dpsclock'):new() -- global for now
 dps_db    = require('damagedb'):new() -- global for now
@@ -33,6 +34,12 @@ default_settings.combinepets = true
 default_settings.oneperline = false
 default_settings.compactsc = false
 default_settings.creditpetdamagetoowner = false
+
+-- Bar display settings
+default_settings.bar_width = 220
+default_settings.bar_height = 20
+default_settings.bar_spacing = 1
+default_settings.icon_size = 18
 
 default_settings.display = {}
 default_settings.display.pos = {}
@@ -98,8 +105,7 @@ windower.register_event('addon command', function()
             sb_output('sb stat <stat> [<player>] : Shows specific damage stats. Respects filters. If player isn\'t specified, stats for everyone are displayed.')
             sb_output('  Valid stats are: '..dps_db.player_stat_fields:tostring():stripchars('{}"'))
             sb_output('sb set <flag> <value> : Sets configuration variables')
-            sb_output('  Valid flags are: CombinePets, NumPlayers, BGTransparency, Font, SBColor, ShowAlliDPS, ResetFilters, ShowFellow, OnePerLine, CompactSC, CreditPetDamageToOwner')
-        elseif command == 'pos' then
+            sb_output('  Valid flags are: CombinePets, NumPlayers, BGTransparency, Font, SBColor, ShowAlliDPS, ResetFilters, ShowFellow, OnePerLine, CompactSC, CreditPetDamageToOwner')            sb_output('  Bar flags: BarWidth, BarHeight, BarSpacing, IconSize')        elseif command == 'pos' then
             if params[2] then
                 local posx, posy = tonumber(params[1]), tonumber(params[2])
                 settings.display.pos.x = posx
@@ -209,6 +215,22 @@ windower.register_event('addon command', function()
                 end
                 settings:save()
                 sb_output("Setting 'CreditPetDamageToOwner' set to " .. tostring(settings.creditpetdamagetoowner))
+            elseif setting:lower() == 'barwidth' then
+                settings.bar_width = tonumber(params[2])
+                settings:save()
+                sb_output("Setting 'BarWidth' set to " .. settings.bar_width .. ". Reload addon to apply.")
+            elseif setting:lower() == 'barheight' then
+                settings.bar_height = tonumber(params[2])
+                settings:save()
+                sb_output("Setting 'BarHeight' set to " .. settings.bar_height .. ". Reload addon to apply.")
+            elseif setting:lower() == 'barspacing' then
+                settings.bar_spacing = tonumber(params[2])
+                settings:save()
+                sb_output("Setting 'BarSpacing' set to " .. settings.bar_spacing .. ". Reload addon to apply.")
+            elseif setting:lower() == 'iconsize' then
+                settings.icon_size = tonumber(params[2])
+                settings:save()
+                sb_output("Setting 'IconSize' set to " .. settings.icon_size .. ". Reload addon to apply.")
             end
         elseif command == 'reset' then
             reset()
@@ -316,6 +338,8 @@ windower.register_event('addon command', function()
             else
                 save()
             end
+        elseif command == 'debug' then
+            display:debug_party()
         else
             error('Unrecognized command. See //sb help')
         end
@@ -530,6 +554,21 @@ function action_handler(raw_actionpacket)
 end
 
 ActionPacket.open_listener(action_handler)
+
+-- Parse incoming party member update packets to get job info (for real players, not trusts)
+local packets = require('packets')
+windower.register_event('incoming chunk', function(id, data)
+    -- 0x0DD = Party member update packet
+    if id == 0x0DD then
+        local p = packets.parse('incoming', data)
+        if p and p['Main job'] and p['Main job'] > 0 and p['Name'] then
+            local job_short = Jobs.get_short_name(p['Main job'])
+            if job_short then
+                display:set_player_job(p['Name'], job_short)
+            end
+        end
+    end
+end)
 
     function find_pet_owner_name(actionpacket)
         local pet = windower.ffxi.get_mob_by_id(actionpacket:get_id())
